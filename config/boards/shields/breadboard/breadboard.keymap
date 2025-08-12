@@ -8,10 +8,10 @@
 
         default_layer {
             bindings = <
-                &kp Q &kp W &kp E &kp R &kp T
-                &kp A &kp S &kp D &kp F &kp G
-                &kp Z &kp X &kp C &kp V &kp B
-                &kp LCTRL &kp LALT &kp SPACE &kp ENTER &kp ESC
+                &kp Y &kp U &kp I &kp O &kp P
+                &kp H &kp J &kp K &kp L &bt BT_CLR
+                &kp N &kp M &bt BT_SEL 0 &bt BT_SEL 1 &bootloader
+                &kp BSPC &kp ENTER &kp ENTER &kp ENTER &kp ENTER
             >;
         };
 
@@ -33,4 +33,4 @@
             >;
         };
     };
-};
+};rfv
