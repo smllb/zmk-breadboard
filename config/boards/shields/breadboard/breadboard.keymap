@@ -11,26 +11,9 @@
                 &kp 1 &kp 2 &kp 3 &kp 4 &kp 5
                 &kp 6 &kp 7 &kp 8 &kp 9 &kp A
                 &kp B &kp C &kp D &kp E &bootloader
-                &kp F &kp G &kp H &kp I &kp J
+                &kp F &kp G &kp H 
             >;
         };
 
-        func_layer {
-            bindings = <
-                &kp F1 &kp F2 &kp F3 &kp F4 &kp F5
-                &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp TAB
-                &kp GRAVE &kp MINUS &kp EQUAL &kp LBKT &kp RBKT
-                &trans &trans &trans &trans &trans
-            >;
-        };
-
-        bt_layer {
-            bindings = <
-                &kp 0 &kp 0 &kp 0 &kp 0 &kp 0
-                &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans
-            >;
-        };
     };
 };
