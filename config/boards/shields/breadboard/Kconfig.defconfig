@@ -1,6 +1,6 @@
-if SHIELD_BREADBOARD
+if SHIELD_SKELETYL
 
 config ZMK_KEYBOARD_NAME
-    default "breadboard"
+    default "skeletyl"
     
 endif
