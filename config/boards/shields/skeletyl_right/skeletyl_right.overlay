@@ -11,15 +11,12 @@
         columns = <5>;
         rows = <4>;
         
-        // RIGHT HALF MAPPING - explicit mapping to second half positions
         map = <
-            RC(0,5) RC(0,6) RC(0,7) RC(0,8) RC(0,9)   // Right top row
-            RC(1,5) RC(1,6) RC(1,7) RC(1,8) RC(1,9)   // Right middle row
-            RC(2,5) RC(2,6) RC(2,7) RC(2,8) RC(2,9)   // Right bottom row
-            RC(3,3) RC(3,4) RC(3,5)                   // Right thumb keys
+            RC(0,5) RC(0,6) RC(0,7) RC(0,8) RC(0,9)   // Right top row - columns 5-9
+            RC(1,5) RC(1,6) RC(1,7) RC(1,8) RC(1,9)   // Right middle row - columns 5-9
+            RC(2,5) RC(2,6) RC(2,7) RC(2,8) RC(2,9)   // Right bottom row - columns 5-9
+                    RC(3,5) RC(3,6) RC(3,7)         
         >;
-        
-        // Removed col-offset since we're using explicit column positions
     };
 
     kscan0: kscan {
