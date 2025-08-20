@@ -1,0 +1,84 @@
+/*
+ * ZMK Combos for skeletyl
+ *
+ * Combo summary:
+ * F+J = Tab
+ * D+K = Caps Lock
+ * Q+P = ~
+ * Z+SLSH = Ctrl+Alt+L
+ * G+H = Ctrl+Alt+T
+ * A+QUOT = Shift x2
+ * M+K = Toggle Layer 3
+ * K+L = Toggle Layer 3
+ * M+K+L = Toggle Layer 3
+ * LEFT+UP = Go to Layer 0
+ * LEFT+UP+RIGHT = Go to Layer 0
+ * RIGHT+UP = Go to Layer 0
+ */
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+
+        combo_tab {
+            timeout-ms = <30>;
+            key-positions = <13 16>; // F + J
+            bindings = <&kp TAB>;
+        };
+        combo_caps {
+            timeout-ms = <30>;
+            key-positions = <12 17>; // D + K
+            bindings = <&kp CAPSLOCK>;
+        };
+        combo_tilde {
+            timeout-ms = <30>;
+            key-positions = <0 9>; // Q + P
+            bindings = <&kp TILD>;
+        };
+        combo_ctrlaltl {
+            timeout-ms = <30>;
+            key-positions = <20 29>; // Z + SLASH
+            bindings = <&kp LCTL &kp LALT &kp L>;
+        };
+        combo_ctrlaltt {
+            timeout-ms = <30>;
+            key-positions = <14 15>; // G + H
+            bindings = <&kp LCTL &kp LALT &kp T>;
+        };
+        combo_shiftx2 {
+            timeout-ms = <30>;
+            key-positions = <11 19>; // A + APOSTROPHE
+            bindings = <&kp LSHIFT &kp LSHIFT>;
+        };
+        combo_tgl3_mk {
+            timeout-ms = <30>;
+            key-positions = <26 17>; // M + K
+            bindings = <&tg 3>;
+        };
+        combo_tgl3_kl {
+            timeout-ms = <30>;
+            key-positions = <17 18>; // K + L
+            bindings = <&tg 3>;
+        };
+        combo_tgl3_mkl {
+            timeout-ms = <30>;
+            key-positions = <26 17 18>; // M + K + L
+            bindings = <&tg 3>;
+        };
+        combo_layer0_leftup {
+            timeout-ms = <30>;
+            key-positions = <25 27>; // LEFT + UP
+            bindings = <&to 0>;
+        };
+        combo_layer0_leftupright {
+            timeout-ms = <30>;
+            key-positions = <25 27 28>; // LEFT + UP + RIGHT
+            bindings = <&to 0>;
+        };
+        combo_layer0_rightup {
+            timeout-ms = <30>;
+            key-positions = <28 27>; // RIGHT + UP
+            bindings = <&to 0>;
+        };
+    };
+};
