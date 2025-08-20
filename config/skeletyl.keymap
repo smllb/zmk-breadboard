@@ -10,8 +10,8 @@
         default_layer {
             bindings = <
                 &kp Q      &kp W      &kp E      &kp R      &kp T      &kp Y      &kp U      &kp I      &kp O      &kp P
-                &mt LSHIFT A &kp S      &tg 3      &lt 1 F    &kp G      &kp H      &lt 1 J    &tg 3      &kp L      &mt LSHIFT APOSTROPHE
-                &mt LCTRL Z  &kp X      &kp C      &lt 2 V    &kp B      &kp N      &lt 2 M    &kp COMMA &kp DOT   &mt RCTRL SLASH
+                &mt LSHIFT &kp A &kp S      &tg 3      &lt 1 &kp F    &kp G      &kp H      &lt 1 &kp J    &tg 3      &kp L      &mt LSHIFT &kp APOSTROPHE
+                &mt LCTRL &kp Z  &kp X      &kp C      &lt 2 &kp V    &kp B      &kp N      &lt 2 &kp M    &kp COMMA &kp DOT   &mt RCTRL &kp SLASH
                 &none        &none      &kp LSHIFT &kp ESC   &kp SPACE  &kp BSPC
             >;
         };
@@ -28,7 +28,7 @@
         layer_2 {
             bindings = <
                 &kp 1    &kp 2    &kp 3    &kp 4    &kp 5    &kp 6    &kp 7    &kp 8    &kp 9    &kp 0
-                &mt LSHIFT F1 &kp F2 &kp F3 &to 0 &to 0 &to 0 &lt 0 KC_COMMA &kp F7 &kp F8 &mt LSHIFT F9
+                &mt LSHIFT &kp F1 &kp F2 &kp F3 &to 0 &to 0 &to 0 &lt 0 &kp COMMA &kp F7 &kp F8 &mt LSHIFT &kp F9
                 &kp F4 &kp F5 &kp F6 &kp LEFT &kp RIGHT &none &kp DOT &kp F10 &kp F11 &kp F12
                 &none &none &kp LSHIFT &mt LCTRL ESC &kp SPACE &kp BSPC
             >;
@@ -37,7 +37,7 @@
         layer_3 {
             bindings = <
                 &kp ESC  &none    &kp HOME &os 1    &none    &none    &none    &kp VOLD &kp MPLY &kp VOLU
-                &mt LSHIFT A &kp TAB &kp END &kp LSHIFT &none &none &kp LALT &kp UP &kp RIGHT &kp LALT
+                &mt LSHIFT &kp A &kp TAB &kp END &kp LSHIFT &none &none &kp LALT &kp UP &kp RIGHT &kp LALT
                 &kp LCTRL &none &kp C &kp V &none &kp MUTE &kp LEFT &kp DOWN &kp PGUP &kp PGDN
                 &none &os 1 &kp LALT &mt LCTRL ESC &kp SPACE &kp BSPC
             >;
