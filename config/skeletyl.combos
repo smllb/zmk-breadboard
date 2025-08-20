@@ -8,6 +8,7 @@
  * Z+SLSH = Ctrl+Alt+L
  * G+H = Ctrl+Alt+T
  * A+QUOT = Shift x2
+ * B+N = Toggle Bluetooth Layer
  * M+K = Toggle Layer 3
  * K+L = Toggle Layer 3
  * M+K+L = Toggle Layer 3
@@ -79,6 +80,11 @@
             timeout-ms = <30>;
             key-positions = <28 27>; // RIGHT + UP
             bindings = <&to 0>;
+        };
+        combo_bluetooth_bn {
+            timeout-ms = <30>;
+            key-positions = <24 25>; // B + N
+            bindings = <&tg 4>;
         };
     };
 };
