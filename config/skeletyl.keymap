@@ -9,13 +9,41 @@
 
         default_layer {
             bindings = <
-                &kp Q      &kp W &kp E     &kp R    &kp T         &kp Y   &kp U     &kp I     &kp O   &kp P
-                &kp A      &kp S &kp D     &kp F    &kp G         &kp H   &kp J     &kp K     &kp L   &kp SEMI
-                &kp Z      &kp X &kp C     &kp V    &kp B         &kp N   &kp M     &kp COMMA &kp DOT &kp SLASH
-                &none      &none &kp LSHFT                        &kp SPACE &kp ENTER &kp ESC
+                &kp Q      &kp W      &kp E      &kp R      &kp T      &kp Y      &kp U      &kp I      &kp O      &kp P
+                &mt LSHIFT A &kp S      &tg 3      &lt 1 F    &kp G      &kp H      &lt 1 J    &tg 3      &kp L      &mt LSHIFT APOSTROPHE
+                &mt LCTRL Z  &kp X      &kp C      &lt 2 V    &kp B      &kp N      &lt 2 M    &kp COMMA &kp DOT   &mt RCTRL SLASH
+                &none        &none      &kp LSHIFT &kp ESC   &kp SPACE  &kp BSPC
             >;
         };
 
+        layer_1 {
+            bindings = <
+                &kp TILD &kp EXLM &kp AT   &kp HASH &kp DLR  &kp RBRC &kp SCLN &kp COLN &kp MINS &kp EQL
+                &kp ASTR &kp PERC &kp CIRC &kp AMPR &kp SCLN &kp LBRC &kp LPRN &kp RPRN &kp UNDS &kp PLUS
+                &kp F4   &kp F5   &kp LEFT &kp RIGHT &kp COLN &to 0   &kp LCBR &kp RCBR &kp BSLS &kp PIPE
+                &none   &none   &kp LSHIFT &kp ESC &kp SPACE &kp BSPC
+            >;
+        };
+
+        layer_2 {
+            bindings = <
+                &kp 1    &kp 2    &kp 3    &kp 4    &kp 5    &kp 6    &kp 7    &kp 8    &kp 9    &kp 0
+                &mt LSHIFT F1 &kp F2 &kp F3 &to 0 &to 0 &to 0 &lt 0 KC_COMMA &kp F7 &kp F8 &mt LSHIFT F9
+                &kp F4 &kp F5 &kp F6 &kp LEFT &kp RIGHT &none &kp DOT &kp F10 &kp F11 &kp F12
+                &none &none &kp LSHIFT &mt LCTRL ESC &kp SPACE &kp BSPC
+            >;
+        };
+
+        layer_3 {
+            bindings = <
+                &kp ESC  &none    &kp HOME &os 1    &none    &none    &none    &kp VOLD &kp MPLY &kp VOLU
+                &mt LSHIFT A &kp TAB &kp END &kp LSHIFT &none &none &kp LALT &kp UP &kp RIGHT &kp LALT
+                &kp LCTRL &none &kp C &kp V &none &kp MUTE &kp LEFT &kp DOWN &kp PGUP &kp PGDN
+                &none &os 1 &kp LALT &mt LCTRL ESC &kp SPACE &kp BSPC
+            >;
+        };
+
+        /* Bluetooth layer kept as-is in the original config */
         bluetooth_layer {
             bindings = <
                 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &none &none &none &none &none
