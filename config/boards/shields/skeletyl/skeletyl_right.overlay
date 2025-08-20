@@ -1,0 +1,15 @@
+#include "skeletyl.dtsi"
+
+&kscan0 {
+    col-gpios
+        = <&gpio1 11 GPIO_ACTIVE_HIGH>
+        , <&gpio0 22 GPIO_ACTIVE_HIGH>
+        , <&gpio0 20 GPIO_ACTIVE_HIGH>
+        , <&gpio0 6 GPIO_ACTIVE_HIGH>
+        , <&gpio0 8 GPIO_ACTIVE_HIGH>
+        ;
+};
+
+&right_encoder {
+    status = "okay";
+};
