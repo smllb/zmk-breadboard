@@ -1,62 +1,27 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/input_transform.h>
-
+#include <dt-bindings/zmk/outputs.h>
 
 / {
-    behaviors {
-        mt_tg3: tap_dance_mod_tap_toggle_3 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&mt LSHFT(D)>, <&tog 3>;
-        };
-        
-        mt_tg3_k: tap_dance_mod_tap_toggle_3_k {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&mt LSHFT(K)>, <&tog 3>;
-        };
-    };
-    
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-                &kp Q         &kp W &kp E     &kp R       &kp T         &kp Y   &kp U       &kp I     &kp O   &kp P
-                &mt LSHFT(A)   &kp S &mt_tg3   &lt 1 F     &kp G         &kp H   &lt 1 J     &mt_tg3_k &kp L   &mt LSHFT(APOS)
-                &mt LCTRL(Z)   &kp X &kp C     &lt 2 V     &kp B         &kp N   &lt 2 M     &kp COMMA &kp DOT &mt RCTRL(SLASH)
-                &none         &none &kp LSHFT &kp ESC     &kp SPACE     &kp BSPC &mt LALT(ENTER) &mo 4 &none  &none
+                &kp Q      &kp W &kp E     &kp R    &kp T         &kp Y   &kp U     &kp I     &kp O   &kp P
+                &kp A      &kp S &kp D     &kp F    &kp G         &kp H   &kp J     &kp K     &kp L   &kp SEMI
+                &kp Z      &kp X &kp C     &kp V    &kp B         &kp N   &kp M     &kp COMMA &kp DOT &kp SLASH
+                &none      &none &kp LSHFT &kp ESC  &kp SPACE     &kp BSPC &kp ENTER &mo 1    &none   &none
             >;
         };
 
-        symbol_layer {
+        bluetooth_layer {
             bindings = <
-                &kp TILDE  &kp EXCL  &kp AT    &kp HASH  &kp DLLR        &kp RBKT  &kp SEMI  &kp COLON &kp MINUS &kp EQUAL
-                &kp ASTRK  &kp PRCNT &kp CARET &kp AMPS  &kp SEMI        &kp LBKT  &kp LPAR  &kp RPAR  &kp UNDER &kp PLUS
-                &kp F4     &kp F5    &kp LEFT  &kp RIGHT &kp COLON       &to 0     &kp LBRC  &kp RBRC  &kp BSLH  &kp PIPE
-                &none      &none     &kp LSHFT &kp ESC   &kp SPACE       &kp BSPC  &mt LALT(ENTER) &none &none    &none
-            >;
-        };
-        
-        number_layer {
-            bindings = <
-                &kp N1       &kp N2   &kp N3   &kp N4     &kp N5         &kp N6   &kp N7       &kp N8   &kp N9   &kp N0
-                &mt LSHFT(F1) &kp F2   &kp F3   &to 0      &to 0          &to 0    &lt 0 COMMA  &kp F7   &kp F8   &mt LSHFT(F9)
-                &kp F4       &kp F5   &kp F6   &kp LEFT   &kp RIGHT      &none    &kp DOT      &kp F10  &kp F11  &kp F12
-                &none        &none    &kp LSHFT &kp LC(ESC) &kp SPACE  &kp BSPC &tog 2       &to 0    &mt LALT(ENTER) &none
-            >;
-        };
-        
-        bluetooth_config_layer {
-            bindings = <
-                &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
-                &bt BT_CLR   &bt BT_NXT   &bt BT_PRV   &out OUT_BLE &bt BT_CLR_ALL  &bt BT_CLR   &bt BT_NXT   &bt BT_PRV   &out OUT_BLE &bt BT_CLR_ALL
-                &out OUT_USB &out OUT_TOG &none        &none        &none           &out OUT_USB &out OUT_TOG &none        &none        &none
-                &none        &none        &none        &to 0        &none           &none        &none        &none        &trans       &none
+                &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &none &none &none &none &none
+                &bt BT_CLR   &bt BT_NXT   &bt BT_PRV   &out OUT_BLE &none          &none &none &none &none &none
+                &out OUT_USB &out OUT_TOG &none        &none        &none          &none &none &none &none &none
+                &none        &none        &none        &to 0        &none          &none &none &none &trans &none
             >;
         };
     };
