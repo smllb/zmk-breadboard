@@ -33,7 +33,43 @@
                 &kp Q      &kp W      &kp E      &kp R      &kp T      &kp Y      &kp U      &kp I      &kp O      &kp P
                 &mt LSHIFT A  &kp S      &tg_d 3 D     &lt 1 F      &kp G      &kp H      &lt 1 J      &tg_k 3 K      &kp L      &mt LSHIFT APOS
                 &mt LCTRL Z   &kp X      &kp C      &lt 2 V       &kp B      &kp N      &lt 2 M       &kp COMMA  &kp DOT    &mt RCTRL SLASH
-                                   &none      &none      &kp LSHIFT &kp ESC   &kp SPACE  &kp BSPC   &mt LALT ENTER  &none
+                                  &kp LSHIFT &kp ESC   &kp SPACE  &kp BSPC   &mt LALT ENTER &none
+            >;
+        };
+
+        symbol_layer {
+            bindings = <
+                &kp TILDE  &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp RBKT   &kp SEMI   &kp COLON  &kp MINUS  &kp EQUAL
+                &kp ASTRK  &kp PRCNT  &kp CARET  &kp AMPS   &kp SEMI   &kp LBKT   &kp LPAR   &kp RPAR   &kp UNDER  &kp PLUS
+                &kp F4     &kp F5     &kp LEFT   &kp RIGHT  &kp COLON  &to 0      &kp LBRC   &kp RBRC   &kp BSLH   &kp PIPE
+                                      &kp LSHIFT &kp ESC   &kp SPACE  &kp BSPC   &mt LALT ENTER  &none
+            >;
+        };
+
+        function_layer {
+            bindings = <
+                &kp N1     &kp N2     &kp N3     &kp N4     &kp N5     &kp N6     &kp N7     &kp N8     &kp N9     &kp N0
+                &mt LSHIFT F1 &kp F2  &kp F3     &to 0      &to 0      &to 0      &lt 0 COMMA &kp F7     &kp F8     &mt LSHIFT F9
+                &kp F4     &kp F5     &kp F6     &kp LEFT   &kp RIGHT  &none      &kp DOT    &kp F10    &kp F11    &kp F12
+                                      &kp LSHIFT &mt LCTRL ESC &kp SPACE &kp BSPC &tog 2     &to 0
+            >;
+        };
+
+        media_layer {
+            bindings = <
+                &kp ESC    &none      &kp HOME   &sl 1      &none      &none      &none      &kp C_VOL_DN &kp C_PP  &kp C_VOL_UP
+                &mt LSHIFT A &kp TAB  &kp END    &kp LSHIFT &none      &none      &kp LALT   &kp UP      &kp RIGHT  &kp LALT
+                &kp LCTRL  &none      &kp C      &kp V      &none      &kp C_MUTE &kp LEFT   &kp DOWN    &kp PG_UP  &kp PG_DN
+                                      &kp LALT   &mt LCTRL ESC &kp SPACE &kp BSPC &mt LALT ENTER &to 0
+            >;
+        };
+
+        bluetooth_layer {
+            bindings = <
+                &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none      &none      &none      &none      &bt BT_CLR
+                &bt BT_PRV   &bt BT_NXT   &none        &none        &none        &none      &none      &none      &out OUT_TOG &none
+                &bootloader  &reset       &none        &none        &none        &none      &none      &none      &none      &sys_reset
+                                         &to 0        &none        &none        &none      &none      &to 0
             >;
         };
     };
