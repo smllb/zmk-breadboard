@@ -19,7 +19,7 @@
 
         layer_1 {
             bindings = <
-                &kp TILD  &kp EXLM  &kp AT    &kp HASH  &kp DLR   &kp RBRC  &kp SCLN  &kp COLN  &kp MINS  &kp EQL
+                &kp TILD  &kp EXLM  &kp AT    &kp HASH  &kp DLR   &kp RBRC  &kp SCLN  &kp COLN  &kp MINS  &kp A
                 &kp ASTR  &kp PERC  &kp CIRC  &kp AMPR  &kp SCLN  &kp LBRC  &kp LPRN  &kp RPRN  &kp UNDS  &kp PLUS
                 &kp F4    &kp F5    &kp LEFT  &kp RIGHT &kp COLN  &to 0     &kp LCBR  &kp RCBR  &kp BSLS  &kp PIPE
                 &none     &none     &kp LSHIFT &kp ESC  &kp SPACE &kp BSPC
