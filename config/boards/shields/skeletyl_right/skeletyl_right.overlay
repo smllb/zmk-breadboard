@@ -7,7 +7,7 @@
     };
 
     default_transform: matrix_transform {
-        #include "../../skeletyl_matrix.dtsi"
+    #include "skeletyl_matrix.dtsi"
         col-offset = <5>;
     };
 

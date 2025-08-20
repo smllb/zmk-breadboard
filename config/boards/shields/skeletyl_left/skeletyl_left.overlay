@@ -27,7 +27,7 @@
                     <&gpio1 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
     };
 
-    #include "../../skeletyl_matrix.dtsi"
+    #include "skeletyl_matrix.dtsi"
 
     physical_layout0: physical_layout_0 { 
         compatible = "zmk,physical-layout";
