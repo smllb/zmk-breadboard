@@ -47,7 +47,7 @@
                 &kp N1       &kp N2   &kp N3   &kp N4     &kp N5         &kp N6   &kp N7       &kp N8   &kp N9   &kp N0
                 &mt LSHFT(F1) &kp F2   &kp F3   &to 0      &to 0          &to 0    &lt 0 COMMA  &kp F7   &kp F8   &mt LSHFT(F9)
                 &kp F4       &kp F5   &kp F6   &kp LEFT   &kp RIGHT      &none    &kp DOT      &kp F10  &kp F11  &kp F12
-                &none        &none    &kp LSHFT &mt LCTRL(ESC) &kp SPACE  &kp BSPC &tog 2       &to 0    &mt LALT(ENTER) &none
+                &none        &none    &kp LSHFT &kp LC(ESC) &kp SPACE  &kp BSPC &tog 2       &to 0    &mt LALT(ENTER) &none
             >;
         };
         
