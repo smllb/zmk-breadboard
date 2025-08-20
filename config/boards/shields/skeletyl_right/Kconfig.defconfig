@@ -5,5 +5,8 @@ config ZMK_KEYBOARD_NAME
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default n
+    
+config ZMK_SPLIT_ROLE_PERIPHERAL
+    default y
 
 endif

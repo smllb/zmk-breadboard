@@ -32,19 +32,20 @@
         rows = <8>;  // 4 rows × 2 (left + right)
         columns = <5>;
 
-        // Full split keyboard mapping, 30 keys total (5 columns × 3 rows + 3 thumb keys per side)
+        // Full split keyboard mapping, 36 keys total in the transform
+        // But we only have 30 actual keys (18 on main grid + 12 thumb keys)
         map = <
-            // Left half (0-14)
-            RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4)    // Top row left 0-4
-            RC(1,0) RC(1,1) RC(1,2) RC(1,3) RC(1,4)    // Middle row left 5-9
-            RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4)    // Bottom row left 10-14
-                           RC(3,2) RC(3,3) RC(3,4)     // Thumb keys left 15-17
-                           
-            // Right half (18-32)
-            RC(4,0) RC(4,1) RC(4,2) RC(4,3) RC(4,4)    // Top row right 18-22
-            RC(5,0) RC(5,1) RC(5,2) RC(5,3) RC(5,4)    // Middle row right 23-27
-            RC(6,0) RC(6,1) RC(6,2) RC(6,3) RC(6,4)    // Bottom row right 28-32
-            RC(7,0) RC(7,1) RC(7,2)                   // Thumb keys right 33-35
+            // Left half keys (0-17)
+            RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4)    // Left top row: 0-4
+            RC(1,0) RC(1,1) RC(1,2) RC(1,3) RC(1,4)    // Left middle row: 5-9  
+            RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4)    // Left bottom row: 10-14
+                           RC(3,2) RC(3,3) RC(3,4)     // Left thumb keys: 15-17
+            
+            // Right half keys (18-35)
+            RC(4,0) RC(4,1) RC(4,2) RC(4,3) RC(4,4)    // Right top row: 18-22
+            RC(5,0) RC(5,1) RC(5,2) RC(5,3) RC(5,4)    // Right middle row: 23-27
+            RC(6,0) RC(6,1) RC(6,2) RC(6,3) RC(6,4)    // Right bottom row: 28-32
+            RC(7,0) RC(7,1) RC(7,2)                    // Right thumb keys: 33-35
         >;
     }; 
 
