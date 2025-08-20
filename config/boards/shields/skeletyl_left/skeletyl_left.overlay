@@ -1,9 +1,3 @@
-/*
- * Copyright (c) 2025 Your Name or Project
- *
- * SPDX-License-Identifier: MIT
- */
-
 #include "skeletyl_matrix.dtsi"
 
 &kscan0 {
