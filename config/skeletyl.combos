@@ -54,7 +54,7 @@
         combo_bluetooth_bn {
             timeout-ms = <30>;
             key-positions = <24 25>; // B + N
-            bindings = <&tg 4>;
+            bindings = <&tog 4>;
         };
     };
 };
