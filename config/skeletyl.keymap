@@ -48,7 +48,7 @@
             display-name = "Toggle-K";
         };
         &mt {
-            flavor = "balanced";
+            flavor = "tap-preferred";
         };  
     };
 
