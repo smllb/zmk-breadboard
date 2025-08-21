@@ -7,6 +7,24 @@
 
 / {
     behaviors {
+        ctrlaltl: ctrlaltl_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press_release &kp LCTL &kp LALT &kp L>;
+            label = "Ctrl+Alt+L";
+        };
+        ctrlaltt: ctrlaltt_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press_release &kp LCTL &kp LALT &kp T>;
+            label = "Ctrl+Alt+T";
+        };
+        shiftx2: shiftx2_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LSHIFT &macro_tap &kp LSHIFT>;
+            label = "Shift x2";
+        };
         &mt {
             flavor = "tap-preferred";
             tapping-term-ms = <200>;

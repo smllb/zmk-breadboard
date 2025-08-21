@@ -39,17 +39,17 @@
         combo_ctrlaltl {
             timeout-ms = <30>;
             key-positions = <20 29>; // Z + SLASH
-            bindings = <&kp LCTL &kp LALT &kp L>;
+            bindings = <&ctrlaltl>;
         };
         combo_ctrlaltt {
             timeout-ms = <30>;
             key-positions = <14 15>; // G + H
-            bindings = <&kp LCTL &kp LALT &kp T>;
+            bindings = <&ctrlaltt>;
         };
         combo_shiftx2 {
             timeout-ms = <30>;
             key-positions = <11 19>; // A + APOSTROPHE
-            bindings = <&kp LSHIFT &kp LSHIFT>;
+            bindings = <&shiftx2>;
         };
         combo_tgl3_mk {
             timeout-ms = <30>;
