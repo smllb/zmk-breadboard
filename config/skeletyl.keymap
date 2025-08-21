@@ -39,10 +39,10 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-    &mt {
-        flavor = "tap-preferred";
-        tapping-term-ms = <200>;
-    };
+            tapping-term-ms = <200>;
+            bindings = <&tog>, <&kp>;
+            display-name = "Toggle-K";
+        };
 
     keymap {
         compatible = "zmk,keymap";
