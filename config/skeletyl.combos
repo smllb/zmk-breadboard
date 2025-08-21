@@ -21,40 +21,25 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_tab {
-            timeout-ms = <30>;
-            key-positions = <13 16>; // F + J
-            bindings = <&kp TAB>;
-        };
-        combo_caps {
-            timeout-ms = <30>;
-            key-positions = <12 17>; // D + K
-            bindings = <&kp CAPSLOCK>;
-        };
-        combo_tilde {
-            timeout-ms = <30>;
-            key-positions = <0 9>; // Q + P
-            bindings = <&kp TILD>;
-        };
-        combo_ctrlaltl {
-            timeout-ms = <30>;
-            key-positions = <20 29>; // Z + SLASH
-            bindings = <&ctrlaltl>;
-        };
-        combo_ctrlaltt {
-            timeout-ms = <30>;
-            key-positions = <14 15>; // G + H
-            bindings = <&ctrlaltt>;
-        };
-        combo_shiftx2 {
-            timeout-ms = <30>;
-            key-positions = <11 19>; // A + APOSTROPHE
-            bindings = <&shiftx2>;
-        };
         combo_tgl3_mk {
             timeout-ms = <30>;
             key-positions = <26 17>; // M + K
-            bindings = <&tg 3>;
+            bindings = <&tog 3>;
+        };
+        combo_tgl3_kl {
+            timeout-ms = <30>;
+            key-positions = <17 18>; // K + L
+            bindings = <&tog 3>;
+        };
+        combo_tgl3_mkl {
+            timeout-ms = <30>;
+            key-positions = <26 17 18>; // M + K + L
+            bindings = <&tog 3>;
+        };
+        combo_bluetooth_bn {
+            timeout-ms = <30>;
+            key-positions = <24 25>; // B + N
+            bindings = <&tog 4>;
         };
         combo_tgl3_kl {
             timeout-ms = <30>;
