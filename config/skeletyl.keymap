@@ -43,6 +43,7 @@
             bindings = <&tog>, <&kp>;
             display-name = "Toggle-K";
         };
+    };
 
     keymap {
         compatible = "zmk,keymap";
