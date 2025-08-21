@@ -36,21 +36,6 @@
             key-positions = <26 17 18>; // M + K + L
             bindings = <&tog 3>;
         };
-        combo_bluetooth_bn {
-            timeout-ms = <30>;
-            key-positions = <24 25>; // B + N
-            bindings = <&tog 4>;
-        };
-        combo_tgl3_kl {
-            timeout-ms = <30>;
-            key-positions = <17 18>; // K + L
-            bindings = <&tg 3>;
-        };
-        combo_tgl3_mkl {
-            timeout-ms = <30>;
-            key-positions = <26 17 18>; // M + K + L
-            bindings = <&tg 3>;
-        };
         combo_layer0_leftup {
             timeout-ms = <30>;
             key-positions = <25 27>; // LEFT + UP
