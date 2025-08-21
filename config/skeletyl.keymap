@@ -25,10 +25,6 @@
             bindings = <&macro_tap &kp LSHIFT &macro_tap &kp LSHIFT>;
             label = "Shift x2";
         };
-        &mt {
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-        };
 
         tg_d: toggle_d {
             compatible = "zmk,behavior-hold-tap";
