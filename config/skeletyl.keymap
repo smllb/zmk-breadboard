@@ -7,24 +7,28 @@
 
 / {
     behaviors {
+        /* Commented out macros that were causing issues
         ctrlaltl: ctrlaltl_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press_release &kp LCTL &kp LALT &kp L>;
+            bindings = <&macro_press &kp LCTL &kp LALT &macro_tap &kp L &macro_release &kp LALT &kp LCTL>;
             label = "Ctrl+Alt+L";
         };
         ctrlaltt: ctrlaltt_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press_release &kp LCTL &kp LALT &kp T>;
+            bindings = <&macro_press &kp LCTL &kp LALT &macro_tap &kp T &macro_release &kp LALT &kp LCTL>;
             label = "Ctrl+Alt+T";
         };
+        */
+        /* Also commenting out this macro
         shiftx2: shiftx2_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&macro_tap &kp LSHIFT &macro_tap &kp LSHIFT>;
             label = "Shift x2";
         };
+        */
 
         tg_d: toggle_d {
             compatible = "zmk,behavior-hold-tap";
