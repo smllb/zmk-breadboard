@@ -6,6 +6,11 @@
 
 / {
     behaviors {
+        &mt {
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+        };
+
         tg_d: toggle_d {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
