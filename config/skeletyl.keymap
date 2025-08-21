@@ -47,6 +47,9 @@
             bindings = <&tog>, <&kp>;
             display-name = "Toggle-K";
         };
+        &mt {
+            flavor = "balanced";
+        };  
     };
 
     keymap {
