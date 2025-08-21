@@ -25,10 +25,9 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&tog>, <&kp>;
-            display-name = "Toggle-K";
-        };
+    &mt {
+        flavor = "tap-preferred";
+        tapping-term-ms = <200>;
     };
 
     keymap {
