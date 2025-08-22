@@ -37,36 +37,16 @@
     };
 
     macros {
-        ctrlaltl: ctrlaltl_macro {
+        zed_em_kay: zed_em_kay {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_press &kp LCTL &kp LALT>
-                , <&macro_tap &kp L>
-                , <&macro_release &kp LALT &kp LCTL>
+                = <&macro_press &kp LSHFT>
+                , <&macro_tap &kp Z &kp M &kp K>
+                , <&macro_release &kp LSHFT>
                 ;
-            label = "Ctrl+Alt+L";
         };
-        ctrlaltt: ctrlaltt_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LCTL &kp LALT>
-                , <&macro_tap &kp T>
-                , <&macro_release &kp LALT &kp LCTL>
-                ;
-            label = "Ctrl+Alt+T";
-        };
-        shiftx2: shiftx2_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &kp LSHIFT>
-                , <&macro_tap &kp LSHIFT>
-                ;
-            label = "Shift x2";
-        };
-    }
+    };
     keymap {
         compatible = "zmk,keymap";
 
