@@ -40,19 +40,30 @@
         ctrlaltl: ctrlaltl_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LCTL &kp LALT &macro_tap &kp L &macro_release &kp LALT &kp LCTL>;
+            bindings
+                = <&macro_press &kp LCTL &kp LALT>
+                , <&macro_tap &kp L>
+                , <&macro_release &kp LALT &kp LCTL>
+                ;
             label = "Ctrl+Alt+L";
         };
         ctrlaltt: ctrlaltt_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_press &kp LCTL &kp LALT &macro_tap &kp T &macro_release &kp LALT &kp LCTL>;
+            bindings
+                = <&macro_press &kp LCTL &kp LALT>
+                , <&macro_tap &kp T>
+                , <&macro_release &kp LALT &kp LCTL>
+                ;
             label = "Ctrl+Alt+T";
         };
         shiftx2: shiftx2_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap &kp LSHIFT &macro_tap &kp LSHIFT>;
+            bindings
+                = <&macro_tap &kp LSHIFT>
+                , <&macro_tap &kp LSHIFT>
+                ;
             label = "Shift x2";
         };
     }
