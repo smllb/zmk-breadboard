@@ -50,9 +50,7 @@
                 open_terminal: open_terminal {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LCTRL &kp LALT &kp T>
-                , <&macro_release &kp LCTRL &kp LALT &kp T>;
+            bindings = <&kp LC(LA(T))>;
         };
     };
 
