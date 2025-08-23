@@ -15,6 +15,8 @@
  * LEFT+UP = Go to Layer 0
  * LEFT+UP+RIGHT = Go to Layer 0
  * RIGHT+UP = Go to Layer 0
+ * S+D+F = Go to Gaming Layer (Overwatch)
+ * G+B = Toggle Gaming Layer (Overwatch)
  */
 
 / {
@@ -90,6 +92,25 @@
             timeout-ms = <50>;
             key-positions = <0 1>;
             bindings = <&kp ESC>;
+        };
+        
+        combo_gaming_wsd {
+            timeout-ms = <100>;
+            key-positions = <1 11 12>; // W + S + D
+            bindings = <&tog 6>;       // Toggle gaming layer
+        };
+        
+        combo_gaming_gamer {
+            timeout-ms = <50>;
+            key-positions = <14 24>;   // G + B
+            bindings = <&toggle_gaming>; // Toggle gaming layer with a macro
+        };
+        
+        combo_gaming_sdf {
+            timeout-ms = <100>;
+            key-positions = <11 12 13>; // S + D + F
+            bindings = <&to 6>;        // Go to gaming layer
+            layers = <0>;              // Only active on default layer
         };
     };
 };
