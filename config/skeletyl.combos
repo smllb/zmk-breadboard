@@ -62,5 +62,11 @@
             key-positions = <13 16>; // F + J
             bindings = <&open_terminal>;
         };
+        
+        combo_capslock_dk {
+            timeout-ms = <50>;
+            key-positions = <12 17>; // D + K
+            bindings = <&kp CAPS>;
+        };
     };
 };
