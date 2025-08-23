@@ -33,6 +33,13 @@
             tapping-term-ms = <200>;
             bindings = <&kp>, <&kp>;
         };
+        
+        // Custom behavior for exiting alt_tab_layer and releasing ALT
+        exit_alt_tab: exit_alt_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_release &kp LALT &to 0>;
+        };
         /**
         * Temporarily switches to a layer (`&mo`) while a modifier is held.
         * Analogous to QMK's `LM()`, using a parameterized macro.
@@ -63,24 +70,10 @@
         };
     };
 
-    behaviors {
-        // Add a custom behavior for exiting alt_tab_layer and releasing ALT
-        exit_alt_tab: exit_alt_tab {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_param_1to1>
-                      , <&macro_release &kp LALT>
-                      , <&to 0>;
-        };
-    };
+
     
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        alt_tab_layer_condition {
-            if-layers = <5>; // When alt_tab_layer is active
-            then-run-macro = <&alt_press>; // Run the alt_press macro
-        };
-    };
+    // We'll use a different approach for ALT handling
+    // instead of conditional layers
 
     macros {
         alt_press: alt_press {
@@ -199,7 +192,7 @@
                 &trans        &trans      &kt LS(TAB)  &kt TAB &trans       &trans      &trans      &trans      &trans      &trans
                 &trans        &trans      &trans        &trans      &trans      &kp LS(TAB) &trans      &trans      &trans      &trans
                 &trans        &trans      &trans        &trans      &trans      &trans      &trans      &trans      &trans      &trans
-                                        &trans        &trans      &kp TAB    &trans   &exit_alt_tab   &trans      
+                                        &macro_press &kp LALT   &trans      &kp TAB    &trans   &exit_alt_tab   &trans      
             >;
             // Using &kt for toggleable Tab and Shift+Tab
             // Using exit_alt_tab to release ALT when exiting the layer
