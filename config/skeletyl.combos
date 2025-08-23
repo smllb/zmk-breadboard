@@ -75,5 +75,12 @@
             bindings = <&paste_git_token>;
             layers = <0>; // Only active in layer 0
         };
+        
+        combo_double_shift_a_apos {
+            timeout-ms = <50>;
+            key-positions = <10 19>; // A + APOS
+            bindings = <&double_lshift>;
+            layers = <0>; // Only active in layer 0
+        };
     };
 };
