@@ -49,6 +49,17 @@
                 &kp LC(RA(P))
             >;
         };
+
+            alt_tab_macro: alt_tab_macro {
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings = <
+                    &macro_press &kp LA(TAB),  // Press Alt+Tab
+                    &macro_release &kp TAB,    // Release Tab, keep Alt pressed
+                    &to 5,         // Switch to alt_tab_layer
+                    &macro_release &kp LA      // Release Alt when leaving the layer
+                >;
+            };
     };
 
     keymap {
@@ -56,7 +67,7 @@
 
         default_layer {
             bindings = <
-                &kp Q        &kp W      &kp E       &kp R        &kp T      &kp Y      &kp U        &kp I      &kp O      &lt 5 P
+                &kp Q        &kp W      &kp E       &kp R        &kp T      &kp Y      &kp U        &kp I      &kp O      &mt alt_tab_behavior P
                 &mt LSHIFT A &kp S      &lt 3 D     &lt 1 F      &kp G      &kp H      &lt 1 J      &lt 3 K    &kp L      &mt LSHIFT APOS
                 &mt LCTRL Z  &kp X      &kp C       &lt 2 V      &kp B      &kp N      &lt 2 M      &kp COMMA  &kp DOT    &mt RCTRL SLASH
                                         &kp LSHIFT  &kp ESC      &kp SPACE  &kp BSPC   &mt LALT ENTER &none
