@@ -34,23 +34,17 @@
             bindings = <&kp>, <&kp>;
         };
         
-        // Layer-tap behavior for P key
-        lt_alt: layer_tap {
+        // Special hold-tap for the P key
+        p_key: p_alt_tab {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
-            bindings = <&mo>, <&kp>;
+            bindings = <&alt_layer_macro>, <&kp>;
         };
     };
     
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <5>;
-            then-layer = <7>;
-        };
-    };
+    // Using key-repeat with layer-toggle instead of conditional layers
 
     macros {
         zed_em_kay: zed_em_kay {
@@ -94,6 +88,18 @@
                 ;
             };
             
+            // Special macro for the P key to handle Alt+Tab functionality
+            alt_layer_macro: alt_layer_macro {
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings = 
+                    <&macro_press &kp LALT>,  // Press Alt
+                    <&macro_tap &mo 5>,       // Momentarily activate layer 5
+                    <&macro_pause_for_release>,
+                    <&macro_release &kp LALT> // Release Alt when key is released
+                ;
+            };
+            
             lock_session: lock_session {
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
@@ -106,7 +112,7 @@
 
         default_layer {
             bindings = <
-                &kp Q        &kp W      &kp E       &kp R        &kp T      &kp Y      &kp U        &kp I      &kp O      &lt 5 P
+                &kp Q        &kp W      &kp E       &kp R        &kp T      &kp Y      &kp U        &kp I      &kp O      &p_key 0 P
                 &mt LSHIFT A &kp S      &lt 3 D     &lt 1 F      &kp G      &kp H      &lt 1 J      &lt 3 K    &kp L      &mtb LSHIFT APOS
                 &mt LCTRL Z  &kp X      &kp C       &lt 2 V      &kp B      &kp N      &lt 2 M      &kp COMMA  &kp DOT    &mth RCTRL SLASH
                                         &kp LSHIFT  &kp ESC      &kp SPACE  &kp BSPC   &mt LALT ENTER &none
@@ -151,23 +157,11 @@
 
         alt_tab_layer {
             bindings = <
-                &none        &none      &kp LS(TAB)  &kp TAB &none       &none      &none      &none      &none      &trans
-                &none        &none      &none        &none      &none      &kp LS(TAB) &none      &none      &none      &none
+                &none        &none      &kp LA(LS(TAB))  &kp LA(TAB) &none       &none      &none      &none      &none      &trans
+                &none        &none      &none        &none      &none      &kp LA(LS(TAB)) &none      &none      &none      &none
                 &none        &none      &none        &none      &none      &none      &none      &none      &none      &none
-                                        &none        &none      &kp TAB &none      &none      &none
+                                        &none        &none      &kp LA(TAB) &none      &none      &none
             >;
-        };
-        
-        // This layer holds the ALT key down
-        alt_layer {
-            bindings = <
-                &trans       &trans     &trans       &trans      &trans     &trans     &trans       &trans     &trans     &trans
-                &trans       &trans     &trans       &trans      &trans     &trans     &trans       &trans     &trans     &trans
-                &trans       &trans     &trans       &trans      &trans     &trans     &trans       &trans     &trans     &trans
-                                        &trans       &trans      &trans     &trans     &trans       &trans
-            >;
-            
-            sensor-bindings = <&sk LALT>;
         };
     };
 };
