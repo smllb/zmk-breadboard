@@ -53,9 +53,10 @@ _name_: macro_##_name_ {                   \
         MACRO(bt_0,   &out OUT_BLE &bt BT_DISC 1 &bt BT_SEL 0)
         MACRO(bt_1,   &out OUT_BLE &bt BT_DISC 0 &bt BT_SEL 1)
         MACRO(bt_2,   &out OUT_BLE &bt BT_DISC 0 &bt BT_SEL 2)
+        MACRO(open_terminal, &kp LCTRL &kp LALT &kp T)
     };
 };
-    };
+
     keymap {
         compatible = "zmk,keymap";
 
