@@ -63,7 +63,40 @@
         };
     };
 
+    behaviors {
+        // Add a custom behavior for exiting alt_tab_layer and releasing ALT
+        exit_alt_tab: exit_alt_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_param_1to1>
+                      , <&macro_release &kp LALT>
+                      , <&to 0>;
+        };
+    };
+    
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        alt_tab_layer_condition {
+            if-layers = <5>; // When alt_tab_layer is active
+            then-run-macro = <&alt_press>; // Run the alt_press macro
+        };
+    };
+
     macros {
+        alt_press: alt_press {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LALT>;
+            // This will press and hold ALT whenever the conditional layer activates
+        };
+
+        alt_release: alt_release {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_release &kp LALT>;
+            // This will release ALT when needed
+        };
+        
         zed_em_kay: zed_em_kay {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -74,19 +107,19 @@
                 ;
         };
 
-                open_terminal: open_terminal {
+        open_terminal: open_terminal {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(LA(T))>;
         };
 
-            double_lshift: double_lshift {
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings = <
-                    &macro_tap &kp LSHFT &kp LSHFT
-                >;
-            };
+        double_lshift: double_lshift {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_tap &kp LSHFT &kp LSHFT
+            >;
+        };
 
         paste_git_token: paste_git_token {
             compatible = "zmk,behavior-macro";
@@ -96,22 +129,21 @@
             >;
         };
 
-            alt_tab_macro: alt_tab_macro {
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings = 
-                    <&macro_press &kp LA(TAB)>,  // Press Alt+Tab
-                    <&macro_release &kp TAB>,    // Release Tab, keep Alt pressed
-                    <&to 5>,         // Switch to alt_tab_layer
-                    <&macro_release &kp LALT>    // Release Alt when leaving the layer
-                ;
-            };
-            
-            lock_session: lock_session {
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings = <&kp LC(LA(L))>;  // Ctrl+Alt+L to lock session on Linux Mint
-            };
+        alt_tab_macro: alt_tab_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = 
+                <&macro_press &kp LALT>,  // Press Alt
+                <&macro_tap &kp TAB>,    // Press and release Tab
+                <&to 5>         // Switch to alt_tab_layer where Alt will remain pressed
+            ;
+        };
+        
+        lock_session: lock_session {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LA(L))>;  // Ctrl+Alt+L to lock session on Linux Mint
+        };
     };
 
     keymap {
@@ -164,11 +196,13 @@
 
         alt_tab_layer {
             bindings = <
-                &trans        &trans      &kp LS(TAB)  &kp TAB &trans       &trans      &trans      &trans      &trans      &trans
-                &trans        &trans      &trans        &trans      &trans      &kp LA(LS(TAB)) &trans      &trans      &trans      &trans
+                &trans        &trans      &kt LS(TAB)  &kt TAB &trans       &trans      &trans      &trans      &trans      &trans
+                &trans        &trans      &trans        &trans      &trans      &kp LS(TAB) &trans      &trans      &trans      &trans
                 &trans        &trans      &trans        &trans      &trans      &trans      &trans      &trans      &trans      &trans
-                                        &trans        &trans      &kp LA(TAB) &trans   &to 0   &trans      
+                                        &trans        &trans      &kp TAB    &trans   &exit_alt_tab   &trans      
             >;
+            // Using &kt for toggleable Tab and Shift+Tab
+            // Using exit_alt_tab to release ALT when exiting the layer
         };
     };
 };
