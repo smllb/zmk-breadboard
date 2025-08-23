@@ -52,8 +52,7 @@
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LCTRL &kp LALT &kp T>
-                , <&macro_release &kp &kp LCTRL &kp LALT &kp T>
-                ;
+                , <&macro_release &kp LCTRL &kp LALT &kp T>;
         };
     };
 
