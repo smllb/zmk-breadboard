@@ -33,6 +33,15 @@
             tapping-term-ms = <200>;
             bindings = <&kp>, <&kp>;
         };
+        
+        // Long sticky key behavior - 15 seconds
+        long_sk: sticky_key_long {
+            compatible = "zmk,behavior-sticky-key";
+            #binding-cells = <1>;
+            release-after-ms = <15000>;
+            bindings = <&kp>;
+            quick-release;
+        };
         /**
         * Temporarily switches to a layer (`&mo`) while a modifier is held.
         * Analogous to QMK's `LM()`, using a parameterized macro.
@@ -193,7 +202,7 @@
             bindings = <
                 &kp ESC       &kp Q      &kp W       &kp E        &kp R      &kp N2     &kp N3      &kp I      &kp O      &to 0
                 &kp LSHFT      &kp A      &kp S       &kp D        &kp N4     &kp N5     &kp H       &kp J      &kp L      &kp RET
-                &sk W     &kp Z      &kp X       &kp C        &kp V      &quick_hello &kp M      &kp TAB    &kp DOT    &to 0
+                &long_sk LCTRL &kp Z      &kp X       &kp C        &kp V      &quick_hello &kp M      &kp TAB    &kp DOT    &to 0
                                         &kp LSHIFT  &kp LCTRL    &kp SPACE  &kp Q      &quick_melee &kp F
             >;
         };
