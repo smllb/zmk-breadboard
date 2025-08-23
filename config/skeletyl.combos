@@ -82,5 +82,12 @@
             bindings = <&double_lshift>;
             layers = <0>; // Only active in layer 0
         };
+        
+        combo_lock_session_z_slash {
+            timeout-ms = <50>;
+            key-positions = <20 29>; // Z + SLASH
+            bindings = <&lock_session>;
+            layers = <0>; // Only active in layer 0
+        };
     };
 };

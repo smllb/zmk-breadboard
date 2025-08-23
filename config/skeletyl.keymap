@@ -60,6 +60,12 @@
                     <&macro_release &kp LALT>    // Release Alt when leaving the layer
                 ;
             };
+            
+            lock_session: lock_session {
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings = <&kp LC(LA(L))>;  // Ctrl+Alt+L to lock session on Linux Mint
+            };
     };
 
     keymap {
