@@ -164,9 +164,9 @@
 
         alt_tab_layer {
             bindings = <
-                &trans        &trans      &kp LS(TAB)  &kp TAB &trans       &trans      &trans      &trans      &trans      &trans
-                &trans        &trans      &trans        &trans      &trans      &kp LA(LS(TAB)) &trans      &trans      &trans      &trans
-                &trans        &trans      &trans        &trans      &trans      &trans      &trans      &trans      &trans      &trans
+                &trans        &trans      &kp LA(LS(TAB))  &kp LA(TAB) &trans       &trans      &trans      &trans      &trans      &trans
+                &trans        &trans      &kp LS(TAB)  &kt p TAB &trans      &trans      &kp LA(LS(TAB)) &trans      &trans      &trans      &trans
+                &trans        &trans      &trans        &kt LALT      &trans      &trans      &trans      &trans      &trans      &trans
                                         &trans        &trans      &kp LA(TAB) &trans   &to 0   &trans      
             >;
         };
