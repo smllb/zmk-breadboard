@@ -34,26 +34,21 @@
             bindings = <&kp>, <&kp>;
         };
         
-        // Use a standard layer-tap behavior that works with our custom macro
+        // Layer-tap behavior for P key
         lt_alt: layer_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
-            bindings = <&alt_mo>, <&kp>;
+            bindings = <&mo>, <&kp>;
         };
-        
-        // Special alt layer behavior for P key
-        alt_mo: alt_momentary_layer {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <1>;
-            bindings = 
-                <&macro_press &kp LALT>,
-                <&macro_press &mo 5>,
-                <&macro_pause_for_release>,
-                <&macro_release &mo 5>,
-                <&macro_release &kp LALT>
-            ;
+    };
+    
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <5>;
+            then-layer = <7>;
         };
     };
 
@@ -111,7 +106,7 @@
 
         default_layer {
             bindings = <
-                &kp Q        &kp W      &kp E       &kp R        &kp T      &kp Y      &kp U        &kp I      &kp O      &lt_alt 5 P
+                &kp Q        &kp W      &kp E       &kp R        &kp T      &kp Y      &kp U        &kp I      &kp O      &lt 5 P
                 &mt LSHIFT A &kp S      &lt 3 D     &lt 1 F      &kp G      &kp H      &lt 1 J      &lt 3 K    &kp L      &mtb LSHIFT APOS
                 &mt LCTRL Z  &kp X      &kp C       &lt 2 V      &kp B      &kp N      &lt 2 M      &kp COMMA  &kp DOT    &mth RCTRL SLASH
                                         &kp LSHIFT  &kp ESC      &kp SPACE  &kp BSPC   &mt LALT ENTER &none
@@ -161,6 +156,18 @@
                 &none        &none      &none        &none      &none      &none      &none      &none      &none      &none
                                         &none        &none      &kp TAB &none      &none      &none
             >;
+        };
+        
+        // This layer holds the ALT key down
+        alt_layer {
+            bindings = <
+                &trans       &trans     &trans       &trans      &trans     &trans     &trans       &trans     &trans     &trans
+                &trans       &trans     &trans       &trans      &trans     &trans     &trans       &trans     &trans     &trans
+                &trans       &trans     &trans       &trans      &trans     &trans     &trans       &trans     &trans     &trans
+                                        &trans       &trans      &trans     &trans     &trans       &trans
+            >;
+            
+            sensor-bindings = <&sk LALT>;
         };
     };
 };
