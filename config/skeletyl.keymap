@@ -52,6 +52,14 @@
             #binding-cells = <0>;
             bindings = <&kp LC(LA(T))>;
         };
+
+            double_lshift: double_lshift {
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings = <
+                    &macro_tap &kp LSHFT &kp LSHFT
+                >;
+            };
     };
 
     keymap {
