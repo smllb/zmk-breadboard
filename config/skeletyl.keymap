@@ -57,7 +57,7 @@
                     <&macro_press &kp LA(TAB)>,  // Press Alt+Tab
                     <&macro_release &kp TAB>,    // Release Tab, keep Alt pressed
                     <&to 5>,         // Switch to alt_tab_layer
-                    <&macro_release &kp LA>      // Release Alt when leaving the layer
+                    <&macro_release &kp LALT>    // Release Alt when leaving the layer
                 ;
             };
     };
