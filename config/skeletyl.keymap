@@ -15,15 +15,6 @@
             tapping-term-ms = <200>;
             bindings = <&kp>, <&kp>;
         };
-
-        // Custom behavior for P key with alt_tab_macro
-        alt_p: alt_tab_p {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&alt_tab_macro>, <&kp P>;
-        };
     };
 
     macros {
@@ -76,7 +67,7 @@
 
         default_layer {
             bindings = <
-                &kp Q        &kp W      &kp E       &kp R        &kp T      &kp Y      &kp U        &kp I      &kp O      &alt_p
+                &kp Q        &kp W      &kp E       &kp R        &kp T      &kp Y      &kp U        &kp I      &kp O      &lt 5 P
                 &mt LSHIFT A &kp S      &lt 3 D     &lt 1 F      &kp G      &kp H      &lt 1 J      &lt 3 K    &kp L      &mt LSHIFT APOS
                 &mt LCTRL Z  &kp X      &kp C       &lt 2 V      &kp B      &kp N      &lt 2 M      &kp COMMA  &kp DOT    &mt RCTRL SLASH
                                         &kp LSHIFT  &kp ESC      &kp SPACE  &kp BSPC   &mt LALT ENTER &none
@@ -121,10 +112,10 @@
 
         alt_tab_layer {
             bindings = <
-                &none        &none      &kp LC(LS(TAB))         &none   &kp LC(TAB)    &none      &none      &none      &none      &none
+                &none        &none      &kp LC(LS(TAB))  &none   &kp LC(TAB)    &none      &none      &none      &none      &none
                 &none        &none      &none        &none      &none      &kp LC(LS(TAB)) &none      &none      &none      &none
-                &none        &none      &none       &none        &none      &none      &none      &none      &none      &none
-                                            &none      &none        &none      &none      &none      &none
+                &none        &none      &none        &none      &none      &none      &none      &none      &none      &none
+                                        &none        &none      &kp LA(TAB) &none      &none      &to 0
             >;
         };
     };
