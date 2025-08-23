@@ -34,13 +34,13 @@
             bindings = <&kp>, <&kp>;
         };
         
-        // Simple layer-tap for P key to access alt-tab layer
+        // Hold-tap for P key to press Alt and access alt-tab layer when held
         p_key: p_alt_tab {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&mo>, <&kp>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <300>;
+            bindings = <&p_alt_layer>, <&kp>;
         };
     };
     
@@ -88,6 +88,15 @@
                 ;
             };
             
+            p_alt_layer: p_alt_layer {
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings = 
+                    <&macro_press &kp LALT>,  // Press Alt
+                    <&macro_tap &mo 5>        // Activate layer 5 while holding Alt
+                ;
+            };
+            
             lock_session: lock_session {
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
@@ -100,7 +109,7 @@
 
         default_layer {
             bindings = <
-                &kp Q        &kp W      &kp E       &kp R        &kp T      &kp Y      &kp U        &kp I      &kp O      &p_key 5 P
+                &kp Q        &kp W      &kp E       &kp R        &kp T      &kp Y      &kp U        &kp I      &kp O      &p_key 0 P
                 &mt LSHIFT A &kp S      &lt 3 D     &lt 1 F      &kp G      &kp H      &lt 1 J      &lt 3 K    &kp L      &mtb LSHIFT APOS
                 &mt LCTRL Z  &kp X      &kp C       &lt 2 V      &kp B      &kp N      &lt 2 M      &kp COMMA  &kp DOT    &mth RCTRL SLASH
                                         &kp LSHIFT  &kp ESC      &kp SPACE  &kp BSPC   &mt LALT ENTER &none
