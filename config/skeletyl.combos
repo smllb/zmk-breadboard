@@ -62,12 +62,12 @@
             key-positions = <13 16>; // F + J
             bindings = <&open_terminal>;
         };
-        
-        combo_capslock_dk {
+                combo_esc {
             timeout-ms = <50>;
-            key-positions = <12 17>; // D + K
-            bindings = <&kp CAPS>;
+            key-positions = <0 1>;
+            bindings = <&kp ESC>;
         };
+
         
         combo_git_token_xdot {
             timeout-ms = <50>;
