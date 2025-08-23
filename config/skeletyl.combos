@@ -79,6 +79,12 @@
             key-positions = <20 29>; // Z + SLASH
             bindings = <&lock_session>;
         };
+        
+        combo_caps_dk {
+            timeout-ms = <50>;
+            key-positions = <12 17>; // D + K
+            bindings = <&kp CAPS>;
+        };
 
         combo_esc {
             timeout-ms = <50>;
