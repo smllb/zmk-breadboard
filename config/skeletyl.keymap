@@ -193,7 +193,7 @@
             bindings = <
                 &kp ESC       &kp Q      &kp W       &kp E        &kp R      &kp N2     &kp N3      &kp I      &kp O      &to 0
                 &kp LSHFT      &kp A      &kp S       &kp D        &kp N4     &kp N5     &kp H       &kp J      &kp L      &kp RET
-                &kp LCTRL     &kp Z      &kp X       &kp C        &kp V      &quick_hello &kp M      &kp TAB    &kp DOT    &to 0
+                &sk W     &kp Z      &kp X       &kp C        &kp V      &quick_hello &kp M      &kp TAB    &kp DOT    &to 0
                                         &kp LSHIFT  &kp LCTRL    &kp SPACE  &kp Q      &quick_melee &kp F
             >;
         };
