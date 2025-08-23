@@ -34,14 +34,6 @@
             tapping-term-ms = <200>;
             bindings = <&kp>, <&kp>;
         };
-        
-        mt_p: mod_tap_p {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&kp P>, <&lt 3>; // Tap for 'P', hold to switch to layer 3
-        };
     };
 
     macros {
