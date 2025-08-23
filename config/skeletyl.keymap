@@ -34,39 +34,19 @@
             bindings = <&kp>, <&kp>;
         };
         
-        // Tap-preferred hold-tap for P key to avoid accidental activation during typing
+        // Simple layer-tap for P key to access alt-tab layer
         p_key: p_alt_tab {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <300>;             // Longer tapping term to prevent accidental activation
-            quick-tap-ms = <150>;                // Allow quick tap followed by hold to be treated as hold
-            require-prior-idle-ms = <150>;       // Require key to be idle before processing hold-tap
-            bindings = <&p_alt_layer>, <&kp>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&kp>;
         };
     };
     
-    // Macros for various functions
-    macros {
-        // Alt layer macro that handles Alt press/release with layer activation
-        p_alt_layer: p_alt_layer_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = 
-                <&macro_press &kp LALT>,      // Press Alt
-                <&macro_tap &mo 5>,           // Activate layer 5
-                <&macro_pause_for_release>,   // Wait for key release
-                <&macro_release &kp LALT>     // Release Alt when key is released
-            ;
-        };
+    // Using key-repeat with layer-toggle instead of conditional layers
 
-        // Macro for initial Alt+Tab press to open the window switcher
-        alt_tab_init: alt_tab_init {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap &kp TAB>;  // Just send Tab since Alt is already pressed
-        };
-        
+    macros {
         zed_em_kay: zed_em_kay {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -77,19 +57,19 @@
                 ;
         };
 
-        open_terminal: open_terminal {
+                open_terminal: open_terminal {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(LA(T))>;
         };
 
-        double_lshift: double_lshift {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <
-                &macro_tap &kp LSHFT &kp LSHFT
-            >;
-        };
+            double_lshift: double_lshift {
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings = <
+                    &macro_tap &kp LSHFT &kp LSHFT
+                >;
+            };
 
         paste_git_token: paste_git_token {
             compatible = "zmk,behavior-macro";
@@ -99,46 +79,20 @@
             >;
         };
 
-        alt_tab_macro: alt_tab_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = 
-                <&macro_press &kp LALT>,  // Press Alt
-                <&macro_tap &kp TAB>      // Press and release Tab while holding Alt
-            ;
-        };
-        
-        // Special macro for Alt+Tab window switching
-        alt_tab_win: alt_tab_windows {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = 
-                <&macro_press &kp LALT>,      // Press Alt
-                <&macro_tap &kp TAB>,         // Press Tab
-                <&macro_pause_for_release>,   // Wait until key is released
-                <&macro_release &kp LALT>     // Release Alt when key is released
-            ;
-        };
-
-        // For reverse Alt+Tab (previous window)
-        alt_shift_tab_win: alt_shift_tab_windows {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = 
-                <&macro_press &kp LALT>,      // Press Alt
-                <&macro_press &kp LSHFT>,     // Press Shift
-                <&macro_tap &kp TAB>,         // Press Tab
-                <&macro_pause_for_release>,   // Wait until key is released
-                <&macro_release &kp LSHFT>,   // Release Shift
-                <&macro_release &kp LALT>     // Release Alt when key is released
-            ;
-        };
-        
-        lock_session: lock_session {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(LA(L))>;  // Ctrl+Alt+L to lock session on Linux Mint
-        };
+            alt_tab_macro: alt_tab_macro {
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings = 
+                    <&macro_press &kp LALT>,  // Press Alt
+                    <&macro_tap &kp TAB>      // Press and release Tab while holding Alt
+                ;
+            };
+            
+            lock_session: lock_session {
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings = <&kp LC(LA(L))>;  // Ctrl+Alt+L to lock session on Linux Mint
+            };
     };
 
     keymap {
@@ -146,7 +100,7 @@
 
         default_layer {
             bindings = <
-                &kp Q        &kp W      &kp E       &kp R        &kp T      &kp Y      &kp U        &kp I      &kp O      &p_key 0 P
+                &kp Q        &kp W      &kp E       &kp R        &kp T      &kp Y      &kp U        &kp I      &kp O      &p_key 5 P
                 &mt LSHIFT A &kp S      &lt 3 D     &lt 1 F      &kp G      &kp H      &lt 1 J      &lt 3 K    &kp L      &mtb LSHIFT APOS
                 &mt LCTRL Z  &kp X      &kp C       &lt 2 V      &kp B      &kp N      &lt 2 M      &kp COMMA  &kp DOT    &mth RCTRL SLASH
                                         &kp LSHIFT  &kp ESC      &kp SPACE  &kp BSPC   &mt LALT ENTER &none
