@@ -34,17 +34,29 @@
             bindings = <&kp>, <&kp>;
         };
         
-        // Special hold-tap for the P key
+        // Hold-tap for P key: tap for 'P', hold for alt+layer
         p_key: p_alt_tab {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
-            bindings = <&alt_layer_macro>, <&kp>;
+            bindings = <&p_alt_layer>, <&kp>;
         };
     };
     
-    // Using key-repeat with layer-toggle instead of conditional layers
+    // Add a macro that handles Alt press/release with layer activation
+    macros {
+        p_alt_layer: p_alt_layer_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = 
+                <&macro_press &kp LALT>,      // Press Alt
+                <&macro_tap &mo 5>,           // Activate layer 5
+                <&macro_pause_for_release>,   // Wait for key release
+                <&macro_release &kp LALT>     // Release Alt when key is released
+            ;
+        };
+    }
 
     macros {
         zed_em_kay: zed_em_kay {
@@ -88,15 +100,29 @@
                 ;
             };
             
-            // Special macro for the P key to handle Alt+Tab functionality
-            alt_layer_macro: alt_layer_macro {
+            // Special macro for Alt+Tab window switching
+            alt_tab_win: alt_tab_windows {
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
                 bindings = 
-                    <&macro_press &kp LALT>,  // Press Alt
-                    <&macro_tap &mo 5>,       // Momentarily activate layer 5
-                    <&macro_pause_for_release>,
-                    <&macro_release &kp LALT> // Release Alt when key is released
+                    <&macro_press &kp LALT>,      // Press Alt
+                    <&macro_tap &kp TAB>,         // Press Tab
+                    <&macro_pause_for_release>,   // Wait until key is released
+                    <&macro_release &kp LALT>     // Release Alt when key is released
+                ;
+            };
+
+            // For reverse Alt+Tab (previous window)
+            alt_shift_tab_win: alt_shift_tab_windows {
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings = 
+                    <&macro_press &kp LALT>,      // Press Alt
+                    <&macro_press &kp LSHFT>,     // Press Shift
+                    <&macro_tap &kp TAB>,         // Press Tab
+                    <&macro_pause_for_release>,   // Wait until key is released
+                    <&macro_release &kp LSHFT>,   // Release Shift
+                    <&macro_release &kp LALT>     // Release Alt when key is released
                 ;
             };
             
@@ -157,10 +183,10 @@
 
         alt_tab_layer {
             bindings = <
-                &none        &none      &kp LA(LS(TAB))  &kp LA(TAB) &none       &none      &none      &none      &none      &trans
-                &none        &none      &none        &none      &none      &kp LA(LS(TAB)) &none      &none      &none      &none
-                &none        &none      &none        &none      &none      &none      &none      &none      &none      &none
-                                        &none        &none      &kp LA(TAB) &none      &none      &none
+                &none        &none      &kp LS(TAB)  &kp TAB     &none      &none      &none      &none      &none      &trans
+                &none        &none      &none        &none       &none      &kp LS(TAB) &none     &none      &none      &none
+                &none        &none      &none        &none       &none      &none      &none      &none      &none      &none
+                                        &none        &none       &kp TAB    &none      &none      &none
             >;
         };
     };
