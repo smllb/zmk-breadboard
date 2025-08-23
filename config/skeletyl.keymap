@@ -126,9 +126,8 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = 
-                <&macro_press &kp LALT>,  // Press Alt
                 <&macro_tap &kp TAB>,    // Press and release Tab
-                <&to 5>         // Switch to alt_tab_layer where Alt will remain pressed
+                <&to 5>         // Switch to alt_tab_layer
             ;
         };
         
