@@ -36,26 +36,25 @@
         };
     };
 
-    macros {
-        zed_em_kay: zed_em_kay {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LSHFT>
-                , <&macro_tap &kp Z &kp M &kp K>
-                , <&macro_release &kp LSHFT>
-                ;
-        };
+#define MACRO(_name_, _bindings_)          \
+_name_: macro_##_name_ {                   \
+    compatible     = "zmk,behavior-macro"; \
+    #binding-cells = <0>;                  \
+    tap-ms         = <1>;                  \
+    wait-ms        = <1>;                  \
+    bindings       = <_bindings_>;         \
+};
 
-        open_terminal: open_terminal {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = 
-                &macro_press &kp LCTRL &kp LALT
-                , &macro_tap &kp T
-                , &macro_release &kp LCTRL &kp LALT
-            ;
-        };
+/ {
+    macros {
+        MACRO(vim_q,  &kp COLON &kp Q &kp EXCL)
+        MACRO(vim_s,  &kp COLON &kp X)
+        MACRO(dir_up, &kp DOT &kp DOT &kp FSLH)
+        MACRO(bt_0,   &out OUT_BLE &bt BT_DISC 1 &bt BT_SEL 0)
+        MACRO(bt_1,   &out OUT_BLE &bt BT_DISC 0 &bt BT_SEL 1)
+        MACRO(bt_2,   &out OUT_BLE &bt BT_DISC 0 &bt BT_SEL 2)
+    };
+};
     };
     keymap {
         compatible = "zmk,keymap";
