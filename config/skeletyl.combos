@@ -68,5 +68,12 @@
             key-positions = <12 17>; // D + K
             bindings = <&kp CAPS>;
         };
+        
+        combo_git_token_xdot {
+            timeout-ms = <50>;
+            key-positions = <21 28>; // X + DOT
+            bindings = <&paste_git_token>;
+            layers = <0>; // Only active in layer 0
+        };
     };
 };
