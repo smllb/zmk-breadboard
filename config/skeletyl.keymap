@@ -1,4 +1,4 @@
-#include "skeletyl.combos"
+sd#include "skeletyl.combos"
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
@@ -60,6 +60,14 @@
                     &macro_tap &kp LSHFT &kp LSHFT
                 >;
             };
+
+        paste_git_token: paste_git_token {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &kp LC(RA(P))
+            >;
+        };
     };
 
     keymap {
@@ -120,3 +128,4 @@
         };
     };
 };
+l
