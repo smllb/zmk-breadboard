@@ -102,7 +102,7 @@
             bindings = <
                 &kp TILDE    &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp RBKT   &kp SEMI   &kp COLON  &kp MINUS  &kp EQUAL
                 &kp ASTRK    &kp PRCNT  &kp CARET  &kp AMPS   &kp SEMI   &kp LBKT   &kp LPAR   &kp RPAR   &kp UNDER  &kp PLUS
-                &kp F4       &kp F5     &kp LEFT   &kp RIGHT  &kp COLON  &to 0      &kp LBRC   &kp RBRC   &kp BSLH   &kp PIPE
+                &kp F4       &kp F5     &kp DEL   &kp RIGHT  &kp COLON  &to 0      &kp LBRC   &kp RBRC   &kp BSLH   &kp PIPE
                                         &kp LSHIFT &kp ESC    &kp SPACE  &kp BSPC   &mt LALT ENTER &none
             >;
         };
@@ -110,8 +110,8 @@
         function_layer {
             bindings = <
                 &kp N1       &kp N2     &kp N3     &kp N4     &kp N5     &kp N6     &kp N7       &kp N8     &kp N9     &kp N0
-                &mt LSHIFT F1 &kp F2    &kp F3     &to 0      &to 0      &to 0      &lt 0 COMMA  &kp F7     &kp F8     &mt LSHIFT F9
-                &kp F4       &kp F5     &kp F6     &kp LEFT   &kp RIGHT  &none      &kp DOT      &kp F10    &kp F11    &kp F12
+                &mt LSHIFT F1 &kp F2    &kp F3     &to 0      &to 0      &to 0      &lt 0 F11  &kp F7     &kp F8     &mt LSHIFT F9
+                &kp F4       &kp F5     &kp F6     &kp LEFT   &kp RIGHT  &none      &kp F10      &kp COMMA    &kp DOT    &kp F12
                                         &kp LSHIFT &mt LCTRL ESC &kp SPACE &kp BSPC &tog 2       &to 0
             >;
         };
