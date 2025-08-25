@@ -59,10 +59,15 @@
             bindings = <&tog 4>;
         };
         
-        combo_terminal_fj {
+        combo_terminal_sl {
             timeout-ms = <50>;
-            key-positions = <13 16>; // F + J
+            key-positions = <14 18>; // S + L
             bindings = <&open_terminal>;
+        };
+        combo_gui_fk {
+            timeout-ms = <50>;
+            key-positions = <13 17>; // F + K
+            bindings = <&kp GUI>;
         };
         combo_git_token_xdot {
             timeout-ms = <50>;
@@ -95,7 +100,7 @@
         };
         
         combo_gaming_wsd {
-            timeout-ms = <100>;
+            timeout-ms = <50>;
             key-positions = <1 11 12>; // W + S + D
             bindings = <&tog 6>;       // Toggle gaming layer
         };
@@ -107,9 +112,23 @@
         };
         
         combo_gaming_sdf {
-            timeout-ms = <100>;
+            timeout-ms = <50>;
             key-positions = <11 12 13>; // S + D + F
             bindings = <&to 6>;        // Go to gaming layer
+            layers = <0>;              // Only active on default layer
+        };
+        
+        combo_bt_clear_all {
+            timeout-ms = <75>;
+            key-positions = <10 19>;    // First and last keys of second row (positions 10 and 19)
+            bindings = <&bt BT_CLR_ALL>; // Clear all BT profiles
+            layers = <4>;               // Only active on Bluetooth layer
+        };
+        
+        combo_alt_f4 {
+            timeout-ms = <50>;
+            key-positions = <1 8>;     // W + O keys, which are further apart but still easy to reach
+            bindings = <&alt_f4>;      // Trigger the Alt+F4 macro
             layers = <0>;              // Only active on default layer
         };
     };

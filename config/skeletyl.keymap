@@ -139,6 +139,12 @@
                 #binding-cells = <0>;
                 bindings = <&tog 6>;  // Toggle gaming layer
             };
+            
+            alt_f4: alt_f4 {
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings = <&kp LA(F4)>;  // Alt+F4 to close windows
+            };
     };
 
     keymap {
@@ -147,9 +153,9 @@
         default_layer {
             bindings = <
                 &kp Q        &kp W      &kp E       &kp R        &kp T      &kp Y      &kp U        &kp I      &kp O      &lt 5 P
-                &mt LSHIFT A &kp S      &lt 3 D     &lt 1 F      &kp G      &kp H      &lt 1 J      &lt 3 K    &kp L      &mtb LSHIFT APOS
+                &mt LSHIFT A &kp S      &lt 3 D     &lt 1 F      &kp G      &kp H      &lt 1 J      &kp K    &kp L      &mtb LSHIFT APOS
                 &mt LCTRL Z  &mt LALT X      &kp C       &lt 2 V      &kp B      &kp N      &lt 2 M      &kp COMMA  &kp DOT    &mth RCTRL SLASH
-                                        &tog 4  &kp ESC      &kp SPACE  &kp BSPC   &mt LALT ENTER &lm 5 LALT
+                                        &mo 4  &kp ESC      &kp SPACE  &kp BSPC   &mt LALT ENTER &lm 5 LALT
             >;
         };
 
@@ -182,17 +188,17 @@
 
         bluetooth_layer {
             bindings = <
-                &bt BT_SEL 0  &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans      &trans      &trans      &trans       &bt BT_CLR
-                &bt BT_PRV    &bt BT_NXT   &trans        &trans        &trans        &trans      &trans      &trans      &out OUT_TOG &bt BT_CLR_ALL
-                &trans   &trans       &trans        &trans        &trans        &trans      &trans      &trans      &trans       &trans
-                                          &to 0        &trans        &trans        &trans      &trans      &to 0
+                &none        &none        &none        &none        &none    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+                &none        &none        &none        &none        &none         &none         &none         &none         &out OUT_TOG  &none
+                &bt BT_PRV   &bt BT_NXT   &none        &to 4        &none         &bt BT_CLR         &none         &none         &none         &none
+                                          &to 0        &none        &to 4         &none         &none         &to 0
             >;
         };
 
         alt_tab_layer {
             bindings = <
-                &trans        &trans      &kp LA(LS(TAB))  &kp LA(TAB) &trans       &trans      &trans      &trans      &trans      &trans
                 &trans        &trans      &kp LS(TAB)      &kp TAB &trans       &trans      &kp LA(LS(TAB)) &trans      &trans      &trans
+                &trans        &trans      &kp LA(LS(TAB))  &kp LA(TAB) &trans       &trans      &trans      &trans      &trans      &trans
                 &trans        &trans      &trans           &kt LALT    &trans       &trans      &trans      &trans      &trans      &trans
                                         &trans        &trans      &kp LA(TAB) &trans   &to 0   &trans      
             >;

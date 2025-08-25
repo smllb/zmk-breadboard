@@ -107,25 +107,29 @@ Optimized layout for playing Overwatch with shifted movement keys:
 
 ## Combos
 
-| Keys | Action | Description |
-|------|--------|-------------|
-| F+J | Open Terminal | Opens terminal with Ctrl+Alt+T |
-| D+K | Caps Lock | Toggles caps lock |
-| Q+P | Tilde (~) | Types tilde character |
-| Z+/ | Lock Session | Locks session with Ctrl+Alt+L |
-| G+H | Open Terminal | Opens terminal |
-| A+' | Double Shift | Taps shift twice (caps word) |
-| B+N | Toggle Bluetooth Layer | Switches to BT layer (4) |
-| G+B | Toggle Gaming Layer | Toggles gaming layer (6) for Overwatch |
-| S+D+F | Go to Gaming Layer | Directly goes to gaming layer (6) for Overwatch, only active on default layer |
-| M+K | Toggle Media Layer | Toggles media layer (3) |
-| K+L | Toggle Media Layer | Toggles media layer (3) |
-| M+K+L | Toggle Media Layer | Toggles media layer (3) |
-| LEFT+UP | Return to Default | Goes to layer 0 |
-| LEFT+UP+RIGHT | Return to Default | Goes to layer 0 |
-| RIGHT+UP | Return to Default | Goes to layer 0 |
-| X+. | Paste Git Token | Pastes git token |
-| Q+W | Escape | Types escape key |
+| Keys         | Action                    | Description                                                      |
+|--------------|---------------------------|------------------------------------------------------------------|
+| S+L          | Open Terminal             | Opens terminal with Ctrl+Alt+T                                   |
+| F+K          | GUI                       | Sends the GUI (Windows/Command) key                              |
+| D+K          | Caps Lock                 | Toggles caps lock                                                |
+| Q+P          | Tilde (~)                 | Types tilde character                                            |
+| Z+/          | Lock Session              | Locks session with Ctrl+Alt+L                                    |
+| A+'          | Double Shift              | Taps shift twice (caps word)                                     |
+| B+N          | Toggle Bluetooth Layer    | Switches to BT layer (4)                                         |
+| G+B          | Toggle Gaming Layer       | Toggles gaming layer (6) for Overwatch                           |
+| S+D+F        | Go to Gaming Layer        | Directly goes to gaming layer (6), only active on default layer  |
+| M+K          | Toggle Media Layer        | Toggles media layer (3)                                          |
+| K+L          | Toggle Media Layer        | Toggles media layer (3)                                          |
+| M+K+L        | Toggle Media Layer        | Toggles media layer (3)                                          |
+| LEFT+UP      | Return to Default         | Goes to layer 0                                                  |
+| LEFT+UP+RIGHT| Return to Default         | Goes to layer 0                                                  |
+| RIGHT+UP     | Return to Default         | Goes to layer 0                                                  |
+| X+.          | Paste Git Token           | Pastes git token                                                 |
+| A+APOS       | Double Shift              | Taps shift twice (caps word)                                     |
+| ESC          | Escape                    | Types escape key                                                 |
+| W+O          | Alt+F4                    | Triggers Alt+F4 macro (close window), only on default layer      |
+| Z+SLASH      | Lock Session              | Locks session with Ctrl+Alt+L                                    |
+| BT_CLR_ALL   | Clear all BT profiles     | Clears all Bluetooth profiles, only on Bluetooth layer           |
 
 ## Configuration Details
 
