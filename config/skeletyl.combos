@@ -105,12 +105,6 @@
             bindings = <&tog 6>;       // Toggle gaming layer
         };
         
-        combo_gaming_gamer {
-            timeout-ms = <50>;
-            key-positions = <14 24>;   // G + B
-            bindings = <&toggle_gaming>; // Toggle gaming layer with a macro
-        };
-        
         combo_gaming_sdf {
             timeout-ms = <50>;
             key-positions = <11 12 13>; // S + D + F
