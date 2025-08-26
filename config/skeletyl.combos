@@ -2,7 +2,6 @@
  * ZMK Combos for skeletyl
  *
  * Combo summary:
- * F+J = Tab
  * D+K = Caps Lock
  * Q+P = ~
  * Z+SLSH = Ctrl+Alt+L
@@ -66,64 +65,79 @@
         };
         combo_gui_fk {
             timeout-ms = <50>;
-            key-positions = <13 17>; // F + K
-            bindings = <&kp GUI>;
+            key-positions = <13 16>; // F + K not working not working 
+            bindings = <&kp LGUI>;
         };
         combo_git_token_xdot {
             timeout-ms = <50>;
-            key-positions = <21 28>; // X + DOT
+            key-positions = <21 28>; // X + DOT working
             bindings = <&paste_git_token>;
         };
         
         combo_double_shift_a_apos {
             timeout-ms = <50>;
-            key-positions = <10 19>; // A + APOS
+            key-positions = <10 19>; // A + APOS working 
             bindings = <&double_lshift>;
         };
         
         combo_lock_session_z_slash {
             timeout-ms = <50>;
-            key-positions = <20 29>; // Z + SLASH
+            key-positions = <20 29>; // Z + SLASH working 
             bindings = <&lock_session>;
         };
         
         combo_caps_dk {
             timeout-ms = <50>;
-            key-positions = <12 17>; // D + K
+            key-positions = <12 17>; // D + K  working 
             bindings = <&kp CAPS>;
         };
 
         combo_esc {
             timeout-ms = <50>;
             key-positions = <0 1>;
-            bindings = <&kp ESC>;
-        };
+            bindings = <&kp ESC>; working
+        }; 
         
         combo_gaming_wsd {
             timeout-ms = <50>;
             key-positions = <1 11 12>; // W + S + D
-            bindings = <&tog 6>;       // Toggle gaming layer
+            bindings = <&tog 6>;       // Toggle gaming layer working 
         };
         
         combo_gaming_sdf {
             timeout-ms = <50>;
             key-positions = <11 12 13>; // S + D + F
             bindings = <&to 6>;        // Go to gaming layer
-            layers = <0>;              // Only active on default layer
+            layers = <0>;              // Only active on default layer working
         };
         
         combo_bt_clear_all {
             timeout-ms = <75>;
             key-positions = <10 19>;    // First and last keys of second row (positions 10 and 19)
             bindings = <&bt BT_CLR_ALL>; // Clear all BT profiles
-            layers = <4>;               // Only active on Bluetooth layer
+            layers = <4>;               // Only active on Bluetooth layer working
         };
         
         combo_alt_f4 {
             timeout-ms = <50>;
             key-positions = <1 8>;     // W + O keys, which are further apart but still easy to reach
             bindings = <&alt_f4>;      // Trigger the Alt+F4 macro
+            layers = <0>;              // Only active on default layer working
+        };
+        
+        combo_terminal_gh {
+            timeout-ms = <50>;
+            key-positions = <14 15>;   // G + H
+            bindings = <&kp LC(LA(T))>; // Ctrl+Alt+T
+            layers = <0>;              // Only active on default layer not working 
+        };
+        
+        combo_tilde_qp {
+            timeout-ms = <50>;
+            key-positions = <0 9>;     // Q + P
+            bindings = <&kp TILDE>;    // ~ key
             layers = <0>;              // Only active on default layer
         };
+
     };
 };
