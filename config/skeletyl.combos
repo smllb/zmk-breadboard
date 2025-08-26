@@ -95,7 +95,7 @@
         combo_esc {
             timeout-ms = <50>;
             key-positions = <0 1>;
-            bindings = <&kp ESC>; working
+            bindings = <&kp ESC>; // working
         }; 
         
         combo_gaming_wsd {
