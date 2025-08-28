@@ -139,5 +139,10 @@
             layers = <0>;              // Only active on default layer
         };
 
+        combo_caps_ei {
+            timeout-ms = <25>;
+            key-positions = <2 7>;     // E + I
+            bindings = <&caps_word>;   // Caps Word
+        };
     };
 };
