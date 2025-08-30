@@ -138,3 +138,9 @@ Optimized layout for playing Overwatch with shifted movement keys:
 - USB support on both halves
 - Battery reporting enabled
 - Improved split connection reliability with optimized parameters
+
+
+a diferenciação deve ser feita pelo ID do parente seguindo a estrutura abaixo:
+
+Assumindo:
+
