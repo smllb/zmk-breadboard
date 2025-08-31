@@ -38,12 +38,12 @@
             bindings = <&tog GAMING>; // Toggle GAMING layer
             layers = <DEFAULT SYMBOL NAVIGATION NUMBER FUNCTION MEDIA BT>; // All except GAMING
         };
-        
-        // Toggle BT layer with 30 + 35 (all except BT)
-        combo_toggle_bt_3035 {
+
+        // Go to BT layer with 30 + 35 (all except BT)
+        combo_to_bt_3035 {
             timeout-ms = <30>;
             key-positions = <30 35>; // 30 + 35
-            bindings = <&to BT>; // Toggle BT layer
+            bindings = <&to BT>; // Go to BT layer
             layers = <DEFAULT SYMBOL NAVIGATION NUMBER FUNCTION MEDIA GAMING>; // All except BT
         };
 
@@ -54,11 +54,11 @@
             bindings = <&to DEFAULT>;
             layers = <BT>;
         };
-        // Toggle BT layer with 3 + 4 (all except BT)
-        combo_toggle_bt_34 {
+        // Go to BT layer with 3 + 4 (all except BT)
+        combo_to_bt_34 {
             timeout-ms = <30>;
             key-positions = <3 4>; // 3 + 4
-            bindings = <&tog BT>; // Toggle BT
+            bindings = <&to BT>; // Go to BT layer
             layers = <DEFAULT SYMBOL NAVIGATION NUMBER FUNCTION MEDIA GAMING>; // All except BT
         };
 
