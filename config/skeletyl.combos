@@ -192,5 +192,26 @@
             bindings = <&sl SYMBOL>;   // Sticky SYMBOL layer
             layers = <DEFAULT>;        // Only active on default layer
         };
+        
+        // New: Toggle NUMBER layer with W + O (positions 1 + 8)
+        combo_toggle_number_wo {
+            timeout-ms = <30>;
+            key-positions = <1 8>; // W + O
+            bindings = <&tog NUMBER>; // Toggle NUMBER layer
+        };
+        
+        // New: Toggle NAVIGATION layer with S + L (positions 11 + 18)
+        combo_toggle_nav_sl {
+            timeout-ms = <30>;
+            key-positions = <11 18>; // S + L
+            bindings = <&tog NAVIGATION>; // Toggle NAVIGATION layer
+        };
+        
+        // New: Toggle SYMBOL layer with X + DOT (positions 21 + 28)
+        combo_toggle_symbol_xdot {
+            timeout-ms = <30>;
+            key-positions = <21 28>; // X + DOT
+            bindings = <&tog SYMBOL>; // Toggle SYMBOL layer
+        };
     };
 };
