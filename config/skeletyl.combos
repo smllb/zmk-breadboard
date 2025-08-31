@@ -124,6 +124,7 @@
             timeout-ms = <15>;
             key-positions = <7 8>; // 7 + 8
             bindings = <&tog NUMBER>; // Toggle NUMBER layer
+            layers = <DEFAULT SYMBOL FUNCTION NAVIGATION MEDIA GAMING>; // All except NUMBER
         };
 
         // New: Toggle SYMBOL layer with 17 + 18
@@ -131,6 +132,7 @@
             timeout-ms = <15>;
             key-positions = <17 18>; // 17 + 18
             bindings = <&tog SYMBOL>; // Toggle SYMBOL layer
+            layers = <DEFAULT FUNCTION NUMBER NAVIGATION MEDIA GAMING>; // All except SYMBOL
         };
 
         // New: Toggle FUNCTION layer with 27 + 28
@@ -138,6 +140,7 @@
             timeout-ms = <15>;
             key-positions = <27 28>; // 27 + 28
             bindings = <&tog FUNCTION>; // Toggle FUNCTION layer
+            layers = <DEFAULT SYMBOL NUMBER NAVIGATION MEDIA GAMING>; // All except FUNCTION
         };
 
         // New: Toggle NUMBER layer with 1 + 2
@@ -145,6 +148,7 @@
             timeout-ms = <15>;
             key-positions = <1 2>; // 1 + 2
             bindings = <&tog NUMBER>; // Toggle NUMBER layer
+            layers = <DEFAULT SYMBOL FUNCTION NAVIGATION MEDIA GAMING>; // All except NUMBER
         };
 
         // New: Toggle SYMBOL layer with 11 + 12
@@ -152,6 +156,7 @@
             timeout-ms = <15>;
             key-positions = <11 12>; // 11 + 12
             bindings = <&tog SYMBOL>; // Toggle SYMBOL layer
+            layers = <DEFAULT FUNCTION NUMBER NAVIGATION MEDIA GAMING>; // All except SYMBOL
         };
 
         // New: Toggle FUNCTION layer with 21 + 22
@@ -159,6 +164,7 @@
             timeout-ms = <15>;
             key-positions = <21 22>; // 21 + 22
             bindings = <&tog FUNCTION>; // Toggle FUNCTION layer
+            layers = <DEFAULT SYMBOL NUMBER NAVIGATION MEDIA GAMING>; // All except FUNCTION
         };
 
         combo_gui_fk {
