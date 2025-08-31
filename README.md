@@ -1,116 +1,113 @@
-# ZMK Skeletyl Keyboard Configuration
+f1 f2 f3 f4 f5    f6 f7 f8 f9 f10
+esc q w e r    2 3 i o to0
+# Skeletyl ZMK Firmware Configuration
 
-This repository contains the ZMK firmware configuration for a Skeletyl split keyboard. Below is a summary of the keyboard's configuration including layers and behaviors.
+This repository contains the ZMK firmware configuration for the Skeletyl split keyboard. Below is an up-to-date summary of the keyboard's layers, combos, custom behaviors, and configuration.
 
-## Keyboard Details
+---
 
-- **Keyboard Name**: "Yggdrasil" (Central) / "Skeletyl" (Breadboard)
-- **Type**: Split keyboard
-- **Power Settings**:
-  - Bluetooth signal boost: +8dBm
-  - Sleep timeout: 30 minutes (1,800,000ms)
-  - Deep sleep enabled
+## Keyboard Overview
 
-## Layers
+- **Keyboard Name:** Skeletyl (Breadboard)
+- **Type:** Split, wireless/USB, QMK/ZMK-inspired
+- **Power:** Bluetooth +8dBm, 30min sleep, deep sleep enabled
+- **Features:** Split BLE, USB on both halves, battery reporting, reliable split sync
+
+---
+
+## Layer Summary
 
 ### 0: Default Layer
-The main typing layer with standard QWERTY layout:
-```
-q w e r t    y u i o p
-a s d f g    h j k l '
-z x c v b    n m , . /
-    _ _ space enter _ _
-```
+Standard QWERTY typing layer.
 
 ### 1: Symbol Layer
-Contains symbols and brackets:
-```
-~ ! @ $ &    ] : ; - =
-# ^ % * _    [ ( ) _ +
-_ _ _ _ _    \ { } | _
-    _ _ _ _ bspc _
-```
+Symbols, brackets, and shifted characters.
 
-### 2: Text Navigation Layer
-Contains navigation controls and text editing functions:
-```
-a v alt tab _    r f y bspc pgup
-shift x c ctrl g    b home up right del
-z _ f4 f5 _     d left down end pgdn
-    _ / space enter bspc _
-```
+### 2: Navigation Layer
+Text navigation, arrow keys, and editing controls.
 
 ### 3: Number Layer
-Contains number keys:
-```
-1 2 3 4 5    6 7 8 9 0
-_ _ _ _ _    _ _ _ _ _
-_ _ _ _ _    _ _ _ _ _
-    _ _ _ _ bspc _
-```
+Number row and numeric input.
 
 ### 4: Function Layer
-Contains function keys:
-```
-f1 f2 f3 f4 f5    f6 f7 f8 f9 f10
-f11 f12 _ _ _    _ _ _ _ _
-_ _ _ _ _    _ _ _ _ _
-    _ _ _ _ bspc _
-```
+F1–F12 and related keys.
 
 ### 5: Media Layer
-Contains media controls:
-```
-_ _ _ _ _    prev vol- play vol+ next
-_ _ _ _ _    _ _ _ _ _
-_ _ _ _ _    _ _ _ _ _
-    _ to0 _ _ _ _
-```
+Media controls (play, volume, next/prev, etc).
 
-### 6: Gaming Layer (Overwatch)
-Optimized layout for playing Overwatch with shifted movement keys:
-```
-esc q w e r    2 3 i o to0
-shift a s d 4    5 h j l enter
-sticky-w z x c v    hello m tab . to0
-    shift ctrl space q melee f
-```
-- WASD for movement
-- Q for ultimate ability
-- Number keys for hero abilities and weapon switching
-- Space bar for jump
-- Left Shift for hero-specific abilities
-- F for quick actions
-- Tab key available
-- Quick access to communication (hello macro)
-- Quick melee attack available
-- Easy return to default layer (top-right key)
+### 6: Gaming Layer
+Optimized for Overwatch and similar games (WASD, quick melee, comms, etc).
 
-## Behaviors
+---
 
-### Mod-Tap Variants
-1. `mt`: Tap-preferred mod-tap with 200ms tapping term
-   - Prioritizes the tap behavior when pressed quickly
+## Keymap Visual Reference
 
-2. `mth`: Hold-preferred mod-tap with 200ms tapping term
-   - Prioritizes the hold behavior
+See `config/key_positions_visual.md` for a full matrix and position reference.
 
-3. `mtb`: Balanced mod-tap with 200ms tapping term
-   - Equal priority to tap and hold behaviors
+---
 
-### Sticky Key Behavior
-- `long_sk`: Extended sticky key with 15 second timeout
-  - Used for gaming layer to provide temporary sticky modifier
+## Combo & Layer Logic
 
-### Layer-Mod Behavior
-- `lm`: Custom macro for Layer-Mod combination
-  - Temporarily switches to a layer while holding a modifier
+### Sticky Layer Combos (One-Shot)
+- **D+K (12+17):** Sticky NAVIGATION (from Default)
+- **E+I (2+7):** Sticky NUMBER (from Default)
+- **C+COMMA (22+27):** Sticky SYMBOL (from Default)
 
-## Configuration Details
+### Shifted/Toggle Combos
+- **W+O (1+8):** Toggle NUMBER layer
+- **S+L (11+18):** Toggle NAVIGATION layer
+- **X+DOT (21+28):** Toggle SYMBOL layer
 
+### Navigation/Default Layer Switching
+- **M+K, K+L, M+K+L:** Switch to NAVIGATION from any layer except NAVIGATION; same combos on NAVIGATION return to DEFAULT
+
+### Other Combos
+- **Q+P:** Tilde (~)
+- **Z+SLASH:** Lock session (Ctrl+Alt+L)
+- **G+H:** Open terminal (Ctrl+Alt+T)
+- **A+APOS:** Double Shift
+- **B+N:** Toggle Bluetooth/Function layer
+- **W+S+D:** Toggle Gaming layer
+- **S+D+F:** Go to Gaming layer (Default only)
+- **BT_CLR_ALL:** Clear all Bluetooth profiles (Function layer)
+- **W+K:** Alt+F4 (Default only)
+
+---
+
+## Custom Behaviors
+
+- **Mod-Tap (`mt`, `mth`, `mtb`):** Tap/hold with tap-preferred, hold-preferred, or balanced logic (200ms tapping term)
+- **Sticky Layer (`sl`, `long_sk`):** One-shot or long sticky layer (2s or 15s timeout)
+- **Layer-Tap (`lt`):** Tap for key, hold for layer (applied to key positions 2/7, 12/17, 22/27, except where transparent)
+- **Macros:** Quick actions (open terminal, lock session, double shift, paste git token, Overwatch comms, etc)
+- **Layer-Mod Macro (`lm`):** Temporarily switch to a layer while holding a modifier
+
+---
+
+## Configuration Highlights
+
+- Split BLE with central/peripheral roles
+- USB enabled on both halves
+- Battery reporting
+- Aggressive split sync and connection reliability
+- Custom Bluetooth name: "Skeletyl" or "Om"
+
+---
+
+## How to Use
+
+1. Refer to the key position visual (`config/key_positions_visual.md`) for matrix mapping
+2. Edit `skeletyl.keymap` for layer and key assignments
+3. Edit `skeletyl.combos` for combo logic
+4. Use the provided macros and behaviors for advanced functionality
+
+---
+
+## Maintainer Notes
+
+- All layer and combo logic is up-to-date with the current firmware
+- Outdated notations and legacy info have been removed
+- For further customization, see comments in each config file
 - Enhanced Bluetooth connectivity with higher power and improved reliability
-- Split keyboard configuration with BLE
-- USB support on both halves
-- Battery reporting enabled
-- Improved split connection reliability with optimized parameters
 
+- Split keyboard configuration with BLE
