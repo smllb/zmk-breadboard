@@ -3,6 +3,8 @@
  *
  * Combo summary:
  * D+K = Navigate between Default & Text Navigation layer
+ * E+I = Switch between Default & Number layers
+ * C+COMMA = Switch between Default & Symbol layers
  * Q+P = ~
  * Z+SLSH = Ctrl+Alt+L
  * G+H = Ctrl+Alt+T
@@ -127,11 +129,7 @@
             layers = <DEFAULT>;        // Only active on default layer
         };
 
-        combo_caps_ei {
-            timeout-ms = <25>;
-            key-positions = <2 7>;     // E + I
-            bindings = <&caps_word>;   // Caps Word
-        };
+
 
         // NEW COMBOS
         combo_nav_dk {
@@ -148,7 +146,7 @@
             layers = <SYMBOL NAVIGATION NUMBER FUNCTION MEDIA GAMING>; // Active on all layers except default
         };
 
-        
+
         combo_nav_mk {
             timeout-ms = <30>;
             key-positions = <26 17>; // M + K
@@ -186,6 +184,34 @@
             key-positions = <26 17 18>; // M + K + L
             bindings = <&to DEFAULT>;
             layers = <NAVIGATION>; // Only on NAVIGATION layer
+        };
+        
+        combo_to_numbers {
+            timeout-ms = <30>;
+            key-positions = <2 7>;     // E + I
+            bindings = <&to NUMBER>;   // Switch to NUMBER layer
+            layers = <DEFAULT SYMBOL NAVIGATION FUNCTION MEDIA GAMING>; // All layers except NUMBER
+        };
+        
+        combo_from_numbers {
+            timeout-ms = <30>;
+            key-positions = <2 7>;     // E + I
+            bindings = <&to DEFAULT>;  // Return to DEFAULT layer
+            layers = <NUMBER>;         // Only when on NUMBER layer
+        };
+        
+        combo_to_symbol {
+            timeout-ms = <30>;
+            key-positions = <22 27>;   // C + COMMA
+            bindings = <&to SYMBOL>;   // Switch to SYMBOL layer
+            layers = <DEFAULT NAVIGATION NUMBER FUNCTION MEDIA GAMING>; // All layers except SYMBOL
+        };
+        
+        combo_from_symbol {
+            timeout-ms = <30>;
+            key-positions = <22 27>;   // C + COMMA
+            bindings = <&to DEFAULT>;  // Return to DEFAULT layer
+            layers = <SYMBOL>;         // Only when on SYMBOL layer
         };
     };
 };
