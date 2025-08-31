@@ -5,6 +5,12 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include "skeletyl.combos"
 
+// Configure the built-in sticky layer behavior
+&sl {
+    release-after-ms = <2000>;
+    quick-release;
+};
+
 // Layer definitions
 #define DEFAULT 0
 #define SYMBOL 1
@@ -156,12 +162,6 @@
                 #binding-cells = <0>;
                 bindings = <&kp LA(F4)>;  // Alt+F4 to close windows
             };
-    };
-
-    // Configure the built-in sticky layer behavior
-    &sl {
-        release-after-ms = <2000>;
-        quick-release;
     };
 
     keymap {
