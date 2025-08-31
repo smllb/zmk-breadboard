@@ -99,6 +99,25 @@
             key-positions = <26 27>; // 26 + 27
             bindings = <&sl FUNCTION>; // Sticky FUNCTION layer
         };
+            // On non-DEFAULT layers: 11+12, 17+18, 12+17 send to DEFAULT
+            combo_to_default_1112 {
+                timeout-ms = <15>;
+                key-positions = <11 12>; // 11 + 12
+                bindings = <&to DEFAULT>;
+                layers = <SYMBOL FUNCTION NUMBER NAVIGATION MEDIA GAMING>;
+            };
+            combo_to_default_1718 {
+                timeout-ms = <15>;
+                key-positions = <17 18>; // 17 + 18
+                bindings = <&to DEFAULT>;
+                layers = <SYMBOL FUNCTION NUMBER NAVIGATION MEDIA GAMING>;
+            };
+            combo_to_default_1217 {
+                timeout-ms = <15>;
+                key-positions = <12 17>; // 12 + 17
+                bindings = <&to DEFAULT>;
+                layers = <SYMBOL FUNCTION NUMBER NAVIGATION MEDIA GAMING>;
+            };
         compatible = "zmk,combos";
                 // New: Toggle NUMBER layer with 7 + 8
         combo_toggle_number_78 {
