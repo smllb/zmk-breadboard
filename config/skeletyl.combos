@@ -63,6 +63,7 @@
             timeout-ms = <15>;
             key-positions = <2 3>; // 2 + 3
             bindings = <&sl NUMBER>; // Sticky NUMBER layer
+            layers = <DEFAULT SYMBOL FUNCTION NAVIGATION MEDIA GAMING>; // All except NUMBER
         };
 
         // New: Sticky SYMBOL layer with 12 + 13
@@ -70,6 +71,7 @@
             timeout-ms = <15>;
             key-positions = <12 13>; // 12 + 13
             bindings = <&sl SYMBOL>; // Sticky SYMBOL layer
+            layers = <DEFAULT FUNCTION NUMBER NAVIGATION MEDIA GAMING>; // All except SYMBOL
         };
 
         // New: Sticky FUNCTION layer with 22 + 23
@@ -77,6 +79,7 @@
             timeout-ms = <15>;
             key-positions = <22 23>; // 22 + 23
             bindings = <&sl FUNCTION>; // Sticky FUNCTION layer
+            layers = <DEFAULT SYMBOL NUMBER NAVIGATION MEDIA GAMING>; // All except FUNCTION
         };
 
         // New: Sticky NUMBER layer with 6 + 7
@@ -84,6 +87,7 @@
             timeout-ms = <15>;
             key-positions = <6 7>; // 6 + 7
             bindings = <&sl NUMBER>; // Sticky NUMBER layer
+            layers = <DEFAULT SYMBOL FUNCTION NAVIGATION MEDIA GAMING>; // All except NUMBER
         };
 
         // New: Sticky SYMBOL layer with 16 + 17
@@ -91,6 +95,7 @@
             timeout-ms = <15>;
             key-positions = <16 17>; // 16 + 17
             bindings = <&sl SYMBOL>; // Sticky SYMBOL layer
+            layers = <DEFAULT FUNCTION NUMBER NAVIGATION MEDIA GAMING>; // All except SYMBOL
         };
 
         // New: Sticky FUNCTION layer with 26 + 27
@@ -98,6 +103,7 @@
             timeout-ms = <15>;
             key-positions = <26 27>; // 26 + 27
             bindings = <&sl FUNCTION>; // Sticky FUNCTION layer
+            layers = <DEFAULT SYMBOL NUMBER NAVIGATION MEDIA GAMING>; // All except FUNCTION
         };
             // On non-DEFAULT layers: 11+12, 17+18, 12+17 send to DEFAULT
             combo_to_default_1112 {
