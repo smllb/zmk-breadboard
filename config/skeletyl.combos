@@ -2,9 +2,9 @@
  * ZMK Combos for skeletyl
  *
  * Combo summary:
- * D+K = Navigate between Default & Text Navigation layer
- * E+I = Switch between Default & Number layers
- * C+COMMA = Switch between Default & Symbol layers
+ * D+K = One-shot Navigation layer (from default)
+ * E+I = One-shot Number layer (from default)
+ * C+COMMA = One-shot Symbol layer (from default)
  * Q+P = ~
  * Z+SLSH = Ctrl+Alt+L
  * G+H = Ctrl+Alt+T
@@ -132,18 +132,11 @@
 
 
         // NEW COMBOS
-        combo_nav_dk {
+        combo_sticky_nav_dk {
             timeout-ms = <50>;
             key-positions = <12 17>; // D + K
-            bindings = <&to SYMBOL>; 
+            bindings = <&sl NAVIGATION>; // Sticky layer for NAVIGATION
             layers = <DEFAULT>;       // Only active on default layer
-        };
-        
-        combo_default_dk {
-            timeout-ms = <50>;
-            key-positions = <12 17>; // D + K
-            bindings = <&to DEFAULT>; // Go back to default layer
-            layers = <SYMBOL NAVIGATION NUMBER FUNCTION MEDIA GAMING>; // Active on all layers except default
         };
 
 
@@ -186,32 +179,18 @@
             layers = <NAVIGATION>; // Only on NAVIGATION layer
         };
         
-        combo_to_numbers {
+        combo_sticky_number {
             timeout-ms = <30>;
             key-positions = <2 7>;     // E + I
-            bindings = <&to NUMBER>;   // Switch to NUMBER layer
-            layers = <DEFAULT SYMBOL NAVIGATION FUNCTION MEDIA GAMING>; // All layers except NUMBER
+            bindings = <&sl NUMBER>;   // Sticky NUMBER layer
+            layers = <DEFAULT>;        // Only active on default layer
         };
         
-        combo_from_numbers {
-            timeout-ms = <30>;
-            key-positions = <2 7>;     // E + I
-            bindings = <&to DEFAULT>;  // Return to DEFAULT layer
-            layers = <NUMBER>;         // Only when on NUMBER layer
-        };
-        
-        combo_to_symbol {
+        combo_sticky_symbol {
             timeout-ms = <30>;
             key-positions = <22 27>;   // C + COMMA
-            bindings = <&to SYMBOL>;   // Switch to SYMBOL layer
-            layers = <DEFAULT NAVIGATION NUMBER FUNCTION MEDIA GAMING>; // All layers except SYMBOL
-        };
-        
-        combo_from_symbol {
-            timeout-ms = <30>;
-            key-positions = <22 27>;   // C + COMMA
-            bindings = <&to DEFAULT>;  // Return to DEFAULT layer
-            layers = <SYMBOL>;         // Only when on SYMBOL layer
+            bindings = <&sl SYMBOL>;   // Sticky SYMBOL layer
+            layers = <DEFAULT>;        // Only active on default layer
         };
     };
 };

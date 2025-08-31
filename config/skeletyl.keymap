@@ -51,6 +51,8 @@
             bindings = <&kp>;
             quick-release;
         };
+        
+
         /**
         * Temporarily switches to a layer (`&mo`) while a modifier is held.
         * Analogous to QMK's `LM()`, using a parameterized macro.
@@ -154,6 +156,12 @@
                 #binding-cells = <0>;
                 bindings = <&kp LA(F4)>;  // Alt+F4 to close windows
             };
+    };
+
+    // Configure the built-in sticky layer behavior
+    &sl {
+        release-after-ms = <2000>;
+        quick-release;
     };
 
     keymap {
