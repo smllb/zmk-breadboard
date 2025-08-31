@@ -49,14 +49,14 @@ See `config/key_positions_visual.md` for a full matrix and position reference.
 ## Combo & Layer Logic
 
 ### Sticky Layer Combos (One-Shot)
-- **D+K (12+17):** Sticky NAVIGATION (from Default)
+- **D+K (12+17):** Sticky SYMBOL (from Default)
 - **E+I (2+7):** Sticky NUMBER (from Default)
-- **C+COMMA (22+27):** Sticky SYMBOL (from Default)
+- **C+COMMA (22+27):** Sticky FUNCTION (from Default)
 
 ### Shifted/Toggle Combos
 - **W+O (1+8):** Toggle NUMBER layer
-- **S+L (11+18):** Toggle NAVIGATION layer
-- **X+DOT (21+28):** Toggle SYMBOL layer
+- **S+L (11+18):** Toggle SYMBOL layer
+- **X+DOT (21+28):** Toggle FUNCTION layer
 
 ### Navigation/Default Layer Switching
 - **M+K, K+L, M+K+L:** Switch to NAVIGATION from any layer except NAVIGATION; same combos on NAVIGATION return to DEFAULT
@@ -78,7 +78,7 @@ See `config/key_positions_visual.md` for a full matrix and position reference.
 
 - **Mod-Tap (`mt`, `mth`, `mtb`):** Tap/hold with tap-preferred, hold-preferred, or balanced logic (200ms tapping term)
 - **Sticky Layer (`sl`, `long_sk`):** One-shot or long sticky layer (2s or 15s timeout)
-- **Layer-Tap (`lt`):** Tap for key, hold for layer (applied to key positions 2/7, 12/17, 22/27, except where transparent)
+- **Layer-Tap (`lt`):** Tap for key, hold for layer (applied to key positions 2/7 = NUMBER, 12/17 = SYMBOL, 22/27 = FUNCTION, except where transparent)
 - **Macros:** Quick actions (open terminal, lock session, double shift, paste git token, Overwatch comms, etc)
 - **Layer-Mod Macro (`lm`):** Temporarily switch to a layer while holding a modifier
 
