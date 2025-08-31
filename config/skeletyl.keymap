@@ -5,6 +5,15 @@
 #include <dt-bindings/zmk/input_transform.h>
 #include "skeletyl.combos"
 
+// Layer definitions
+#define DEFAULT 0
+#define SYMBOL 1
+#define NAVIGATION 2
+#define NUMBER 3
+#define FUNCTION 4
+#define MEDIA 5
+#define GAMING 6
+
 / {
     behaviors {   
         // Configure the built-in mod-tap behavior to use tap-preferred
@@ -111,7 +120,7 @@
                 bindings = 
                     <&macro_press &kp LA(TAB)>,  // Press Alt+Tab
                     <&macro_release &kp TAB>,    // Release Tab, keep Alt pressed
-                    <&to 5>,         // Switch to alt_tab_layer
+                    <&to MEDIA>,         // Switch to media layer (used as alt_tab layer)
                     <&macro_release &kp LALT>    // Release Alt when leaving the layer
                 ;
             };
@@ -137,7 +146,7 @@
             toggle_gaming: toggle_gaming {
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
-                bindings = <&tog 6>;  // Toggle gaming layer
+                bindings = <&tog GAMING>;  // Toggle gaming layer
             };
             
             alt_f4: alt_f4 {
@@ -153,8 +162,8 @@
         default_layer {
             bindings = <
                 &kp Q        &kp W      &kp E       &kp R        &kp T      &kp Y      &kp U        &kp I      &kp O      &kp P
-                &kp A        &kp S      &kp D       &kp F        &kp G      &kp H      &kp J        &kp K      &kp L      &kp APOS
-                &kp Z        &kp X      &kp C       &kp V        &kp B      &kp N      &kp M        &kp COMMA  &kp DOT    &kp SLASH
+                &mt LSHIFT A  &kp S      &kp D       &kp F        &kp G      &kp H      &kp J        &kp K      &kp L      &kp APOS
+                &mt LCTRL Z   &mt LALT X &kp C       &kp V        &kp B      &kp N      &kp M        &kp COMMA  &kp DOT    &kp SLASH
                                         &none       &none        &kp SPACE  &kp ENTER  &none        &none
             >;
         };
@@ -167,7 +176,7 @@
                                         &trans     &trans      &trans     &trans     &kp BSPC   &trans
             >;
         };
-        
+
         text_navigation_layer {
             bindings = <
                 &kp A        &kp V      &kp LALT   &kp TAB    &none      &kp R       &kp F        &kp Y     &kp BSPC     &kp PG_UP
@@ -200,15 +209,15 @@
                 &trans       &trans     &trans     &trans     &trans     &kp C_PREV  &kp C_VOL_DN &kp C_PP  &kp C_VOL_UP &kp C_NEXT
                 &trans       &trans     &trans     &trans     &trans     &trans      &trans       &trans    &trans       &trans
                 &trans       &trans     &trans     &trans     &trans     &trans      &trans       &trans    &trans       &trans
-                                        &none      &to 0      &none      &none       &none        &none
+                                        &none      &to DEFAULT      &none      &none       &none        &none
             >;
         };
 
         gaming_layer {
             bindings = <
-                &kp ESC       &kp Q      &kp W       &kp E        &kp R      &kp N2     &kp N3      &kp I      &kp O      &to 0
+                &kp ESC       &kp Q      &kp W       &kp E        &kp R      &kp N2     &kp N3      &kp I      &kp O      &to DEFAULT
                 &kp LSHFT      &kp A      &kp S       &kp D        &kp N4     &kp N5     &kp H       &kp J      &kp L      &kp RET
-                &long_sk W &kp Z      &kp X       &kp C        &kp V      &quick_hello &kp M      &kp TAB    &kp DOT    &to 0
+                &long_sk W &kp Z      &kp X       &kp C        &kp V      &quick_hello &kp M      &kp TAB    &kp DOT    &to DEFAULT
                                         &kp LSHIFT  &kp LCTRL    &kp SPACE  &kp Q      &quick_melee &kp F
             >;
         };
