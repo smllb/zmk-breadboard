@@ -152,55 +152,55 @@
 
         default_layer {
             bindings = <
-                &kp Q        &kp W      &kp E       &kp R        &kp T      &kp Y      &kp U        &kp I      &kp O      &lt 5 P
-                &mtb LSHIFT A &kp S      &lt 3 D     &lt 1 F      &kp G      &kp H      &lt 1 J      &kp K    &kp L      &kp BSPC
-                &mtb LCTRL Z  &mt LALT X      &kp C       &lt 2 V      &kp B      &kp N      &lt 2 M      &kp COMMA  &kp DOT    &mth RCTRL SLASH
-                                        &to 4  &kp ESC      &kp SPACE  &mt LALT ENTER &none &lm 5 LALT
+                &kp Q        &kp W      &kp E       &kp R        &kp T      &kp Y      &kp U        &kp I      &kp O      &kp P
+                &kp A        &kp S      &kp D       &kp F        &kp G      &kp H      &kp J        &kp K      &kp L      &kp APOS
+                &kp Z        &kp X      &kp C       &kp V        &kp B      &kp N      &kp M        &kp COMMA  &kp DOT    &kp SLASH
+                                        &none       &none        &kp SPACE  &kp ENTER  &none        &none
             >;
         };
 
         symbol_layer {
             bindings = <
-                &kp TILDE    &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp RBKT   &kp SEMI   &kp COLON  &kp MINUS  &kp EQUAL
-                &mth LSHIFT ASTRK    &kp PRCNT  &kp CARET  &kp AMPS   &kp SEMI   &kp LBKT   &kp LPAR   &kp RPAR   &kp UNDER  &kp APOS
-                &kp F4       &kp F5     &kp DEL   &kp RIGHT  &kp COLON   &kp BSLH      &kp LBRC   &kp RBRC   &kp PLUS   &kp PIPE
-                                        &kp LSHIFT &kp ESC    &kp SPACE  &kp BSPC   &mt LALT ENTER &trans
+                &kp TILDE    &kp EXCL   &kp AT     &kp DLLR    &kp AMPS   &kp RBKT   &kp COLON  &kp SEMI   &kp MINUS  &kp EQUAL
+                &kp HASH     &kp CARET  &kp PRCNT  &kp ASTRK   &trans     &kp LBKT   &kp LPAR   &kp RPAR   &kp UNDER  &kp PLUS
+                &trans       &trans     &trans     &trans      &trans     &kp BSLH   &kp LBRC   &kp RBRC   &kp PIPE   &trans
+                                        &trans     &trans      &trans     &trans     &kp BSPC   &trans
+            >;
+        };
+        
+        text_navigation_layer {
+            bindings = <
+                &kp A        &kp V      &kp LALT   &kp TAB    &none      &kp R       &kp F        &kp Y     &kp BSPC     &kp PG_UP
+                &kp LSHIFT   &kp X      &kp C      &kp LCTRL  &kp G      &kp B       &kp HOME     &kp UP    &kp RIGHT    &kp DEL
+                &kp Z        &none      &kp F4     &kp F5     &none      &kp D       &kp LEFT     &kp DOWN  &kp END      &kp PG_DN
+                                        &none      &kp SLASH  &kp SPACE  &kp ENTER   &kp BSPC     &none
             >;
         };
 
-        function_layer {
+        num_layer {
             bindings = <
-                &kp N1       &kp N2     &kp N3     &kp N4     &kp N5     &kp N6     &kp N7       &kp N8     &kp N9     &kp N0
-                &mt LSHIFT F1 &kp F2    &kp F3     &to 0      &to 0      &to 0      &lt 0 F11  &kp F7     &kp F8     &mt LSHIFT F9
-                &kp F4       &kp F5     &kp F6     &kp LEFT   &kp RIGHT  &trans      &kp F10      &kp COMMA    &kp DOT    &kp F12
-                                        &kp LSHIFT &mt LCTRL ESC &kp SPACE &kp BSPC &tog 2       &to 0
+                &kp N1       &kp N2     &kp N3     &kp N4     &kp N5     &kp N6     &kp N7     &kp N8     &kp N9     &kp N0
+                &trans       &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans
+                &trans       &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans
+                                        &trans     &trans     &trans     &trans     &kp BSPC   &trans
             >;
         };
 
-        media_layer {
+        fn_layer {
             bindings = <
-                &kp ESC      &trans      &kp HOME   &sl 1      &trans      &trans      &trans      &kp C_VOL_DN &kp C_PP   &kp C_VOL_UP
-                &mt LSHIFT A &kp TAB    &kp END    &kp LSHIFT &trans      &trans      &kp LALT   &kp UP      &kp RIGHT  &kp LALT
-                &kp LCTRL    &trans      &kp C      &kp V      &trans      &kp C_MUTE &kp LEFT   &kp DOWN    &kp PG_UP  &kp PG_DN
-                                        &kp LALT   &mt LCTRL ESC &kp SPACE &kp BSPC &mt LALT ENTER &to 0
+                &kp F1       &kp F2     &kp F3     &kp F4     &kp F5     &kp F6     &kp F7     &kp F8     &kp F9     &kp F10
+                &kp F11      &kp F12    &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans
+                &trans       &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans     &trans
+                                        &trans     &trans     &trans     &trans     &kp BSPC   &trans
             >;
         };
 
-        bluetooth_layer {
+        general_media {
             bindings = <
-                &none        &none        &none        &none        &none    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-                &none        &none        &none        &none        &none         &none         &none         &none         &out OUT_TOG  &none
-                &bt BT_PRV   &bt BT_NXT   &none        &to 4        &none         &bt BT_CLR         &none         &none         &none         &none
-                                          &to 0        &none        &to 4         &none         &none         &to 0
-            >;
-        };
-
-        alt_tab_layer {
-            bindings = <
-                &trans        &trans      &kp LS(TAB)      &kp TAB &trans       &trans      &kp LA(LS(TAB)) &trans      &trans      &trans
-                &trans        &trans      &kp LA(LS(TAB))  &kp LA(TAB) &trans       &trans      &trans      &trans      &trans      &trans
-                &trans        &trans      &trans           &kt LALT    &trans       &trans      &trans      &trans      &trans      &trans
-                                        &trans        &trans      &kp LA(TAB) &trans   &to 0   &trans      
+                &trans       &trans     &trans     &trans     &trans     &kp C_PREV  &kp C_VOL_DN &kp C_PP  &kp C_VOL_UP &kp C_NEXT
+                &trans       &trans     &trans     &trans     &trans     &trans      &trans       &trans    &trans       &trans
+                &trans       &trans     &trans     &trans     &trans     &trans      &trans       &trans    &trans       &trans
+                                        &none      &to 0      &none      &none       &none        &none
             >;
         };
 
