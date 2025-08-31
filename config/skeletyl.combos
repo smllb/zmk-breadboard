@@ -153,18 +153,6 @@
             layers = <NAVIGATION>; // Only on NAVIGATION layer
         };
         
-        combo_nav_kl {
-            timeout-ms = <30>;
-            key-positions = <17 18>; // K + L
-            bindings = <&to NAVIGATION>;
-            layers = <DEFAULT SYMBOL NUMBER FUNCTION MEDIA GAMING>; // All layers except NAVIGATION
-        };
-        combo_default_kl {
-            timeout-ms = <30>;
-            key-positions = <17 18>; // K + L
-            bindings = <&to DEFAULT>;
-            layers = <NAVIGATION>; // Only on NAVIGATION layer
-        };
         
         combo_nav_mkl {
             timeout-ms = <30>;
