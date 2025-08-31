@@ -31,34 +31,117 @@
 
 / {
     combos {
-        compatible = "zmk,combos";
+        // On SYMBOL layer: 12+13 and 16+17 send to DEFAULT
+        combo_symbol_1213_to_default {
+            timeout-ms = <15>;
+            key-positions = <12 13>; // 12 + 13
+            bindings = <&to DEFAULT>;
+            layers = <SYMBOL>;
+        };
+        combo_symbol_1617_to_default {
+            timeout-ms = <15>;
+            key-positions = <16 17>; // 16 + 17
+            bindings = <&to DEFAULT>;
+            layers = <SYMBOL>;
+        };
 
-        combo_layer0_leftup {
-            timeout-ms = <30>;
-            key-positions = <25 27>; // LEFT + UP
+        // On FUNCTION layer: 12+13 and 16+17 send to DEFAULT
+        combo_function_1213_to_default {
+            timeout-ms = <15>;
+            key-positions = <12 13>; // 12 + 13
             bindings = <&to DEFAULT>;
+            layers = <FUNCTION>;
         };
-        combo_layer0_leftupright {
-            timeout-ms = <30>;
-            key-positions = <25 27 28>; // LEFT + UP + RIGHT
+        combo_function_1617_to_default {
+            timeout-ms = <15>;
+            key-positions = <16 17>; // 16 + 17
             bindings = <&to DEFAULT>;
+            layers = <FUNCTION>;
         };
-        combo_layer0_rightup {
-            timeout-ms = <30>;
-            key-positions = <28 27>; // RIGHT + UP
-            bindings = <&to DEFAULT>;
+        // New: Sticky NUMBER layer with 2 + 3
+        combo_sticky_number_23 {
+            timeout-ms = <15>;
+            key-positions = <2 3>; // 2 + 3
+            bindings = <&sl NUMBER>; // Sticky NUMBER layer
         };
-        combo_bluetooth_bn {
-            timeout-ms = <30>;
-            key-positions = <24 25>; // B + N
-            bindings = <&tog FUNCTION>;
+
+        // New: Sticky SYMBOL layer with 12 + 13
+        combo_sticky_symbol_1213 {
+            timeout-ms = <15>;
+            key-positions = <12 13>; // 12 + 13
+            bindings = <&sl SYMBOL>; // Sticky SYMBOL layer
         };
-        
-        combo_terminal_sl {
-            timeout-ms = <50>;
-            key-positions = <14 18>; // S + L
-            bindings = <&open_terminal>;
+
+        // New: Sticky FUNCTION layer with 22 + 23
+        combo_sticky_function_2223 {
+            timeout-ms = <15>;
+            key-positions = <22 23>; // 22 + 23
+            bindings = <&sl FUNCTION>; // Sticky FUNCTION layer
         };
+
+        // New: Sticky NUMBER layer with 6 + 7
+        combo_sticky_number_67 {
+            timeout-ms = <15>;
+            key-positions = <6 7>; // 6 + 7
+            bindings = <&sl NUMBER>; // Sticky NUMBER layer
+        };
+
+        // New: Sticky SYMBOL layer with 16 + 17
+        combo_sticky_symbol_1617 {
+            timeout-ms = <15>;
+            key-positions = <16 17>; // 16 + 17
+            bindings = <&sl SYMBOL>; // Sticky SYMBOL layer
+        };
+
+        // New: Sticky FUNCTION layer with 26 + 27
+        combo_sticky_function_2627 {
+            timeout-ms = <15>;
+            key-positions = <26 27>; // 26 + 27
+            bindings = <&sl FUNCTION>; // Sticky FUNCTION layer
+        };
+        compatible = "zmk,combos";
+                // New: Toggle NUMBER layer with 7 + 8
+        combo_toggle_number_78 {
+            timeout-ms = <15>;
+            key-positions = <7 8>; // 7 + 8
+            bindings = <&tog NUMBER>; // Toggle NUMBER layer
+        };
+
+        // New: Toggle SYMBOL layer with 17 + 18
+        combo_toggle_symbol_1718 {
+            timeout-ms = <15>;
+            key-positions = <17 18>; // 17 + 18
+            bindings = <&tog SYMBOL>; // Toggle SYMBOL layer
+        };
+
+        // New: Toggle FUNCTION layer with 27 + 28
+        combo_toggle_function_2728 {
+            timeout-ms = <15>;
+            key-positions = <27 28>; // 27 + 28
+            bindings = <&tog FUNCTION>; // Toggle FUNCTION layer
+        };
+
+        // New: Toggle NUMBER layer with 1 + 2
+        combo_toggle_number_12 {
+            timeout-ms = <15>;
+            key-positions = <1 2>; // 1 + 2
+            bindings = <&tog NUMBER>; // Toggle NUMBER layer
+        };
+
+        // New: Toggle SYMBOL layer with 11 + 12
+        combo_toggle_symbol_1112 {
+            timeout-ms = <15>;
+            key-positions = <11 12>; // 11 + 12
+            bindings = <&tog SYMBOL>; // Toggle SYMBOL layer
+        };
+
+        // New: Toggle FUNCTION layer with 21 + 22
+        combo_toggle_function_2122 {
+            timeout-ms = <15>;
+            key-positions = <21 22>; // 21 + 22
+            bindings = <&tog FUNCTION>; // Toggle FUNCTION layer
+        };
+
         combo_gui_fk {
             timeout-ms = <50>;
             key-positions = <13 16>; // F + K not working not working 
@@ -87,26 +170,6 @@
             key-positions = <0 1>;
             bindings = <&kp ESC>; // working
         }; 
-        
-        combo_gaming_wsd {
-            timeout-ms = <50>;
-            key-positions = <1 11 12>; // W + S + D
-            bindings = <&tog GAMING>;  // Toggle gaming layer working 
-        };
-        
-        combo_gaming_sdf {
-            timeout-ms = <50>;
-            key-positions = <11 12 13>; // S + D + F
-            bindings = <&to GAMING>;   // Go to gaming layer
-            layers = <DEFAULT>;        // Only active on default layer working
-        };
-        
-        combo_bt_clear_all {
-            timeout-ms = <75>;
-            key-positions = <10 19>;    // First and last keys of second row (positions 10 and 19)
-            bindings = <&bt BT_CLR_ALL>; // Clear all BT profiles
-            layers = <FUNCTION>;        // Only active on Bluetooth/Function layer working
-        };
         
         combo_alt_f4 {
             timeout-ms = <50>;

@@ -48,18 +48,80 @@ See `config/key_positions_visual.md` for a full matrix and position reference.
 
 ## Combo & Layer Logic
 
+---
+
+## Layer Access Summary
+
+---
+
+## Layer Access: Detailed Combo Map
+
+### NUMBER Layer
+- **Enter from DEFAULT:**
+	- Combos: 2+7, 1+8, 7+8, 1+2, 6+7, 2+3 (all toggle, 15ms)
+- **Enter from NUMBER:**
+	- Same combos (toggle, 15ms)
+- **Exit to DEFAULT:**
+	- Same combos (toggle, 15ms)
+
+### SYMBOL Layer
+- **Enter from DEFAULT:**
+	- Combos: 12+17, 11+18, 17+18, 11+12, 16+17, 12+13 (all toggle, 15ms)
+- **Enter from SYMBOL:**
+	- Same combos (toggle, 15ms)
+- **Exit to DEFAULT:**
+	- Combos: 12+13, 16+17 (on SYMBOL, to DEFAULT, 15ms)
+	- All entry combos also act as exit (toggle, 15ms)
+
+### FUNCTION Layer
+- **Enter from DEFAULT:**
+	- Combos: 22+27, 21+28, 27+28, 21+22, 22+23, 26+27 (all toggle, 15ms)
+- **Enter from FUNCTION:**
+	- Same combos (toggle, 15ms)
+- **Exit to DEFAULT:**
+	- Combos: 22+23, 26+27 (on FUNCTION, to DEFAULT, 15ms)
+	- All entry combos also act as exit (toggle, 15ms)
+
+### NAVIGATION Layer
+- **Enter from DEFAULT:**
+	- Combos: 26+17, 26+17+18 (to, 30ms)
+- **Enter from any other layer:**
+	- Combos: 26+17, 26+17+18 (to, 30ms)
+- **Exit to DEFAULT:**
+	- Combos: 26+17, 26+17+18 (on NAVIGATION, to DEFAULT, 30ms)
+
+**All combos are mirrored for left/right and top/bottom hand positions where possible.**
+**Timeouts:** 15ms for most combos, 30ms for navigation combos.
+
 ### Sticky Layer Combos (One-Shot)
 - **D+K (12+17):** Sticky SYMBOL (from Default)
 - **E+I (2+7):** Sticky NUMBER (from Default)
 - **C+COMMA (22+27):** Sticky FUNCTION (from Default)
 
 ### Shifted/Toggle Combos
-- **W+O (1+8):** Toggle NUMBER layer
-- **S+L (11+18):** Toggle SYMBOL layer
-- **X+DOT (21+28):** Toggle FUNCTION layer
+- **W+O (1+8), 7+8, 1+2, 6+7:** Toggle NUMBER layer
+- **S+L (11+18), 17+18, 11+12, 16+17:** Toggle SYMBOL layer
+- **X+DOT (21+28), 27+28, 21+22, 22+23, 26+27:** Toggle FUNCTION layer
 
-### Navigation/Default Layer Switching
-- **M+K, K+L, M+K+L:** Switch to NAVIGATION from any layer except NAVIGATION; same combos on NAVIGATION return to DEFAULT
+#### LED/Side Combos (all 15ms timeout, toggle mode)
+- **2+3, 6+7:** Toggle NUMBER layer
+- **12+13, 16+17:** Toggle SYMBOL layer
+- **22+23, 26+27:** Toggle FUNCTION layer
+
+#### Layer Return Combos
+- **On SYMBOL or FUNCTION layers:**
+	- **12+13, 16+17:** Instantly return to DEFAULT layer
+
+
+---
+
+## Navigation Combos (Between Layers)
+
+- **M+K, M+K+L:** Switch to NAVIGATION from any layer except NAVIGATION; same combos on NAVIGATION return to DEFAULT
+- **26+17, 26+17+18:** To NAVIGATION (from any non-NAVIGATION layer)
+- **26+17, 26+17+18 (on NAVIGATION):** Return to DEFAULT
+
+---
 
 ### Other Combos
 - **Q+P:** Tilde (~)
@@ -105,9 +167,48 @@ See `config/key_positions_visual.md` for a full matrix and position reference.
 
 ## Maintainer Notes
 
-- All layer and combo logic is up-to-date with the current firmware
-- Outdated notations and legacy info have been removed
-- For further customization, see comments in each config file
-- Enhanced Bluetooth connectivity with higher power and improved reliability
 
-- Split keyboard configuration with BLE
+---
+
+## Navigation Hierarchy Scheme
+
+The Skeletyl navigation is designed for fast, mirrored, and intuitive layer switching. Combos are mapped so you can both enter and exit layers with the same or adjacent finger positions.
+
+### Visual Layer Navigation Map
+
+```mermaid
+flowchart TD
+	DEFAULT((Default Layer))
+	NUMBER((Number Layer))
+	SYMBOL((Symbol Layer))
+	FUNCTION((Function Layer))
+	NAV((Navigation Layer))
+
+	DEFAULT -- "Combo: 2+7, 1+8, 7+8, 1+2, 6+7, 2+3" --> NUMBER
+	DEFAULT -- "Combo: 12+17, 11+18, 17+18, 11+12, 16+17, 12+13" --> SYMBOL
+	DEFAULT -- "Combo: 22+27, 21+28, 27+28, 21+22, 22+23, 26+27" --> FUNCTION
+	DEFAULT -- "Combo: 26+17, 17+18, 26+17+18" --> NAV
+
+	NUMBER -- "Same combos (e.g. 2+7, 7+8, 1+2, 6+7, 2+3)" --> DEFAULT
+	SYMBOL -- "Same combos (e.g. 12+17, 17+18, 11+12, 16+17, 12+13)" --> DEFAULT
+	FUNCTION -- "Same combos (e.g. 22+27, 27+28, 21+22, 22+23, 26+27)" --> DEFAULT
+	NAV -- "Combo: 26+17, 17+18, 26+17+18" --> DEFAULT
+
+```
+
+#### Combo Mapping Table
+
+| Combo Positions | From Layer | To Layer   | Timeout | Mode   |
+|----------------|------------|------------|---------|--------|
+| 2+7, 1+8, 7+8, 1+2, 6+7, 2+3 | DEFAULT    | NUMBER     | 15ms    | Toggle |
+| 12+17, 11+18, 17+18, 11+12, 16+17, 12+13 | DEFAULT    | SYMBOL     | 15ms    | Toggle |
+| 22+27, 21+28, 27+28, 21+22, 22+23, 26+27 | DEFAULT    | FUNCTION   | 15ms    | Toggle |
+| 26+17, 17+18, 26+17+18 | DEFAULT    | NAVIGATION | 30ms    | To     |
+| 2+7, 7+8, 1+2, 6+7, 2+3 | NUMBER     | DEFAULT     | 15ms    | Toggle |
+| 12+17, 17+18, 11+12, 16+17, 12+13 | SYMBOL     | DEFAULT     | 15ms    | Toggle |
+| 22+27, 27+28, 21+22, 22+23, 26+27 | FUNCTION   | DEFAULT     | 15ms    | Toggle |
+| 26+17, 17+18, 26+17+18 | NAVIGATION | DEFAULT     | 30ms    | To     |
+
+**Mirrored combos**: All combos are available on both left/right and top/bottom sides for fast access.
+
+**Timeouts**: Most combos use 15ms for speed, except navigation combos (30ms).
