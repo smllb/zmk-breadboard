@@ -31,6 +31,21 @@
 
 / {
     combos {
+        // Toggle MEDIA layer with 8 + 9 (all except MEDIA)
+        combo_toggle_media_89 {
+            timeout-ms = <30>;
+            key-positions = <8 9>; // 8 + 9
+            bindings = <&tog MEDIA>; // Toggle MEDIA layer
+            layers = <DEFAULT SYMBOL NAVIGATION NUMBER FUNCTION GAMING>; // All except MEDIA
+        };
+
+        // On MEDIA layer: 8 + 9 returns to DEFAULT
+        combo_media_89_to_default {
+            timeout-ms = <30>;
+            key-positions = <8 9>; // 8 + 9
+            bindings = <&to DEFAULT>;
+            layers = <MEDIA>;
+        };
         // On SYMBOL layer: 12+13 and 16+17 send to DEFAULT
         combo_symbol_1213_to_default {
             timeout-ms = <15>;
