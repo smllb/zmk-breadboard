@@ -56,42 +56,41 @@ See `config/key_positions_visual.md` for a full matrix and position reference.
 
 ## Layer Access: Detailed Combo Map
 
+
 ### NUMBER Layer
-- **Enter from DEFAULT:**
-	- Combos: 2+7, 1+8, 7+8, 1+2, 6+7, 2+3 (all toggle, 15ms)
-- **Enter from NUMBER:**
-	- Same combos (toggle, 15ms)
-- **Exit to DEFAULT:**
-	- Same combos (toggle, 15ms)
+- **Sticky combos (one-shot, 15ms):**
+	- 2+7 (E+I), 2+3, 6+7 — only on DEFAULT layer
+- **Toggle combos (15ms):**
+	- 1+8, 7+8, 1+2 — global
+- **Return to DEFAULT:**
+	- 11+12, 17+18, 12+17 — on all non-DEFAULT layers
 
 ### SYMBOL Layer
-- **Enter from DEFAULT:**
-	- Combos: 12+17, 11+18, 17+18, 11+12, 16+17, 12+13 (all toggle, 15ms)
-- **Enter from SYMBOL:**
-	- Same combos (toggle, 15ms)
-- **Exit to DEFAULT:**
-	- Combos: 12+13, 16+17 (on SYMBOL, to DEFAULT, 15ms)
-	- All entry combos also act as exit (toggle, 15ms)
+- **Sticky combos (one-shot, 15ms):**
+	- 12+17 (D+K), 12+13, 16+17 — only on DEFAULT layer
+- **Toggle combos (15ms):**
+	- 11+18, 17+18, 11+12, 16+17 — global
+- **Return to DEFAULT:**
+	- 11+12, 17+18, 12+17 — on all non-DEFAULT layers
 
 ### FUNCTION Layer
-- **Enter from DEFAULT:**
-	- Combos: 22+27, 21+28, 27+28, 21+22, 22+23, 26+27 (all toggle, 15ms)
-- **Enter from FUNCTION:**
-	- Same combos (toggle, 15ms)
-- **Exit to DEFAULT:**
-	- Combos: 22+23, 26+27 (on FUNCTION, to DEFAULT, 15ms)
-	- All entry combos also act as exit (toggle, 15ms)
+- **Sticky combos (one-shot, 15ms):**
+	- 22+27 (C+COMMA), 22+23, 26+27 — only on DEFAULT layer
+- **Toggle combos (15ms):**
+	- 21+28, 27+28, 21+22, 22+23, 26+27 — global
+- **Return to DEFAULT:**
+	- 11+12, 17+18, 12+17 — on all non-DEFAULT layers
 
 ### NAVIGATION Layer
-- **Enter from DEFAULT:**
-	- Combos: 26+17, 26+17+18 (to, 30ms)
-- **Enter from any other layer:**
-	- Combos: 26+17, 26+17+18 (to, 30ms)
-- **Exit to DEFAULT:**
-	- Combos: 26+17, 26+17+18 (on NAVIGATION, to DEFAULT, 30ms)
+- **To NAVIGATION (30ms):**
+	- 26+17, 26+17+18 — from all layers except NAVIGATION
+- **Return to DEFAULT:**
+	- 26+17, 26+17+18 — on NAVIGATION layer
 
-**All combos are mirrored for left/right and top/bottom hand positions where possible.**
-**Timeouts:** 15ms for most combos, 30ms for navigation combos.
+**Note:**
+- Sticky combos are only active on the DEFAULT layer to avoid overlap with return-to-default combos.
+- Toggle combos are global unless otherwise noted.
+- Combos 11+12, 17+18, 12+17 always return to DEFAULT when pressed on any non-DEFAULT layer.
 
 ### Sticky Layer Combos (One-Shot)
 - **D+K (12+17):** Sticky SYMBOL (from Default)
