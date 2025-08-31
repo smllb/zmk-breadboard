@@ -31,44 +31,6 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_nav_mk {
-            timeout-ms = <30>;
-            key-positions = <26 17>; // M + K
-            bindings = <&to NAVIGATION>;
-            layers = <DEFAULT SYMBOL NUMBER FUNCTION MEDIA GAMING>; // All layers except NAVIGATION
-        };
-        combo_default_mk {
-            timeout-ms = <30>;
-            key-positions = <26 17>; // M + K
-            bindings = <&to DEFAULT>;
-            layers = <NAVIGATION>; // Only on NAVIGATION layer
-        };
-        
-        combo_nav_kl {
-            timeout-ms = <30>;
-            key-positions = <17 18>; // K + L
-            bindings = <&to NAVIGATION>;
-            layers = <DEFAULT SYMBOL NUMBER FUNCTION MEDIA GAMING>; // All layers except NAVIGATION
-        };
-        combo_default_kl {
-            timeout-ms = <30>;
-            key-positions = <17 18>; // K + L
-            bindings = <&to DEFAULT>;
-            layers = <NAVIGATION>; // Only on NAVIGATION layer
-        };
-        
-        combo_nav_mkl {
-            timeout-ms = <30>;
-            key-positions = <26 17 18>; // M + K + L
-            bindings = <&to NAVIGATION>;
-            layers = <DEFAULT SYMBOL NUMBER FUNCTION MEDIA GAMING>; // All layers except NAVIGATION
-        };
-        combo_default_mkl {
-            timeout-ms = <30>;
-            key-positions = <26 17 18>; // M + K + L
-            bindings = <&to DEFAULT>;
-            layers = <NAVIGATION>; // Only on NAVIGATION layer
-        };
         combo_layer0_leftup {
             timeout-ms = <30>;
             key-positions = <25 27>; // LEFT + UP
@@ -186,5 +148,44 @@
             layers = <SYMBOL NAVIGATION NUMBER FUNCTION MEDIA GAMING>; // Active on all layers except default
         };
 
+        
+        combo_nav_mk {
+            timeout-ms = <30>;
+            key-positions = <26 17>; // M + K
+            bindings = <&to NAVIGATION>;
+            layers = <DEFAULT SYMBOL NUMBER FUNCTION MEDIA GAMING>; // All layers except NAVIGATION
+        };
+        combo_default_mk {
+            timeout-ms = <30>;
+            key-positions = <26 17>; // M + K
+            bindings = <&to DEFAULT>;
+            layers = <NAVIGATION>; // Only on NAVIGATION layer
+        };
+        
+        combo_nav_kl {
+            timeout-ms = <30>;
+            key-positions = <17 18>; // K + L
+            bindings = <&to NAVIGATION>;
+            layers = <DEFAULT SYMBOL NUMBER FUNCTION MEDIA GAMING>; // All layers except NAVIGATION
+        };
+        combo_default_kl {
+            timeout-ms = <30>;
+            key-positions = <17 18>; // K + L
+            bindings = <&to DEFAULT>;
+            layers = <NAVIGATION>; // Only on NAVIGATION layer
+        };
+        
+        combo_nav_mkl {
+            timeout-ms = <30>;
+            key-positions = <26 17 18>; // M + K + L
+            bindings = <&to NAVIGATION>;
+            layers = <DEFAULT SYMBOL NUMBER FUNCTION MEDIA GAMING>; // All layers except NAVIGATION
+        };
+        combo_default_mkl {
+            timeout-ms = <30>;
+            key-positions = <26 17 18>; // M + K + L
+            bindings = <&to DEFAULT>;
+            layers = <NAVIGATION>; // Only on NAVIGATION layer
+        };
     };
 };
