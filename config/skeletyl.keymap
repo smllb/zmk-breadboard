@@ -26,6 +26,7 @@
         // Mod-morph: O normally, Backspace when Shift is held
         mod_morph_o_backspace: mod_morph_o_backspace {
             compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
             bindings = <&kp O &kp BSPC>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
