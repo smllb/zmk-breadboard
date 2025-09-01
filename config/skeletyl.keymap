@@ -233,10 +233,10 @@
 
         BT {
             bindings = <
-                &bt_sel 0     &bt_sel 1     &bt_sel 2     &bt_sel 3     &bt_sel 4     &bt_sel 5     &none         &none         &none         &none         &none
-                &none         &none         &none         &none         &none         &none         &none         &none         &bt_next      &none
-                &bt_clr       &bt_prev      &none         &none         &none         &none         &none         &none         &none         &none
-                &none         &none         &none         &none         &none         &none
+                &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4     &none         &none       &none        &none            &none
+                &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4         &none         &none         &none         &bt BT_NXT      &none
+                &none       &none         &none         &none         &none         &bt BT_CLR         &bt BT_PRV         &none         &none         &none
+                &to DEFAULT         &none         &none         &none         &none         &to DEFAULT
             >;
         };
     };

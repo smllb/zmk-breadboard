@@ -72,6 +72,13 @@
             bindings = <&to DEFAULT>;
             layers = <BT>;
         };
+        // On BT: 20 + 32 + 33 + 29 sends BT_CLR_ALL
+        combo_bt_clr_all_20_32_33_29 {
+            timeout-ms = <30>;
+            key-positions = <20 32 33 29>; // 20 + 32 + 33 + 29
+            bindings = <&bt BT_CLR_ALL>;
+            layers = <BT>;
+        };
         // Toggle MEDIA layer with 8 + 9 (all except MEDIA)
         combo_toggle_media_89 {
             timeout-ms = <30>;
@@ -231,7 +238,7 @@
 
         combo_gui_fk {
             timeout-ms = <50>;
-            key-positions = <13 16>; // F + K not working not working 
+            key-positions = <13 16>; // F + K
             bindings = <&kp LGUI>;
         };
         combo_git_token_xdot {
