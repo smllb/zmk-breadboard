@@ -178,7 +178,7 @@
         default_layer {
             bindings = <
                 &kp Q         &kp W         &lt FUNCTION E   &kp R         &kp T         &kp Y         &kp U         &lt FUNCTION I   &mod_morph_o_backspace &kp P
-                &mtb LSHIFT A  A  &kp S         &lt SYMBOL D   &kp F         &kp G         &kp H         &kp J         &lt SYMBOL K   &kp L         &mt MOD_LSFT APOS
+                &mtb LSHIFT A &kp S         &lt SYMBOL D   &kp F         &kp G         &kp H         &kp J         &lt SYMBOL K   &kp L         &mt MOD_LSFT APOS
                 &mt LCTRL Z   &mt LALT X    &lt NUMBER C &kp V         &kp B         &kp N         &kp M         &lt NUMBER COMMA &kp DOT   &mt LCTRL SLASH
                 &none         &none         &kp SPACE    &kp ENTER     &none         &none
             >;
