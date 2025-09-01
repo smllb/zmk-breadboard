@@ -16,6 +16,10 @@
  * RIGHT+UP = Go to Default Layer
  * S+D+F = Go to Gaming Layer (Overwatch)
  * G+B = Toggle Gaming Layer (Overwatch)
+ * J+K (16+17) = Toggle Symbol Layer from Default / Go back to Default from Symbol Layer
+ * D+F (12+13) = Toggle Symbol Layer from Default / Go back to Default from Symbol Layer
+ * M+K (26+17) = Toggle Navigation Layer from Default / Go back to Default from Navigation Layer
+ * M+COMMA (26+27) = Toggle Function Layer from Default / Go back to Default from Function Layer
  */
 
 // Layer definitions - copied from skeletyl.keymap for consistency
@@ -83,6 +87,54 @@
             bindings = <&to DEFAULT>;
             layers = <SYMBOL>;
         };
+        
+        // New combo for toggling symbol layer with D+F (keys 12+13)
+        combo_toggle_sym_12_13 {
+            timeout-ms = <25>;
+            key-positions = <12 13>;
+            bindings = <&tog SYMBOL>;
+            layers = <DEFAULT NUMBER NAVIGATION FUNCTION MEDIA BT GAMING>;
+        };
+        
+        // Return to default when pressing D+F in symbol layer
+        combo_sym_12_13_to_default {
+            timeout-ms = <25>;
+            key-positions = <12 13>;
+            bindings = <&to DEFAULT>;
+            layers = <SYMBOL>;
+        };
+        
+        // New combo for toggling navigation layer with M+K (keys 26+17)
+        combo_toggle_nav_26_17 {
+            timeout-ms = <25>;
+            key-positions = <26 17>;
+            bindings = <&tog NAVIGATION>;
+            layers = <DEFAULT NUMBER SYMBOL FUNCTION MEDIA BT GAMING>;
+        };
+        
+        // Return to default when pressing M+K in navigation layer
+        combo_nav_26_17_to_default {
+            timeout-ms = <25>;
+            key-positions = <26 17>;
+            bindings = <&to DEFAULT>;
+            layers = <NAVIGATION>;
+        };
+        
+        // New combo for toggling function layer with M+COMMA (keys 26+27)
+        combo_toggle_func_26_27 {
+            timeout-ms = <25>;
+            key-positions = <26 27>;
+            bindings = <&tog FUNCTION>;
+            layers = <DEFAULT NUMBER SYMBOL NAVIGATION MEDIA BT GAMING>;
+        };
+        
+        // Return to default when pressing M+COMMA in function layer
+        combo_func_26_27_to_default {
+            timeout-ms = <25>;
+            key-positions = <26 27>;
+            bindings = <&to DEFAULT>;
+            layers = <FUNCTION>;
+        };
         combo_sticky_sym_17_18 {
             timeout-ms = <25>;
             key-positions = <17 18>;
@@ -92,6 +144,22 @@
         combo_sticky_sym_17_18_to_default {
             timeout-ms = <25>;
             key-positions = <17 18>;
+            bindings = <&to DEFAULT>;
+            layers = <SYMBOL>;
+        };
+        
+        // New combo for toggling symbol layer with J+K (keys 16+17)
+        combo_toggle_sym_16_17 {
+            timeout-ms = <25>;
+            key-positions = <16 17>;
+            bindings = <&tog SYMBOL>;
+            layers = <DEFAULT NUMBER NAVIGATION FUNCTION MEDIA BT GAMING>;
+        };
+        
+        // Return to default when pressing J+K in symbol layer
+        combo_sym_16_17_to_default {
+            timeout-ms = <25>;
+            key-positions = <16 17>;
             bindings = <&to DEFAULT>;
             layers = <SYMBOL>;
         };
