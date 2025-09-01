@@ -33,6 +33,55 @@
 / {
     combos {
         compatible = "zmk,combos";
+        // === Sticky and Toggle Layer Combos (25ms timeout) ===
+
+        // --- Number Layer ---
+        // Sticky: 2+3
+        combo_sticky_num_2_3 {
+            timeout-ms = <25>;
+            key-positions = <2 3>;
+            bindings = <&sl NUMBER>;
+            layers = <DEFAULT SYMBOL NAVIGATION FUNCTION MEDIA BT GAMING>;
+        };
+        // On NUMBER: 2+3 returns to DEFAULT
+        combo_sticky_num_2_3_to_default {
+            timeout-ms = <25>;
+            key-positions = <2 3>;
+            bindings = <&to DEFAULT>;
+            layers = <NUMBER>;
+        };
+
+        // --- Symbol Layer ---
+        // Sticky: 12+13
+        combo_sticky_sym_12_13 {
+            timeout-ms = <25>;
+            key-positions = <12 13>;
+            bindings = <&sl SYMBOL>;
+            layers = <DEFAULT NUMBER NAVIGATION FUNCTION MEDIA BT GAMING>;
+        };
+        // On SYMBOL: 12+13 returns to DEFAULT
+        combo_sticky_sym_12_13_to_default {
+            timeout-ms = <25>;
+            key-positions = <12 13>;
+            bindings = <&to DEFAULT>;
+            layers = <SYMBOL>;
+        };
+
+        // --- Function Layer ---
+        // Sticky: 22+23
+        combo_sticky_fun_22_23 {
+            timeout-ms = <25>;
+            key-positions = <22 23>;
+            bindings = <&sl FUNCTION>;
+            layers = <DEFAULT NUMBER SYMBOL NAVIGATION MEDIA BT GAMING>;
+        };
+        // On FUNCTION: 22+23 returns to DEFAULT
+        combo_sticky_fun_22_23_to_default {
+            timeout-ms = <25>;
+            key-positions = <22 23>;
+            bindings = <&to DEFAULT>;
+            layers = <FUNCTION>;
+        };
 
         // Toggle GAMING layer with 11 + 2 + 13 (all except GAMING)
         combo_toggle_gaming_11213 {
