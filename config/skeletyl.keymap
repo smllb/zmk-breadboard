@@ -250,8 +250,8 @@
 
         tab_layer {
             bindings = <
-                &kp ESC         &none         &kp LS(TAB)   &kp TAB         &none         &none         &none         &none         &none         &none
-                &kp CAPSLOBKC &none         &none         &kp LA(LS(TAB))   &kp LA(TAB)         &none         &none         &none         &none         &none         &none       &none
+                &kp ESC       &none         &kp LS(TAB)   &kp TAB       &none         &none         &none         &none         &none         &none
+                &kp CAPS      &none         &kp LA(LS(TAB)) &kp LA(TAB) &none         &none         &none         &none         &none         &none
                 &none         &none         &none         &none         &none         &none         &none         &none         &none         &none
                 &none         &none         &none         &none         &none         &none
             >;
