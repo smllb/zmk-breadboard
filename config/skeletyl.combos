@@ -31,6 +31,8 @@
 
 / {
     combos {
+        compatible = "zmk,combos";
+        
         // Toggle GAMING layer with 11 + 2 + 13 (all except GAMING)
         combo_toggle_gaming_11213 {
             timeout-ms = <30>;
@@ -177,7 +179,7 @@
                 bindings = <&to DEFAULT>;
                 layers = <SYMBOL FUNCTION NUMBER NAVIGATION MEDIA GAMING>;
             };
-        compatible = "zmk,combos";
+
                 // New: Toggle NUMBER layer with 7 + 8
         combo_toggle_number_78 {
             timeout-ms = <15>;
