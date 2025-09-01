@@ -249,8 +249,8 @@
 
         gaming_layer {
             bindings = <
-                &kp ESC       &kp Q         &lt NUMBER W    &kp E         &kp R         &kp N2        &kp N3        &lt NUMBER I    &kp O         &to DEFAULT
-                &kp MOD_LSFT  &kp A         &lt SYMBOL S    &kp D         &kp N4        &kp N5        &kp H         &lt SYMBOL J    &kp L         &kp RET
+                &kp ESC       &kp Q         &kp W    &kp E         &kp R         &kp N2        &kp N3        &lt NUMBER I    &kp O         &to DEFAULT
+                &kp MOD_LSFT  &kp A         &kp S    &kp D         &kp N4        &kp N5        &kp H         &lt SYMBOL J    &kp L         &kp RET
                 &long_sk W    &kp Z         &kp X  &kp C         &kp V         &quick_hello  &kp M         &lt FUNCTION TAB &kp DOT      &to DEFAULT
                 &kp MOD_LSFT  &kp LCTRL     &kp SPACE     &kp Q         &quick_melee   &kp F
             >;
