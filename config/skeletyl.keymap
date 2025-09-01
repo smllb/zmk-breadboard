@@ -20,14 +20,23 @@
 #define MEDIA 5
 #define GAMING 6
 #define BT 7
+#define TAB_LAYER 8
 
 / {
     behaviors {
-        // Mod-morph: O normally, Backspace when Shift is held
+        // Tap-dance for O: o on single tap, O on double tap
+        td_o: tap_dance_o {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp O>, <&kp LS(O)>;
+        };
+        
+        // Mod-morph: tap-dance O normally, Backspace when Shift is held
         mod_morph_o_backspace: mod_morph_o_backspace {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp O &kp BSPC>;
+            bindings = <&td_o &kp BSPC>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         // Configure the built-in mod-tap behavior to use tap-preferred
@@ -66,7 +75,15 @@
             quick-release;
         };
         
-
+        // P tap and Layer + Modifier on hold behavior
+        p_lm: p_tap_layer_mod {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <3>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            bindings = <&lm>, <&kp>;
+        };
+        
         /**
         * Temporarily switches to a layer (`&mo`) while a modifier is held.
         * Analogous to QMK's `LM()`, using a parameterized macro.
@@ -85,15 +102,24 @@
             #binding-cells = <2>;
             bindings
                 = <&macro_param_1to1>
-                , <&macro_press &mo MACRO_PLACEHOLDER>
+                , <&macro_press &mo TAB>
                 , <&macro_param_2to1>
-                , <&macro_press &kp MACRO_PLACEHOLDER>
+                , <&macro_press &kp LALT>
                 , <&macro_pause_for_release>
                 , <&macro_param_2to1>
-                , <&macro_release &kp MACRO_PLACEHOLDER>
+                , <&macro_release &kp LALT>
                 , <&macro_param_1to1>
-                , <&macro_release &mo MACRO_PLACEHOLDER>
+                , <&macro_release &mo TAB>
                 ;
+        };
+        
+        // P key behavior: P on tap, TAB layer with Alt held when held
+        p_tab_layer: p_tab_layer {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            bindings = <&lm>, <&kp>;
         };
     };
 
@@ -130,16 +156,6 @@
             >;
         };
 
-            alt_tab_macro: alt_tab_macro {
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings = 
-                    <&macro_press &kp LA(TAB)>,  // Press Alt+Tab
-                    <&macro_release &kp TAB>,    // Release Tab, keep Alt pressed
-                    <&to MEDIA>,         // Switch to media layer (used as alt_tab layer)
-                    <&macro_release &kp LALT>    // Release Alt when leaving the layer
-                ;
-            };
             
             lock_session: lock_session {
                 compatible = "zmk,behavior-macro";
@@ -170,6 +186,7 @@
                 #binding-cells = <0>;
                 bindings = <&kp LA(F4)>;  // Alt+F4 to close windows
             };
+
     };
 
     keymap {
@@ -177,9 +194,9 @@
 
         default_layer {
             bindings = <
-                &kp Q         &kp W         &lt FUNCTION E   &kp R         &kp T         &kp Y         &kp U         &lt FUNCTION I   &mod_morph_o_backspace &kp P
-                &mtb LSHIFT A &kp S         &lt SYMBOL D   &kp F         &kp G         &kp H         &kp J         &lt SYMBOL K   &kp L         &mt MOD_LSFT APOS
-                &mt LCTRL Z   &mt LALT X    &lt NUMBER C &kp V         &kp B         &kp N         &kp M         &lt NUMBER COMMA &kp DOT   &mt LCTRL SLASH
+                &kp Q         &kp W         &lt FUNCTION E   &kp R         &kp T         &kp Y         &kp U         &lt FUNCTION I   &mod_morph_o_backspace &p_lm TAB_LAYER LALT P
+                &mtb LSHIFT A &kp S         &lt SYMBOL D   &kp F         &kp G         &kp H         &lt SYMBOL  J         &lt SYMBOL K   &kp L         &mt MOD_LSFT APOS
+                &mt LCTRL Z   &mt LALT X    &lt NUMBER C &kp V         &kp B         &kp N         &lt NUMBER M         &lt NUMBER COMMA &kp DOT   &mt LCTRL SLASH
                 &none         &none         &kp SPACE    &kp ENTER     &none         &none
             >;
         };
@@ -244,6 +261,15 @@
                 &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4         &none         &none         &none         &bt BT_NXT      &none
                 &none       &none         &none         &none         &none         &bt BT_CLR         &bt BT_PRV         &none         &none         &none
                 &to DEFAULT         &none         &none         &none         &none         &to DEFAULT
+            >;
+        };
+
+        tab_layer {
+            bindings = <
+                &kp ESC         &none         &kp LS(TAB)   &kp TAB         &none         &none         &none         &none         &none         &none
+                &none         &none         &kp LS(TAB)   &kp TAB         &none         &none         &none         &none         &none         &none       &none
+                &none         &none         &none         &none         &none         &none         &none         &none         &none         &none
+                &none         &none         &none         &none         &none         &none
             >;
         };
     };
