@@ -28,11 +28,12 @@
 #define FUNCTION 4
 #define MEDIA 5
 #define GAMING 6
+#define BT 7
 
 / {
     combos {
         compatible = "zmk,combos";
-        
+
         // Toggle GAMING layer with 11 + 2 + 13 (all except GAMING)
         combo_toggle_gaming_11213 {
             timeout-ms = <30>;
