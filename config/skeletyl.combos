@@ -104,6 +104,23 @@
             layers = <SYMBOL>;
         };
         
+
+        // New combo for toggling gaming layer with 1 2 3 
+        combo_toggle_gaming_1_2_3 {
+            timeout-ms = <20>;
+            key-positions = <1 2 3>;
+            bindings = <&to GAMING>;
+            layers = <DEFAULT NUMBER NAVIGATION FUNCTION MEDIA BT>;
+        };
+        
+        // Return to default 
+        combo_toggle_gaming_1_2_3_to_default {
+            timeout-ms = <15>;
+            key-positions = <1 2 3>;
+            bindings = <&to DEFAULT>;
+            layers = <GAMING>;
+        };
+
         // New combo for toggling navigation layer with M+K (keys 26+17)
         combo_toggle_nav_26_17 {
             timeout-ms = <25>;
@@ -176,17 +193,17 @@
             bindings = <&to DEFAULT>;
             layers = <FUNCTION>;
         };
-        combo_sticky_fun_27_28 {
+        combo_sticky_nav_27_28 {
             timeout-ms = <25>;
             key-positions = <27 28>;
-            bindings = <&sl FUNCTION>;
+            bindings = <&to NAVIGATION>;
             layers = <DEFAULT NUMBER SYMBOL NAVIGATION MEDIA BT GAMING>;
         };
-        combo_sticky_fun_27_28_to_default {
+        combo_sticky_nav_27_28_to_default {
             timeout-ms = <25>;
             key-positions = <27 28>;
             bindings = <&to DEFAULT>;
-            layers = <FUNCTION>;
+            layers = <NAVIGATION>;
         };
 
         // Toggle GAMING layer with 11 + 2 + 13 (all except GAMING)
