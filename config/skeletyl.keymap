@@ -75,14 +75,6 @@
             quick-release;
         };
         
-        // P tap and Layer + Modifier on hold behavior
-        p_lm: p_tap_layer_mod {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <3>;
-            flavor = "balanced";
-            tapping-term-ms = <200>;
-            bindings = <&lm>, <&kp>;
-        };
         
         /**
         * Temporarily switches to a layer (`&mo`) while a modifier is held.
@@ -113,14 +105,6 @@
                 ;
         };
         
-        // P key behavior: P on tap, TAB layer with Alt held when held
-        p_tab_layer: p_tab_layer {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <200>;
-            bindings = <&lm>, <&kp>;
-        };
     };
 
     macros {
@@ -194,10 +178,10 @@
 
         default_layer {
             bindings = <
-                &kp Q         &kp W         &lt FUNCTION E   &kp R         &kp T         &kp Y         &kp U         &lt FUNCTION I   &mod_morph_o_backspace &p_lm TAB_LAYER LALT P
+                &kp Q         &kp W         &lt FUNCTION E   &kp R         &kp T         &kp Y         &kp U         &lt FUNCTION I   &mod_morph_o_backspace &lt TAB_LAYER P
                 &mtb LSHIFT A &kp S         &lt SYMBOL D   &kp F         &kp G         &kp H         &lt SYMBOL  J         &lt SYMBOL K   &kp L         &mt MOD_LSFT APOS
                 &mt LCTRL Z   &mt LALT X    &lt NUMBER C &kp V         &kp B         &kp N         &lt NUMBER M         &lt NUMBER COMMA &kp DOT   &mt LCTRL SLASH
-                &none         &none         &kp SPACE    &kp ENTER     &none         &none
+                &none         &none         &kp SPACE    &kp ENTER     &kp BSPC         &none
             >;
         };
 
@@ -267,7 +251,7 @@
         tab_layer {
             bindings = <
                 &kp ESC         &none         &kp LS(TAB)   &kp TAB         &none         &none         &none         &none         &none         &none
-                &none         &none         &kp LS(TAB)   &kp TAB         &none         &none         &none         &none         &none         &none       &none
+                &none         &none         &kp LA(LS(TAB))   &kp LA(TAB)         &none         &none         &none         &none         &none         &none       &none
                 &none         &none         &none         &none         &none         &none         &none         &none         &none         &none
                 &none         &none         &none         &none         &none         &none
             >;
