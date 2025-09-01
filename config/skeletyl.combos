@@ -46,75 +46,75 @@
             bindings = <&to DEFAULT>;
             layers = <NUMBER>;
         };
-        combo_toggle_num_1_2 {
+        combo_sticky_num_1_2 {
             timeout-ms = <25>;
             key-positions = <1 2>;
             bindings = <&sl NUMBER>;
             layers = <DEFAULT SYMBOL NAVIGATION FUNCTION MEDIA BT GAMING>;
         };
-        combo_toggle_num_1_2_to_default {
+        combo_sticky_num_1_2_to_default {
             timeout-ms = <25>;
             key-positions = <1 2>;
             bindings = <&to DEFAULT>;
             layers = <NUMBER>;
         };
-        combo_toggle_num_7_8 {
+        combo_sticky_num_7_8 {
             timeout-ms = <25>;
             key-positions = <7 8>;
             bindings = <&sl NUMBER>;
             layers = <DEFAULT SYMBOL NAVIGATION FUNCTION MEDIA BT GAMING>;
         };
-        combo_toggle_num_7_8_to_default {
+        combo_sticky_num_7_8_to_default {
             timeout-ms = <25>;
             key-positions = <7 8>;
             bindings = <&to DEFAULT>;
             layers = <NUMBER>;
         };
         // Symbol Layer
-        combo_toggle_sym_11_12 {
+        combo_sticky_sym_11_12 {
             timeout-ms = <25>;
             key-positions = <11 12>;
             bindings = <&sl SYMBOL>;
             layers = <DEFAULT NUMBER NAVIGATION FUNCTION MEDIA BT GAMING>;
         };
-        combo_toggle_sym_11_12_to_default {
+        combo_sticky_sym_11_12_to_default {
             timeout-ms = <25>;
             key-positions = <11 12>;
             bindings = <&to DEFAULT>;
             layers = <SYMBOL>;
         };
-        combo_toggle_sym_17_18 {
+        combo_sticky_sym_17_18 {
             timeout-ms = <25>;
             key-positions = <17 18>;
             bindings = <&sl SYMBOL>;
             layers = <DEFAULT NUMBER NAVIGATION FUNCTION MEDIA BT GAMING>;
         };
-        combo_toggle_sym_17_18_to_default {
+        combo_sticky_sym_17_18_to_default {
             timeout-ms = <25>;
             key-positions = <17 18>;
             bindings = <&to DEFAULT>;
             layers = <SYMBOL>;
         };
         // Function Layer
-        combo_toggle_fun_21_22 {
+        combo_sticky_fun_21_22 {
             timeout-ms = <25>;
             key-positions = <21 22>;
             bindings = <&sl FUNCTION>;
             layers = <DEFAULT NUMBER SYMBOL NAVIGATION MEDIA BT GAMING>;
         };
-        combo_toggle_fun_21_22_to_default {
+        combo_sticky_fun_21_22_to_default {
             timeout-ms = <25>;
             key-positions = <21 22>;
             bindings = <&to DEFAULT>;
             layers = <FUNCTION>;
         };
-        combo_toggle_fun_27_28 {
+        combo_sticky_fun_27_28 {
             timeout-ms = <25>;
             key-positions = <27 28>;
             bindings = <&sl FUNCTION>;
             layers = <DEFAULT NUMBER SYMBOL NAVIGATION MEDIA BT GAMING>;
         };
-        combo_toggle_fun_27_28_to_default {
+        combo_sticky_fun_27_28_to_default {
             timeout-ms = <25>;
             key-positions = <27 28>;
             bindings = <&to DEFAULT>;
