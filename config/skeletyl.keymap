@@ -7,7 +7,7 @@
 
 // Configure the built-in sticky layer behavior
 &sl {
-    release-after-ms = <2000>;
+    release-after-ms = <5000>;
     quick-release;
 };
 
