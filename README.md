@@ -1,5 +1,3 @@
-f1 f2 f3 f4 f5    f6 f7 f8 f9 f10
-esc q w e r    2 3 i o to0
 # Skeletyl ZMK Firmware Configuration
 
 This repository contains the ZMK firmware configuration for the Skeletyl split keyboard. Below is an up-to-date summary of the keyboard's layers, combos, custom behaviors, and configuration.
@@ -9,19 +7,19 @@ This repository contains the ZMK firmware configuration for the Skeletyl split k
 ## Keyboard Overview
 
 - **Keyboard Name:** Skeletyl (Breadboard)
-- **Type:** Split, wireless/USB, QMK/ZMK-inspired
-- **Power:** Bluetooth +8dBm, 30min sleep, deep sleep enabled
-- **Features:** Split BLE, USB on both halves, battery reporting, reliable split sync
+- **Type:** Split, wireless/USB
+- **Power:** Bluetooth +8dBm, 30min sleep timeout
+- **Features:** Custom combos and multiple layers for enhanced productivity
 
 ---
 
 ## Layer Summary
 
 ### 0: Default Layer
-Standard QWERTY typing layer.
+Standard QWERTY typing layer with home row mods and layer-tap keys.
 
 ### 1: Symbol Layer
-Symbols, brackets, and shifted characters.
+Symbols, brackets, and special characters.
 
 ### 2: Navigation Layer
 Text navigation, arrow keys, and editing controls.
@@ -30,184 +28,153 @@ Text navigation, arrow keys, and editing controls.
 Number row and numeric input.
 
 ### 4: Function Layer
-F1–F12 and related keys.
+F1–F12 keys and system functions.
 
 ### 5: Media Layer
-Media controls (play, volume, next/prev, etc).
+Media controls (volume, playback, etc).
 
 ### 6: Gaming Layer
-Optimized for Overwatch and similar games (WASD, quick melee, comms, etc).
+Optimized for gaming (WASD, quick melee, comms).
+
+### 7: Bluetooth Layer
+BT profile selection and management.
+
+### 8: Tab Layer
+Tab navigation and special functions.
 
 ---
 
 ## Keymap Visual Reference
 
-See `config/key_positions_visual.md` for a full matrix and position reference.
+See `config/key_positions_visual.md` for a full matrix and position reference:
+
+```
+╭────────┬────────┬────────┬────────┬────────╮   ╭────────┬────────┬────────┬────────┬────────╮
+│   0    │   1    │   2    │   3    │   4    │   │   5    │   6    │   7    │   8    │   9    │ 
+│   Q    │   W    │   E    │   R    │   T    │   │   Y    │   U    │   I    │   O    │   P    │
+├────────┼────────┼────────┼────────┼────────┤   ├────────┼────────┼────────┼────────┼────────┤
+│   10   │   11   │   12   │   13   │   14   │   │   15   │   16   │   17   │   18   │   19   │
+│   A    │   S    │   D    │   F    │   G    │   │   H    │   J    │   K    │   L    │  APOS  │
+├────────┼────────┼────────┼────────┼────────┤   ├────────┼────────┼────────┼────────┼────────┤
+│   20   │   21   │   22   │   23   │   24   │   │   25   │   26   │   27   │   28   │   29   │
+│   Z    │   X    │   C    │   V    │   B    │   │   N    │   M    │ COMMA  │  DOT   │ SLASH  │
+╰────────┴────────┴────────┴────────┴────────╯   ╰────────┴────────┴────────┴────────┴────────╯
+
+                  ╭────────┬────────┬────────╮   ╭────────┬────────┬────────╮
+                  │   30   │   31   │   32   │   │   33   │   34   │   35   │
+                  │        │        │ SPACE  │   │ ENTER  │        │        │
+                  ╰────────┴────────┴────────╯   ╰────────┴────────┴────────╯
+```
 
 ---
 
-## Combo & Layer Logic
+## Current Layer Implementation
+
+The default layer features:
+- QWERTY layout with strategic layer-tap keys
+- Mod-taps on the home row and bottom row
+- Layer access through hold and combo actions
+
+Additional layers provide:
+- Full symbol access in Symbol layer
+- Navigation with arrow keys and editing controls
+- Number row and function keys
+- Media controls and specialized gaming layout
+- Bluetooth device management
 
 ---
 
-## Layer Access Summary
+## Current Combo System
 
----
+### Layer Access Combos
 
-## Layer Access: Detailed Combo Map
+| Combo Keys | Action | Active Layers |
+|------------|--------|---------------|
+| D+F (12+13) | Toggle Symbol / Return to Default | All |
+| J+K (16+17) | Toggle Symbol / Return to Default | All |
+| S+D (11+12) | Sticky Symbol | All except Symbol |
+| K+L (17+18) | Sticky Symbol | All except Symbol |
+| M+K (26+17) | Toggle Navigation / Return to Default | All |
+| M+COMMA (26+27) | Toggle Function / Return to Default | All |
+| X+C (21+22) | Sticky Function | All except Function |
+| DOT+COMMA (27+28) | To Navigation | All except Navigation |
+| W+E+R (1+2+3) | Toggle Gaming / Return to Default | All |
+| W+E (1+2) | Sticky Number | All except Number |
+| I+O (7+8) | Sticky Number | All except Number |
+| I+O (8+9) | Toggle Number / Return to Default | All |
+| B+N (24+25) | Toggle Bluetooth | All except BT |
+| R+T (3+4) | Toggle Bluetooth | All except BT |
+| SPACE+ENTER (32+33) | Toggle Bluetooth | All except BT |
 
+### Other Useful Combos
 
-### NUMBER Layer
-- **Sticky combos (one-shot, 15ms):**
-	- 2+7 (E+I), 2+3, 6+7 — only on DEFAULT layer
-- **Toggle combos (15ms):**
-	- 1+8, 7+8, 1+2 — global
-- **Return to DEFAULT:**
-	- 11+12, 17+18, 12+17 — on all non-DEFAULT layers
-
-### SYMBOL Layer
-- **Sticky combos (one-shot, 15ms):**
-	- 12+17 (D+K), 12+13, 16+17 — only on DEFAULT layer
-- **Toggle combos (15ms):**
-	- 11+18, 17+18, 11+12, 16+17 — global
-- **Return to DEFAULT:**
-	- 11+12, 17+18, 12+17 — on all non-DEFAULT layers
-
-### FUNCTION Layer
-- **Sticky combos (one-shot, 15ms):**
-	- 22+27 (C+COMMA), 22+23, 26+27 — only on DEFAULT layer
-- **Toggle combos (15ms):**
-	- 21+28, 27+28, 21+22, 22+23, 26+27 — global
-- **Return to DEFAULT:**
-	- 11+12, 17+18, 12+17 — on all non-DEFAULT layers
-
-### NAVIGATION Layer
-- **To NAVIGATION (30ms):**
-	- 26+17, 26+17+18 — from all layers except NAVIGATION
-- **Return to DEFAULT:**
-	- 26+17, 26+17+18 — on NAVIGATION layer
-
-**Note:**
-- Sticky combos are only active on the DEFAULT layer to avoid overlap with return-to-default combos.
-- Toggle combos are global unless otherwise noted.
-- Combos 11+12, 17+18, 12+17 always return to DEFAULT when pressed on any non-DEFAULT layer.
-
-### Sticky Layer Combos (One-Shot)
-- **D+K (12+17):** Sticky SYMBOL (from Default)
-- **E+I (2+7):** Sticky NUMBER (from Default)
-- **C+COMMA (22+27):** Sticky FUNCTION (from Default)
-
-### Shifted/Toggle Combos
-- **W+O (1+8), 7+8, 1+2, 6+7:** Toggle NUMBER layer
-- **S+L (11+18), 17+18, 11+12, 16+17:** Toggle SYMBOL layer
-- **X+DOT (21+28), 27+28, 21+22, 22+23, 26+27:** Toggle FUNCTION layer
-
-#### LED/Side Combos (all 15ms timeout, toggle mode)
-- **2+3, 6+7:** Toggle NUMBER layer
-- **12+13, 16+17:** Toggle SYMBOL layer
-- **22+23, 26+27:** Toggle FUNCTION layer
-
-#### Layer Return Combos
-- **On SYMBOL or FUNCTION layers:**
-	- **12+13, 16+17:** Instantly return to DEFAULT layer
-
-
----
-
-## Navigation Combos (Between Layers)
-
-- **M+K, M+K+L:** Switch to NAVIGATION from any layer except NAVIGATION; same combos on NAVIGATION return to DEFAULT
-- **26+17, 26+17+18:** To NAVIGATION (from any non-NAVIGATION layer)
-- **26+17, 26+17+18 (on NAVIGATION):** Return to DEFAULT
-
----
-
-### Other Combos
-- **Q+P:** Tilde (~)
-- **Z+SLASH:** Lock session (Ctrl+Alt+L)
-- **G+H:** Open terminal (Ctrl+Alt+T)
-- **A+APOS:** Double Shift
-- **B+N:** Toggle Bluetooth/Function layer
-- **W+S+D:** Toggle Gaming layer
-- **S+D+F:** Go to Gaming layer (Default only)
-- **BT_CLR_ALL:** Clear all Bluetooth profiles (Function layer)
-- **W+K:** Alt+F4 (Default only)
+| Combo Keys | Action | Active Layers |
+|------------|--------|---------------|
+| Q+P (0+9) | Tilde (~) | Default |
+| Q+W (0+1) | Escape | All |
+| Z+SLASH (20+29) | Lock Session (Ctrl+Alt+L) | All |
+| Z+N (20+25) | Screenshot (Print Screen) | Most layers |
+| G+H (14+15) | Open Terminal (Ctrl+Alt+T) | Default |
+| W+K (1+17) | Alt+F4 | Default |
+| A+APOS (10+19) | Double Shift | All |
+| X+DOT (21+28) | Paste Git Token | All |
+| F+J (13+16) | GUI Key | All |
+| Z+SPACE+ENTER+SLASH (20+32+33+29) | Clear All BT Profiles | BT layer |
 
 ---
 
 ## Custom Behaviors
 
-- **Mod-Tap (`mt`, `mth`, `mtb`):** Tap/hold with tap-preferred, hold-preferred, or balanced logic (200ms tapping term)
-- **Sticky Layer (`sl`, `long_sk`):** One-shot or long sticky layer (2s or 15s timeout)
-- **Layer-Tap (`lt`):** Tap for key, hold for layer (applied to key positions 2/7 = NUMBER, 12/17 = SYMBOL, 22/27 = FUNCTION, except where transparent)
-- **Macros:** Quick actions (open terminal, lock session, double shift, paste git token, Overwatch comms, etc)
-- **Layer-Mod Macro (`lm`):** Temporarily switch to a layer while holding a modifier
+- **Mod-Tap (`mt`, `mth`, `mtb`):** Tap/hold with different behaviors (200ms tapping term)
+  - `mt`: Tap-preferred
+  - `mth`: Hold-preferred
+  - `mtb`: Balanced
+
+- **Sticky Layer (`sl`):** One-shot layer activation (5s timeout)
+
+- **Long Sticky Key (`long_sk`):** Extended sticky key (30s timeout)
+
+- **Layer-Tap (`lt`):** Tap for key, hold for layer
+
+- **Layer-Mod Macro (`lm`):** Layer+modifier combination
+
+- **Tap-Dance:** Multiple actions from single key
+  - Single/double tap behaviors for I and O keys
+
+---
+
+## Macros
+
+- **Zed-Em-Kay:** Types "ZMK" with shift
+- **Open Terminal:** Ctrl+Alt+T
+- **Double Shift:** Sends two shift keypresses
+- **Paste Git Token:** Ctrl+Alt+P
+- **Lock Session:** Ctrl+Alt+L
+- **Quick Melee:** V key (for gaming)
+- **Quick Hello:** Ctrl+C (for in-game communication)
+- **Alt+F4:** Close window
 
 ---
 
 ## Configuration Highlights
 
-- Split BLE with central/peripheral roles
-- USB enabled on both halves
-- Battery reporting
-- Aggressive split sync and connection reliability
-- Custom Bluetooth name: "Skeletyl" or "Om"
+- Bluetooth with +8dBm transmit power
+- 30 minute sleep timeout
+- Custom Bluetooth name: "Skeletyl"
 
 ---
 
 ## How to Use
 
-1. Refer to the key position visual (`config/key_positions_visual.md`) for matrix mapping
-2. Edit `skeletyl.keymap` for layer and key assignments
-3. Edit `skeletyl.combos` for combo logic
-4. Use the provided macros and behaviors for advanced functionality
+1. Use the key position reference when modifying your keymap
+2. Edit `skeletyl.keymap` to change layer and key assignments
+3. Edit `skeletyl.combos` to modify combo behavior
+4. Use the built-in macros and behaviors for advanced functionality
 
 ---
 
-## Maintainer Notes
+## Navigation Structure
 
+The Skeletyl uses an intuitive layer navigation system with mirror-symmetric combos. Most layer-switching combos also work to return to the default layer when pressed again, creating a consistent and easy-to-remember interface.
 
 ---
-
-## Navigation Hierarchy Scheme
-
-The Skeletyl navigation is designed for fast, mirrored, and intuitive layer switching. Combos are mapped so you can both enter and exit layers with the same or adjacent finger positions.
-
-### Visual Layer Navigation Map
-
-```mermaid
-flowchart TD
-	DEFAULT((Default Layer))
-	NUMBER((Number Layer))
-	SYMBOL((Symbol Layer))
-	FUNCTION((Function Layer))
-	NAV((Navigation Layer))
-
-	DEFAULT -- "Combo: 2+7, 1+8, 7+8, 1+2, 6+7, 2+3" --> NUMBER
-	DEFAULT -- "Combo: 12+17, 11+18, 17+18, 11+12, 16+17, 12+13" --> SYMBOL
-	DEFAULT -- "Combo: 22+27, 21+28, 27+28, 21+22, 22+23, 26+27" --> FUNCTION
-	DEFAULT -- "Combo: 26+17, 17+18, 26+17+18" --> NAV
-
-	NUMBER -- "Same combos (e.g. 2+7, 7+8, 1+2, 6+7, 2+3)" --> DEFAULT
-	SYMBOL -- "Same combos (e.g. 12+17, 17+18, 11+12, 16+17, 12+13)" --> DEFAULT
-	FUNCTION -- "Same combos (e.g. 22+27, 27+28, 21+22, 22+23, 26+27)" --> DEFAULT
-	NAV -- "Combo: 26+17, 17+18, 26+17+18" --> DEFAULT
-
-```
-
-#### Combo Mapping Table
-
-| Combo Positions | From Layer | To Layer   | Timeout | Mode   |
-|----------------|------------|------------|---------|--------|
-| 2+7, 1+8, 7+8, 1+2, 6+7, 2+3 | DEFAULT    | NUMBER     | 15ms    | Toggle |
-| 12+17, 11+18, 17+18, 11+12, 16+17, 12+13 | DEFAULT    | SYMBOL     | 15ms    | Toggle |
-| 22+27, 21+28, 27+28, 21+22, 22+23, 26+27 | DEFAULT    | FUNCTION   | 15ms    | Toggle |
-| 26+17, 17+18, 26+17+18 | DEFAULT    | NAVIGATION | 30ms    | To     |
-| 2+7, 7+8, 1+2, 6+7, 2+3 | NUMBER     | DEFAULT     | 15ms    | Toggle |
-| 12+17, 17+18, 11+12, 16+17, 12+13 | SYMBOL     | DEFAULT     | 15ms    | Toggle |
-| 22+27, 27+28, 21+22, 22+23, 26+27 | FUNCTION   | DEFAULT     | 15ms    | Toggle |
-| 26+17, 17+18, 26+17+18 | NAVIGATION | DEFAULT     | 30ms    | To     |
-
-**Mirrored combos**: All combos are available on both left/right and top/bottom sides for fast access.
-
-**Timeouts**: Most combos use 15ms for speed, except navigation combos (30ms).

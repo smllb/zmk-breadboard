@@ -38,7 +38,7 @@
 
         combo_screenshot {
             timeout-ms = <25>;
-            key-positions = <20 25>;
+            key-positions = <25 26>;
             bindings = <&kp PSCRN>;
             layers = <DEFAULT SYMBOL NAVIGATION FUNCTION MEDIA BT GAMING>;
         };
