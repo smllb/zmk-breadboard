@@ -35,6 +35,13 @@
 / {
     combos {
         compatible = "zmk,combos";
+
+        combo_screenshot {
+            timeout-ms = <25>;
+            key-positions = <20 25>;
+            bindings = <&kp PSCRN>;
+            layers = <DEFAULT SYMBOL NAVIGATION FUNCTION MEDIA BT GAMING>;
+        };
         // === Toggle Layer Combos (25ms timeout) ===
         // --- Layer Toggle Combos (left: 1,2 11,12 21,22; right: 7,8 17,18 27,28) --- 
         // Number Layer
