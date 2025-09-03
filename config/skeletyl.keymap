@@ -198,7 +198,7 @@
                 &kp Q         &kp W         &lt FUNCTION E   &lt FUNCTION R         &kp T         &kp Y         &kp U         &lt_td_i FUNCTION 0   &mod_morph_o_backspace &lt TAB_LAYER P
                 &mtb LSHIFT A &kp S         &lt SYMBOL D   &lt SYMBOL F         &kp G         &kp H         &lt SYMBOL  J         &lt SYMBOL K   &kp L         &mt MOD_LSFT APOS
                 &mt LCTRL Z   &mt LALT X    &lt NUMBER C &lt NUMBER V         &kp B         &kp N         &lt NUMBER M         &lt NUMBER COMMA &kp DOT   &mt LCTRL SLASH
-                &none         &none         &kp SPACE    &kp ENTER     &kp BSPC         &none
+                &to BT         &none         &kp SPACE    &kp ENTER     &kp BSPC         &to MEDIA
             >;
         };
 
@@ -270,7 +270,7 @@
                 &kp ESC       &none         &kp LS(TAB)   &kp TAB       &none         &none         &none         &none         &none         &none
                 &kp CAPS      &kp F5         &kp LA(LS(TAB)) &kp LA(TAB) &none         &none         &none         &none         &none         &none
                 &none         &none         &none         &none         &none         &none         &none         &none         &none         &none
-                &none         &none         &none         &kp F5         &none         &none
+                &kp LGUI         &none         &none         &kp F5         &none         &none
             >;
         };
     };
