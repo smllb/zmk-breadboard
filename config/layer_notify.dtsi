@@ -1,0 +1,170 @@
+/*
+ * Layer notification macros for system notifications
+ * These send special key combinations to the host that a listener script can detect
+ */
+
+/ {
+    macros {
+        // Notification macro for DEFAULT layer
+        notify_layer_0: notify_layer_0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms = <5>;
+            bindings = <&kp LC(LS(F20))>;
+        };
+
+        // Notification macro for SYMBOL layer
+        notify_layer_1: notify_layer_1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms = <5>;
+            bindings = <&kp LC(LS(F21))>;
+        };
+
+        // Notification macro for NAVIGATION layer
+        notify_layer_2: notify_layer_2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms = <5>;
+            bindings = <&kp LC(LS(F22))>;
+        };
+
+        // Notification macro for NUMBER layer
+        notify_layer_3: notify_layer_3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms = <5>;
+            bindings = <&kp LC(LS(F23))>;
+        };
+
+        // Notification macro for FUNCTION layer
+        notify_layer_4: notify_layer_4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms = <5>;
+            bindings = <&kp LC(LS(LA(F20)))>;
+        };
+
+        // Notification macro for MEDIA layer
+        notify_layer_5: notify_layer_5 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms = <5>;
+            bindings = <&kp LC(LS(LA(F21)))>;
+        };
+
+        // Notification macro for GAMING layer
+        notify_layer_6: notify_layer_6 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms = <5>;
+            bindings = <&kp LC(LS(LA(F22)))>;
+        };
+
+        // Notification macro for BT layer
+        notify_layer_7: notify_layer_7 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms = <5>;
+            bindings = <&kp LC(LS(LA(F23)))>;
+        };
+        
+        // Notification macro for TAB_LAYER layer
+        notify_layer_8: notify_layer_8 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms = <5>;
+            bindings = <&kp LC(LA(LS(F24)))>;
+        };
+
+        // Notification for sticky layer activated
+        notify_sticky_layer: notify_sticky_layer {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <5>;
+            tap-ms = <5>;
+            bindings = <&kp LA(LC(LS(F24)))>;
+        };
+    };
+
+    // Custom layer-tap behavior that also triggers notifications
+    behaviors {
+        lt_notify: layer_tap_notify {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            bindings = <&mo_notify>, <&kp>;
+        };
+
+        // Modified momentary layer that sends notifications
+        mo_notify: momentary_layer_notify {
+            compatible = "zmk,behavior-macro-two-param";
+            #binding-cells = <2>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings
+                = <&macro_param_1to1>
+                , <&macro_tap &notify_sticky_layer>
+                , <&macro_press &mo MACRO_PLACEHOLDER>
+                , <&macro_pause_for_release>
+                , <&macro_param_2to1>
+                , <&macro_tap &notify_layer_0>
+                , <&macro_release &mo MACRO_PLACEHOLDER>;
+        };
+
+        // Modified toggle layer that sends notifications
+        tog_notify: toggle_layer_notify {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings
+                = <&macro_param_1to1>
+                , <&macro_tap &tog MACRO_PLACEHOLDER>
+                // The notification will be sent by layer-state-changed sensor
+                ;
+        };
+    };
+    
+    // Sensor to detect layer changes and send notifications
+    sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&layer_state_sensor>;
+    };
+
+    layer_state_sensor: layer_state_sensor {
+        compatible = "zmk,behavior-sensor-rotate";
+        #sensor-binding-cells = <0>;
+        bindings = <&layer_notify>;
+    };
+
+    behaviors {
+        layer_notify: layer_notify {
+            compatible = "zmk,behavior-macro-variant";
+            #binding-cells = <0>;
+            label = "LAYER_NOTIFY";
+            variants = <
+                &notify_layer_0
+                &notify_layer_1
+                &notify_layer_2
+                &notify_layer_3
+                &notify_layer_4
+                &notify_layer_5
+                &notify_layer_6
+                &notify_layer_7
+                &notify_layer_8
+            >;
+            selected-by = <&macro_get_layer_state>;
+        };
+    };
+};
