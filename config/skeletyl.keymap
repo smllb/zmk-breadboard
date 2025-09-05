@@ -208,7 +208,7 @@
                 &kp HASH      &kp CARET     &lt SYMBOL PRCNT &kp ASTRK    &trans        &kp LBKT      &kp LPAR      &lt SYMBOL RPAR &kp UNDER     &kp PLUS
                 &trans        &trans        &trans        &trans        &trans        &kp BSLH      &kp LBRC      &trans        &kp PIPE      &trans
                 &trans        &trans        &trans        &trans        &kp BSPC      &trans
-            >;/
+            >;
         };
 
         navigation_layer {
