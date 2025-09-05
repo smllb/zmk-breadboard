@@ -84,42 +84,33 @@ Additional layers provide:
 
 ---
 
-## Current Combo System
+## Combo System
 
-### Layer Access Combos
+For a comprehensive reference of all keyboard combos, see the [COMBOS.md](COMBOS.md) file.
+
+### Key Layer Access Combos
 
 | Combo Keys | Action | Active Layers |
 |------------|--------|---------------|
 | D+F (12+13) | Toggle Symbol / Return to Default | All |
 | J+K (16+17) | Toggle Symbol / Return to Default | All |
-| S+D (11+12) | Sticky Symbol | All except Symbol |
-| K+L (17+18) | Sticky Symbol | All except Symbol |
 | M+K (26+17) | Toggle Navigation / Return to Default | All |
 | M+COMMA (26+27) | Toggle Function / Return to Default | All |
-| X+C (21+22) | Sticky Function | All except Function |
-| DOT+COMMA (27+28) | To Navigation | All except Navigation |
 | W+E+R (1+2+3) | Toggle Gaming / Return to Default | All |
-| W+E (1+2) | Sticky Number | All except Number |
-| I+O (7+8) | Sticky Number | All except Number |
-| I+O (8+9) | Toggle Number / Return to Default | All |
 | B+N (24+25) | Toggle Bluetooth | All except BT |
 | R+T (3+4) | Toggle Bluetooth | All except BT |
-| SPACE+ENTER (32+33) | Toggle Bluetooth | All except BT |
 
-### Other Useful Combos
+### Frequently Used Combos
 
 | Combo Keys | Action | Active Layers |
 |------------|--------|---------------|
 | Q+P (0+9) | Tilde (~) | Default |
 | Q+W (0+1) | Escape | All |
 | Z+SLASH (20+29) | Lock Session (Ctrl+Alt+L) | All |
-| Z+N (20+25) | Screenshot (Print Screen) | Most layers |
-| G+H (14+15) | Open Terminal (Ctrl+Alt+T) | Default |
 | W+K (1+17) | Alt+F4 | Default |
 | A+APOS (10+19) | Double Shift | All |
 | X+DOT (21+28) | Paste Git Token | All |
-| F+J (13+16) | GUI Key | All |
-| Z+SPACE+ENTER+SLASH (20+32+33+29) | Clear All BT Profiles | BT layer |
+| F+K (13+17) | GUI Key | All |
 
 ---
 
