@@ -297,7 +297,7 @@
         
         combo_terminal_gh {
             timeout-ms = <50>;
-            key-positions = <14 25>;   // G + H
+            key-positions = <14 15>;   // G + H
             bindings = <&kp LC(LA(T))>; // Ctrl+Alt+T
             layers = <DEFAULT>;        // Only active on default layer not working 
         };
