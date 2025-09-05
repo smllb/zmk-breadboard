@@ -69,18 +69,7 @@
             bindings = <&to DEFAULT>;
             layers = <NUMBER>;
         };
-        combo_sticky_num_7_8 {
-            timeout-ms = <25>;
-            key-positions = <7 8>;
-            bindings = <&sl NUMBER>;
-            layers = <DEFAULT SYMBOL NAVIGATION FUNCTION MEDIA BT GAMING>;
-        };
-        combo_sticky_num_7_8_to_default {
-            timeout-ms = <25>;
-            key-positions = <7 8>;
-            bindings = <&to DEFAULT>;
-            layers = <NUMBER>;
-        };
+        // combo_sticky_num_7_8 and combo_sticky_num_7_8_to_default removed to avoid conflict with navigation combos
         // Symbol Layer
         combo_sticky_sym_11_12 {
             timeout-ms = <25>;
