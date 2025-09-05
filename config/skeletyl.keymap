@@ -24,27 +24,35 @@
 
 / {
     behaviors {
-        // Tap-dance for O: o on single tap, O on double tap
-        td_o: tap_dance_o {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp O>, <&kp LS(O)>;
-        };
-        
-        // Tap-dance for I: I on single tap, toggle media layer on double tap
-        td_i: tap_dance_i {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp I>, <&tog MEDIA>;
-        };
-        
-        // Mod-morph: tap-dance O normally, Backspace when Shift is held
-        mod_morph_o_backspace: mod_morph_o_backspace {
+        // Mod-morph: O normally, BSPC when Shift is held
+        mm_o_bspc: mod_morph_o_bspc {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp O &kp BSPC>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        
+        // Mod-morph: I normally, BSPC when Shift is held
+        mm_i_bspc: mod_morph_i_bspc {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp I &kp BSPC>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        
+        // Mod-morph: U normally, BSPC when Shift is held
+        mm_u_bspc: mod_morph_u_bspc {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp U &kp BSPC>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        
+        // Mod-morph: Y normally, BSPC when Shift is held
+        mm_y_bspc: mod_morph_y_bspc {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp Y &kp BSPC>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         // Configure the built-in mod-tap behavior to use tap-preferred
@@ -83,14 +91,7 @@
             quick-release;
         };
         
-        // Layer-tap with tap-dance: FUNCTION on hold, tap-dance I on tap
-        lt_td_i: layer_tap_tapdance_i {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <200>;
-            bindings = <&mo>, <&td_i>;
-        };
+        // Removed tap-dance related code
         
         
         /**
@@ -195,8 +196,8 @@
 
         default_layer {
             bindings = <
-                &kp Q         &kp W         &lt FUNCTION E   &lt FUNCTION R         &kp T         &kp Y         &kp U         &lt FUNCTION I   &mod_morph_o_backspace &lt TAB_LAYER P
-                &mtb LSHIFT A &kp S         &lt SYMBOL D   &lt SYMBOL F         &kp G         &kp H         &lt SYMBOL  J         &lt SYMBOL K   &kp L         &lt LSHIFT APOS
+                &kp Q         &kp W         &lt FUNCTION E   &lt FUNCTION R         &kp T         &mm_y_bspc &mm_u_bspc &lt FUNCTION mm_i_bspc   &mm_o_bspc &lt TAB_LAYER P
+                &mtb LSHIFT A &kp S         &lt SYMBOL D   &lt SYMBOL F         &kp G         &kp H         &lt SYMBOL  J         &lt SYMBOL K   &kp L         &mt LSHIFT APOS
                 &mt LCTRL Z   &mt LALT X    &lt NUMBER C &lt NUMBER V         &kp B         &kp N         &lt NUMBER M         &lt NUMBER COMMA &kp DOT   &mt LCTRL SLASH
                 &kp X         &none         &kp SPACE    &kp ENTER     &kp BSPC         &kp Z
             >;
@@ -240,7 +241,7 @@
 
         general_media {
             bindings = <
-                &trans        &trans        &trans        &trans        &trans        &kp C_PREV    &kp C_VOL_DN     &td_i      &kp C_VOL_UP  &kp C_NEXT
+                &trans        &trans        &trans        &trans        &trans        &kp C_PREV    &kp C_VOL_DN     &kp I      &kp C_VOL_UP  &kp C_NEXT
                 &trans        &trans        &trans        &trans        &trans        &trans           &trans        &trans        &trans        &trans
                 &trans        &trans        &trans        &trans        &trans        &kp C_MUTE       &trans        &trans        &trans        &trans
                 &none         &to DEFAULT   &none         &none         &none         &none
