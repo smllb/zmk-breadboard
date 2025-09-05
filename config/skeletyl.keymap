@@ -29,7 +29,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp O &kp BSPC>;
-            mods = <(MOD_LSFT)>;
+            mods = <MOD_LSFT>;
         };
         
         // Mod-morph: I normally, BSPC when Left Shift is held, I uppercase when Right Shift is held
@@ -37,7 +37,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp I &kp BSPC>;
-            mods = <(MOD_LSFT)>;
+            mods = <MOD_LSFT>;
         };
         
         // Mod-morph: U normally, BSPC when Left Shift is held, U uppercase when Right Shift is held
@@ -45,7 +45,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp U &kp BSPC>;
-            mods = <(MOD_LSFT)>;
+            mods = <MOD_LSFT>;
         };
         
         // Mod-morph: Y normally, BSPC when Left Shift is held, Y uppercase when Right Shift is held
@@ -53,7 +53,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp Y &kp BSPC>;
-            mods = <(MOD_LSFT)>;
+            mods = <MOD_LSFT>;
         };
         // Configure the built-in mod-tap behavior to use tap-preferred
         mt: mod_tap {
