@@ -28,7 +28,7 @@
         mm_o_bspc: mod_morph_o_bspc {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp O>, <&kp BSPC>;
+            bindings = <&kp O &kp BSPC>;
             mods = <(MOD_LSFT)>;
         };
         
@@ -36,7 +36,7 @@
         mm_i_bspc: mod_morph_i_bspc {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp I>, <&kp BSPC>;
+            bindings = <&kp I &kp BSPC>;
             mods = <(MOD_LSFT)>;
         };
         
@@ -44,7 +44,7 @@
         mm_u_bspc: mod_morph_u_bspc {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp U>, <&kp BSPC>;
+            bindings = <&kp U &kp BSPC>;
             mods = <(MOD_LSFT)>;
         };
         
@@ -52,7 +52,7 @@
         mm_y_bspc: mod_morph_y_bspc {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&kp Y>, <&kp BSPC>;
+            bindings = <&kp Y &kp BSPC>;
             mods = <(MOD_LSFT)>;
         };
         // Configure the built-in mod-tap behavior to use tap-preferred
@@ -196,7 +196,7 @@
 
         default_layer {
             bindings = <
-                &kp Q         &kp W         &mt RSHIFT E   &lt FUNCTION R         &kp T         &mm_y_bspc &mm_u_bspc &lt FUNCTION mm_i_bspc   &mm_o_bspc &lt TAB_LAYER P
+                &kp Q         &kp W         &mt RSHIFT E   &lt FUNCTION R         &kp T         &mm_y_bspc &mm_u_bspc &mm_i_bspc   &mm_o_bspc &lt TAB_LAYER P
                 &mtb LSHIFT A &kp S         &lt SYMBOL D   &mt LCTRL F         &kp G         &kp H         &lt SYMBOL  J         &lt SYMBOL K   &kp L         &mth LSHIFT APOS
                 &mt LCTRL Z   &mt LALT X    &lt NUMBER C &lt NUMBER V         &kp B         &kp N         &lt NUMBER M         &lt NUMBER COMMA &kp DOT   &mth LCTRL SLASH
                 &kp X         &none         &kp SPACE    &kp ENTER     &kp BSPC         &kp Z
