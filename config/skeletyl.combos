@@ -249,18 +249,18 @@
             bindings = <&to DEFAULT>;
             layers = <BT>;
         };
-        // Go to BT layer with 3 + 4 (all except BT)
-        combo_to_bt_34 {
+      
+        combo_to_bt_429 {
             timeout-ms = <30>;
-            key-positions = <3 4>; // 3 + 4
+            key-positions = <4 29>; 
             bindings = <&to BT>; // Go to BT layer
             layers = <DEFAULT SYMBOL NAVIGATION NUMBER FUNCTION MEDIA GAMING>; // All except BT
         };
 
-        // On BT: 3 + 4 returns to DEFAULT
-        combo_bt_34_to_default {
+     
+        combo_bt_429_to_default {
             timeout-ms = <30>;
-            key-positions = <3 4>; // 3 + 4
+            key-positions = <4 29>; 
             bindings = <&to DEFAULT>;
             layers = <BT>;
         };
