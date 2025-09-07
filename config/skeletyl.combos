@@ -116,23 +116,6 @@
             bindings = <&to DEFAULT>;
             layers = <GAMING>;
         };
-
-        // New combo for toggling navigation layer with M+K (keys 26+17)
-        combo_toggle_nav_26_17 {
-            timeout-ms = <25>;
-            key-positions = <26 17>;
-            bindings = <&tog NAVIGATION>;
-            layers = <DEFAULT NUMBER SYMBOL FUNCTION MEDIA BT GAMING>;
-        };
-        
-        // Return to default when pressing M+K in navigation layer
-        combo_nav_26_17_to_default {
-            timeout-ms = <25>;
-            key-positions = <26 17>;
-            bindings = <&to DEFAULT>;
-            layers = <NAVIGATION>;
-        };
-        
         // New combo for toggling function layer with M+COMMA (keys 26+27)
         combo_toggle_func_26_27 {
             timeout-ms = <25>;
