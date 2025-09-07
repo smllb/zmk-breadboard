@@ -176,19 +176,19 @@
             timeout-ms = <25>;
             key-positions = <16 7 8>;
             bindings = <&to NAVIGATION>;
-            layers = <DEFAULT NUMBER SYMBOL NAVIGATION MEDIA BT GAMING>;
+            layers = <DEFAULT NUMBER SYMBOL MEDIA BT GAMING>;
         };
         combo_to_nav_16_7{
             timeout-ms = <25>;
             key-positions = <16 7>;
             bindings = <&to NAVIGATION>;
-            layers = <DEFAULT NUMBER SYMBOL NAVIGATION MEDIA BT GAMING>;
+            layers = <DEFAULT NUMBER SYMBOL MEDIA BT GAMING>;
         };
         combo_to_nav_7_8{
             timeout-ms = <25>;
             key-positions = <7 8>;
             bindings = <&to NAVIGATION>;
-            layers = <DEFAULT NUMBER SYMBOL NAVIGATION MEDIA BT GAMING>;
+            layers = <DEFAULT NUMBER SYMBOL MEDIA BT GAMING>;
         };
         combo_to_nav_7_8_to_default{
             timeout-ms = <25>;
