@@ -90,6 +90,13 @@ The firmware implements three types of layer-switching combos:
 | `M+COMMA` | 26+27 | Toggle Function layer | DEFAULT and others |
 | From Function layer: `M+COMMA` | - | Return to DEFAULT | FUNCTION |
 
+#### Media Layer Combos
+
+| Combo Keys | Key Positions | Action | Active Layers |
+|------------|--------------|--------|---------------|
+| `31+34` | 31+34 | Toggle Media layer | DEFAULT and others |
+| From Media layer: `31+34` | - | Return to DEFAULT | MEDIA |
+
 #### Gaming Layer Combos
 
 | Combo Keys | Key Positions | Action | Active Layers |

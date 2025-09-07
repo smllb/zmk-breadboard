@@ -305,6 +305,21 @@
             layers = <DEFAULT>;        // Only active on default layer
         };
 
+        // Toggle Media layer with 31 + 34 (available everywhere except in Media layer)
+        combo_toggle_media_31_34 {
+            timeout-ms = <50>;
+            key-positions = <31 34>;   // Keys 31 and 34
+            bindings = <&tog MEDIA>;   // Toggle Media layer
+            layers = <DEFAULT SYMBOL NAVIGATION NUMBER FUNCTION GAMING BT>; // All except MEDIA
+        };
+
+        // Return to default when pressing 31 + 34 in media layer
+        combo_media_31_34_to_default {
+            timeout-ms = <50>;
+            key-positions = <31 34>;   // Keys 31 and 34
+            bindings = <&to DEFAULT>;  // Return to DEFAULT layer
+            layers = <MEDIA>;          // Only active in MEDIA layer
+        };
 
     };
 };

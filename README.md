@@ -96,6 +96,7 @@ For a comprehensive reference of all keyboard combos, see the [COMBOS.md](COMBOS
 | J+K (16+17) | Toggle Symbol / Return to Default | All |
 | M+K (26+17) | Toggle Navigation / Return to Default | All |
 | M+COMMA (26+27) | Toggle Function / Return to Default | All |
+| 31+34 | Toggle Media / Return to Default | All |
 | W+E+R (1+2+3) | Toggle Gaming / Return to Default | All |
 | B+N (24+25) | Toggle Bluetooth | All except BT |
 | R+T (3+4) | Toggle Bluetooth | All except BT |
