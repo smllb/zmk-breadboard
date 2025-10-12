@@ -21,9 +21,33 @@
 #define GAMING 6
 #define BT 7
 #define TAB_LAYER 8
+#define BATTLEFIELD 8
 
 / {
     behaviors {
+        // Custom auto-move toggle behavior (press once to start holding W)
+        auto_move: auto_move {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kt W>;
+        };
+        
+        // Tap dance: G on single tap, T on double tap with short tapping term
+        grenade_mask: grenade_mask {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <150>; // Short tapping term
+            bindings = <&kp G>, <&kp T>;
+        };
+        
+        // Tap dance: R on single tap, N1 on double tap with short tapping term
+        reload_weapon: reload_weapon {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <140>; // Even shorter tapping term
+            bindings = <&kp R>, <&kp N1>;
+        };
+        
         // Mod-morph: O normally, BSPC when Left Shift is held, O uppercase when Right Shift is held
         mm_o_bspc: mod_morph_o_bspc {
             compatible = "zmk,behavior-mod-morph";
@@ -82,7 +106,7 @@
             bindings = <&kp>, <&kp>;
         };
         
-        // Long sticky key behavior - 15 seconds
+        // Long sticky key behavior - 30 seconds
         long_sk: sticky_key_long {
             compatible = "zmk,behavior-sticky-key";
             #binding-cells = <1>;
@@ -90,6 +114,8 @@
             bindings = <&kp>;
             quick-release;
         };
+        
+        // Auto-movement toggle via key toggle functionality
         
         // Removed tap-dance related code
         
@@ -163,6 +189,24 @@
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
                 bindings = <&kp LC(LA(L))>;  // Ctrl+Alt+L to lock session on Linux Mint
+            };
+            
+            heal: heal {
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings = <
+                    &macro_tap &kp N3
+                    &macro_wait_time 50
+                    &macro_tap &kp N4
+                    &macro_wait_time 50
+                    &macro_tap &kp N4
+                    &macro_wait_time 50
+                    &macro_tap &kp N4
+                    &macro_wait_time 50
+                    &macro_tap &kp N4
+                    &macro_wait_time 50
+                    &macro_tap &kp N4
+                >;
             };
             
             quick_melee: quick_melee {
@@ -254,6 +298,15 @@
                 &kp LSHIFT  &kp A         &kp S    &kp D         &kp N4        &kp N5        &kp H         &lt SYMBOL J    &kp L         &kp RET
                 &long_sk W    &kp Z         &kp X  &kp C         &kp V         &quick_hello  &kp M         &lt FUNCTION TAB &kp DOT      &to DEFAULT
                 &kp TAB  &kp LCTRL     &kp SPACE     &kp Q         &quick_melee   &kp F
+            >;
+        };
+
+        battlefield {
+            bindings = <
+                &kp ESC       &kp Q         &kp W         &kp E         &reload_weapon &heal        &kp N3        &lt NUMBER I    &kp O         &to DEFAULT
+                &kp LSHIFT    &kp A         &kp S         &kp D         &kp N1        &kp Q        &kp H         &lt SYMBOL J    &kp L         &kp RET
+                &auto_move    &kp LCTRL     &kp X         &kp N2        &grenade_mask &quick_hello  &kp M         &lt FUNCTION TAB &kp DOT       &to DEFAULT
+                &kp TAB       &kp LCTRL     &kp SPACE     &kp Q         &quick_melee  &kp F
             >;
         };
 

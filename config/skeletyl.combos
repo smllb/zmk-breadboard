@@ -31,6 +31,8 @@
 #define MEDIA 5
 #define GAMING 6
 #define BT 7
+#define BATTLEFIELD 8
+#define TAB_LAYER 9
 
 / {
     combos {
@@ -321,5 +323,20 @@
             layers = <MEDIA>;          // Only active in MEDIA layer
         };
 
+        // Toggle Battlefield layer with 24 + 4 (B + T)
+        combo_toggle_battlefield_24_4 {
+            timeout-ms = <40>;
+            key-positions = <24 4>;    // Keys 24 (B) and 4 (T)
+            bindings = <&to BATTLEFIELD>; // Go to Battlefield layer
+            layers = <DEFAULT SYMBOL NAVIGATION NUMBER FUNCTION MEDIA GAMING BT TAB_LAYER>; // All except BATTLEFIELD
+        };
+
+        // Return to DEFAULT when pressing 24 + 4 in Battlefield layer
+        combo_battlefield_24_4_to_default {
+            timeout-ms = <40>;
+            key-positions = <24 4>;    // Keys 24 (B) and 4 (T)
+            bindings = <&to DEFAULT>;  // Return to DEFAULT layer
+            layers = <BATTLEFIELD>;    // Only active in BATTLEFIELD layer
+        };
     };
 };
