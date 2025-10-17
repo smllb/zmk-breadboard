@@ -123,6 +123,15 @@
                 ;
         };
         
+        // Toggle on tap, momentary on hold behavior
+        tog_mo: toggle_momentary {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&tog>;
+        };
+        
     };
 
     macros {
@@ -199,7 +208,7 @@
                 &kp Q         &kp W         &mt RSHIFT E   &lt FUNCTION R         &kp T         &mm_y_bspc &mm_u_bspc &mm_i_bspc   &mm_o_bspc &lt TAB_LAYER P
                 &mtb LSHIFT A &kp S         &mt LCTRL D   &lt SYMBOL F         &kp G         &kp H         &lt SYMBOL  J         &lt SYMBOL K   &kp L         &mt LSHIFT APOS
                 &mt LCTRL Z   &mt RCTRL X    &lt NUMBER C &lt NUMBER V         &kp B         &kp N         &lt NUMBER M         &lt NUMBER COMMA &mt RCTRL DOT   &mt LCTRL SLASH
-                &kp X         &none         &kp SPACE    &kp ENTER     &kp BSPC         &kp Z
+                &kp X         &none         &kp SPACE    &kp ENTER     &tog_mo NAVIGATION NAVIGATION     &kp Z
             >;
         };
 
@@ -217,7 +226,7 @@
                 &kp A         &kp V         &kp LALT &kp TAB       &none         &kp R         &kp BSPC      &kp UP        &kp RIGHT     &kp BSPC
                 &kp LSHIFT    &kp X         &kp C    &kp LCTRL     &kp G         &kp B         &kp LEFT      &kp DOWN      &kp END       &kp PG_UP
                 &kp Z         &none         &kp F4   &kp F5        &none         &kp D         &kp HOME      &kp F         &kp Y         &kp PG_DN
-                &none         &kp SLASH     &kp SPACE     &kp ENTER     &kp BSPC      &kp DEL
+                &none         &kp SLASH     &kp SPACE     &kp ENTER     &to 0    &kp DEL
             >;
         };
 
