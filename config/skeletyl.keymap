@@ -140,8 +140,74 @@
             #binding-cells = <0>;
             bindings
                 = <&macro_tap &kp LC(LA(T))>  // Press Ctrl+Alt+T
-                , <&macro_wait_time 200>      // Wait 0.2s
-                , <&macro_tap &kp S &kp U &kp D &kp O &kp SPACE &kp MINUS &kp U &kp SPACE &kp W &kp W &kp W &kp MINUS &kp D &kp A &kp T &kp A &kp SPACE &kp FSLH &kp V &kp A &kp R &kp FSLH &kp W &kp W &kp W &kp FSLH &kp H &kp T &kp M &kp L &kp FSLH &kp F &kp F &kp L &kp C &kp H &kp MINUS &kp D &kp R &kp U &kp P &kp A &kp L &kp FSLH &kp V &kp E &kp N &kp D &kp O &kp R &kp FSLH &kp B &kp I &kp N &kp FSLH &kp D &kp R &kp U &kp S &kp H &kp SPACE &kp C &kp R>
+                , <&macro_wait_time 400>      // Wait 0.2s
+                // Type "sudo -u www-data"
+                , <&macro_tap &kp S>
+                , <&macro_tap &kp U>
+                , <&macro_tap &kp D>
+                , <&macro_tap &kp O>
+                , <&macro_tap &kp SPACE>
+                , <&macro_tap &kp MINUS>
+                , <&macro_tap &kp U>
+                , <&macro_tap &kp SPACE>
+                , <&macro_tap &kp W>
+                , <&macro_tap &kp W>
+                , <&macro_tap &kp W>
+                , <&macro_tap &kp MINUS>
+                , <&macro_tap &kp D>
+                , <&macro_tap &kp A>
+                , <&macro_tap &kp T>
+                , <&macro_tap &kp A>
+                // Type the path
+                , <&macro_tap &kp SPACE>
+                , <&macro_tap &kp FSLH>
+                , <&macro_tap &kp V>
+                , <&macro_tap &kp A>
+                , <&macro_tap &kp R>
+                , <&macro_tap &kp FSLH>
+                , <&macro_tap &kp W>
+                , <&macro_tap &kp W>
+                , <&macro_tap &kp W>
+                , <&macro_tap &kp FSLH>
+                , <&macro_tap &kp H>
+                , <&macro_tap &kp T>
+                , <&macro_tap &kp M>
+                , <&macro_tap &kp L>
+                , <&macro_tap &kp FSLH>
+                // Type fflch-drupal path
+                , <&macro_tap &kp F>
+                , <&macro_tap &kp F>
+                , <&macro_tap &kp L>
+                , <&macro_tap &kp C>
+                , <&macro_tap &kp H>
+                , <&macro_tap &kp MINUS>
+                , <&macro_tap &kp D>
+                , <&macro_tap &kp R>
+                , <&macro_tap &kp U>
+                , <&macro_tap &kp P>
+                , <&macro_tap &kp A>
+                , <&macro_tap &kp L>
+                // Type /vendor/bin/drush cr
+                , <&macro_tap &kp FSLH>
+                , <&macro_tap &kp V>
+                , <&macro_tap &kp E>
+                , <&macro_tap &kp N>
+                , <&macro_tap &kp D>
+                , <&macro_tap &kp O>
+                , <&macro_tap &kp R>
+                , <&macro_tap &kp FSLH>
+                , <&macro_tap &kp B>
+                , <&macro_tap &kp I>
+                , <&macro_tap &kp N>
+                , <&macro_tap &kp FSLH>
+                , <&macro_tap &kp D>
+                , <&macro_tap &kp R>
+                , <&macro_tap &kp U>
+                , <&macro_tap &kp S>
+                , <&macro_tap &kp H>
+                , <&macro_tap &kp SPACE>
+                , <&macro_tap &kp C>
+                , <&macro_tap &kp R>
                 , <&macro_tap &kp ENTER>     // Press Enter
                 , <&macro_wait_time 200>      // Wait 0.2s
                 , <&macro_tap &kp M &kp I &kp A>  // Type "mia"
