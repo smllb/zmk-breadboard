@@ -135,6 +135,22 @@
     };
 
     macros {
+        drush_cache_rebuild: drush_cache_rebuild {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &kp LC(LA(T))>  // Press Ctrl+Alt+T
+                , <&macro_wait_time 200>      // Wait 0.2s
+                , <&macro_tap &kp S &kp U &kp D &kp O &kp SPACE &kp MINUS &kp U &kp SPACE &kp W &kp W &kp W &kp MINUS &kp D &kp A &kp T &kp A &kp SPACE &kp FSLH &kp V &kp A &kp R &kp FSLH &kp W &kp W &kp W &kp FSLH &kp H &kp T &kp M &kp L &kp FSLH &kp F &kp F &kp L &kp C &kp H &kp MINUS &kp D &kp R &kp U &kp P &kp A &kp L &kp FSLH &kp V &kp E &kp N &kp D &kp O &kp R &kp FSLH &kp B &kp I &kp N &kp FSLH &kp D &kp R &kp U &kp S &kp H &kp SPACE &kp C &kp R>
+                , <&macro_tap &kp ENTER>     // Press Enter
+                , <&macro_wait_time 200>      // Wait 0.2s
+                , <&macro_tap &kp M &kp I &kp A>  // Type "mia"
+                , <&macro_tap &kp ENTER>     // Press Enter
+                , <&macro_wait_time 3500>     // Wait 3.5s
+                , <&macro_tap &kp LA(F4)>    // Press Alt+F4
+                ;
+        };
+        
         zed_em_kay: zed_em_kay {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -208,7 +224,7 @@
                 &kp Q         &kp W         &mt RSHIFT E   &lt FUNCTION R         &kp T         &mm_y_bspc &mm_u_bspc &mm_i_bspc   &mm_o_bspc &lt TAB_LAYER P
                 &mtb LSHIFT A &kp S         &mt LCTRL D   &lt SYMBOL F         &kp G         &kp H         &lt SYMBOL  J         &lt SYMBOL K   &kp L         &mt LSHIFT APOS
                 &mt LCTRL Z   &mt RCTRL X    &lt NUMBER C &lt NUMBER V         &kp B         &kp N         &lt NUMBER M         &lt NUMBER COMMA &mt RCTRL DOT   &mt LCTRL SLASH
-                &kp X         &none         &kp SPACE    &kp ENTER     &tog_mo NAVIGATION NAVIGATION     &kp Z
+                &kp X         &none         &kp SPACE    &kp ENTER     &tog_mo NAVIGATION NAVIGATION     &drush_cache_rebuild
             >;
         };
 
