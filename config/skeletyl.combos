@@ -31,6 +31,8 @@
 #define MEDIA 5
 #define GAMING 6
 #define BT 7
+#define TAB_LAYER 8
+#define BATTLEFIELD 9
 
 / {
     combos {
@@ -57,32 +59,7 @@
             bindings = <&to DEFAULT>;
             layers = <NUMBER>;
         };
-        combo_sticky_num_1_2 {
-            timeout-ms = <25>;
-            key-positions = <1 2>;
-            bindings = <&sl NUMBER>;
-            layers = <DEFAULT SYMBOL NAVIGATION FUNCTION MEDIA BT GAMING>;
-        };
-        combo_sticky_num_1_2_to_default {
-            timeout-ms = <25>;
-            key-positions = <1 2>;
-            bindings = <&to DEFAULT>;
-            layers = <NUMBER>;
-        };
-        // combo_sticky_num_7_8 and combo_sticky_num_7_8_to_default removed to avoid conflict with navigation combos
-        // Symbol Layer
-        combo_sticky_sym_11_12 {
-            timeout-ms = <25>;
-            key-positions = <11 12>;
-            bindings = <&sl SYMBOL>;
-            layers = <DEFAULT NUMBER NAVIGATION FUNCTION MEDIA BT GAMING>;
-        };
-        combo_sticky_sym_11_12_to_default {
-            timeout-ms = <25>;
-            key-positions = <11 12>;
-            bindings = <&to DEFAULT>;
-            layers = <SYMBOL>;
-        };
+
         
         // New combo for toggling symbol layer with D+F (keys 12+13)
         combo_toggle_sym_12_13 {
@@ -116,33 +93,6 @@
             bindings = <&to DEFAULT>;
             layers = <GAMING>;
         };
-        // New combo for toggling function layer with M+COMMA (keys 26+27)
-        combo_toggle_func_26_27 {
-            timeout-ms = <25>;
-            key-positions = <26 27>;
-            bindings = <&tog FUNCTION>;
-            layers = <DEFAULT NUMBER SYMBOL NAVIGATION MEDIA BT GAMING>;
-        };
-        
-        // Return to default when pressing M+COMMA in function layer
-        combo_func_26_27_to_default {
-            timeout-ms = <25>;
-            key-positions = <26 27>;
-            bindings = <&to DEFAULT>;
-            layers = <FUNCTION>;
-        };
-        combo_sticky_sym_17_18 {
-            timeout-ms = <25>;
-            key-positions = <17 18>;
-            bindings = <&sl SYMBOL>;
-            layers = <DEFAULT NUMBER NAVIGATION FUNCTION MEDIA BT GAMING>;
-        };
-        combo_sticky_sym_17_18_to_default {
-            timeout-ms = <25>;
-            key-positions = <17 18>;
-            bindings = <&to DEFAULT>;
-            layers = <SYMBOL>;
-        };
         
         // New combo for toggling symbol layer with J+K (keys 16+17)
         combo_toggle_sym_16_17 {
@@ -159,19 +109,7 @@
             bindings = <&to DEFAULT>;
             layers = <SYMBOL>;
         };
-        // Function Layer
-        combo_sticky_fun_21_22 {
-            timeout-ms = <25>;
-            key-positions = <21 22>;
-            bindings = <&sl FUNCTION>;
-            layers = <DEFAULT NUMBER SYMBOL NAVIGATION MEDIA BT GAMING>;
-        };
-        combo_sticky_fun_21_22_to_default {
-            timeout-ms = <25>;
-            key-positions = <21 22>;
-            bindings = <&to DEFAULT>;
-            layers = <FUNCTION>;
-        };
+
         combo_to_nav_16_7_8{
             timeout-ms = <25>;
             key-positions = <16 7 8>;
@@ -296,29 +234,6 @@
             key-positions = <14 15>;   // G + H
             bindings = <&kp LC(LA(T))>; // Ctrl+Alt+T
             layers = <DEFAULT>;        // Only active on default layer not working 
-        };
-        
-        combo_tilde_qp {
-            timeout-ms = <50>;
-            key-positions = <0 9>;     // Q + P
-            bindings = <&kp TILDE>;    // ~ key
-            layers = <DEFAULT>;        // Only active on default layer
-        };
-
-        // Toggle Media layer with 31 + 34 (available everywhere except in Media layer)
-        combo_toggle_media_31_34 {
-            timeout-ms = <50>;
-            key-positions = <31 34>;   // Keys 31 and 34
-            bindings = <&tog MEDIA>;   // Toggle Media layer
-            layers = <DEFAULT SYMBOL NAVIGATION NUMBER FUNCTION GAMING BT>; // All except MEDIA
-        };
-
-        // Return to default when pressing 31 + 34 in media layer
-        combo_media_31_34_to_default {
-            timeout-ms = <50>;
-            key-positions = <31 34>;   // Keys 31 and 34
-            bindings = <&to DEFAULT>;  // Return to DEFAULT layer
-            layers = <MEDIA>;          // Only active in MEDIA layer
         };
 
     };
