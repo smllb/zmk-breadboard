@@ -93,22 +93,6 @@
             bindings = <&to DEFAULT>;
             layers = <GAMING>;
         };
-        
-        // New combo for toggling symbol layer with J+K (keys 16+17)
-        combo_toggle_sym_16_17 {
-            timeout-ms = <25>;
-            key-positions = <16 17>;
-            bindings = <&tog SYMBOL>;
-            layers = <DEFAULT NUMBER NAVIGATION FUNCTION MEDIA BT GAMING>;
-        };
-        
-        // Return to default when pressing J+K in symbol layer
-        combo_sym_16_17_to_default {
-            timeout-ms = <25>;
-            key-positions = <16 17>;
-            bindings = <&to DEFAULT>;
-            layers = <SYMBOL>;
-        };
 
         combo_to_nav_16_7_8{
             timeout-ms = <25>;
