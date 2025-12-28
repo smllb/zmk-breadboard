@@ -64,7 +64,7 @@
         // New combo for toggling symbol layer with D+F (keys 12+13)
         combo_toggle_sym_12_13 {
             timeout-ms = <25>;
-            key-positions = <14 15>;
+            key-positions = <13 14>;
             bindings = <&tog SYMBOL>;
             layers = <DEFAULT NUMBER NAVIGATION FUNCTION MEDIA BT GAMING>;
         };
@@ -72,7 +72,7 @@
         // Return to default when pressing D+F in symbol layer
         combo_sym_12_13_to_default {
             timeout-ms = <25>;
-            key-positions = <14 15>;
+            key-positions = <13 14>;
             bindings = <&to DEFAULT>;
             layers = <SYMBOL>;
         };
@@ -81,7 +81,7 @@
         // New combo for toggling gaming layer with 1 2 3 
         combo_toggle_gaming_1_2_3 {
             timeout-ms = <20>;
-            key-positions = <2 3 4>;
+            key-positions = <1 2 3>;
             bindings = <&to GAMING>;
             layers = <DEFAULT NUMBER NAVIGATION FUNCTION MEDIA BT>;
         };
@@ -89,7 +89,7 @@
         // Return to default 
         combo_toggle_gaming_1_2_3_to_default {
             timeout-ms = <15>;
-            key-positions = <2 3 4>;
+            key-positions = <1 2 3>;
             bindings = <&to DEFAULT>;
             layers = <GAMING>;
         };
@@ -134,7 +134,7 @@
         // Toggle GAMING layer with 11 + 2 + 13 (all except GAMING)
         combo_toggle_gaming_11213 {
             timeout-ms = <30>;
-            key-positions = <13 3 15>; // 11 + 2 + 13
+            key-positions = <12 2 14>; // 11 + 2 + 13
             bindings = <&tog GAMING>; // Toggle GAMING layer
             layers = <DEFAULT SYMBOL NAVIGATION NUMBER FUNCTION MEDIA BT>; // All except GAMING
         };
@@ -157,7 +157,7 @@
       
         combo_to_bt_429 {
             timeout-ms = <30>;
-            key-positions = <5 32>; 
+            key-positions = <4 32>; 
             bindings = <&to BT>; // Go to BT layer
             layers = <DEFAULT SYMBOL NAVIGATION NUMBER FUNCTION MEDIA GAMING>; // All except BT
         };
@@ -165,57 +165,57 @@
      
         combo_bt_429_to_default {
             timeout-ms = <30>;
-            key-positions = <5 32>; 
+            key-positions = <4 32>; 
             bindings = <&to DEFAULT>;
             layers = <BT>;
         };
         // On BT: 20 + 32 + 33 + 29 sends BT_CLR_ALL
         combo_bt_clr_all_20_32_33_29 {
             timeout-ms = <30>;
-            key-positions = <23 35 36 32>; // 20 + 32 + 33 + 29
+            key-positions = <22 35 36 32>; // 20 + 32 + 33 + 29
             bindings = <&bt BT_CLR_ALL>;
             layers = <BT>;
         };
 
         combo_gui_fk {
             timeout-ms = <50>;
-            key-positions = <15 19>; // F + K
+            key-positions = <14 18>; // F + K
             bindings = <&kp LGUI>;
         };
         combo_git_token_xdot {
             timeout-ms = <50>;
-            key-positions = <24 31>; // X + DOT working
+            key-positions = <23 31>; // X + DOT working
             bindings = <&paste_git_token>;
         };
         
         combo_double_shift_a_apos {
             timeout-ms = <50>;
-            key-positions = <12 21>; // A + APOS working 
+            key-positions = <11 21>; // A + APOS working 
             bindings = <&double_lshift>;
         };
         
         combo_lock_session_z_slash {
             timeout-ms = <20>;
-            key-positions = <23 32>; // Z + SLASH working 
+            key-positions = <22 32>; // Z + SLASH working 
             bindings = <&lock_session>;
         };
 
         combo_esc {
             timeout-ms = <50>;
-            key-positions = <1 2>;
+            key-positions = <0 1>;
             bindings = <&kp ESC>; // working
         }; 
         
         combo_alt_f4 {
             timeout-ms = <50>;
-            key-positions = <2 20>;     // W + K keys
+            key-positions = <1 19>;     // W + K keys
             bindings = <&alt_f4>;      // Trigger the Alt+F4 macro
             layers = <DEFAULT>;        // Only active on default layer working
         };
         
         combo_terminal_gh {
             timeout-ms = <50>;
-            key-positions = <16 17>;   // G + H
+            key-positions = <15 17>;   // G + H
             bindings = <&kp LC(LA(T))>; // Ctrl+Alt+T
             layers = <DEFAULT>;        // Only active on default layer not working 
         };
