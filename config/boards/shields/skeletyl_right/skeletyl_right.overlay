@@ -1,7 +1,7 @@
 #include "skeletyl_matrix.dtsi"
 
 &default_transform {
-	col-offset = <5>;
+	col-offset = <6>;
 };
 
 &kscan0 {
