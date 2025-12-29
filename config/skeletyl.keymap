@@ -187,11 +187,12 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&kp APOS &kp SPACE>
-                , <&kp APOS &kp SPACE>
+                = <&macro_press &kp LSHFT>
+                , <&macro_tap &kp APOS &kp SPACE>
+                , <&macro_tap &kp APOS &kp SPACE>
                 , <&macro_release &kp LSHFT>
                 , <&macro_release &kp RSHFT>
-                , <&kp LEFT>
+                , <&macro_tap &kp LEFT>
                 ;
         };
 
