@@ -24,19 +24,6 @@
 #define BATTLEFIELD 9
 
 / {
-    macros {
-        macro_quotes: macro_quotes {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp APOS &kp APOS &kp LEFT>;
-        };
-        macro_dquotes: macro_dquotes {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LS(APOS) &kp LS(APOS) &kp LEFT>;
-        };
-    };
-
     behaviors {
         // Mod-morph to select between single and double quotes macros
         mm_quotes: mm_quotes {
@@ -190,7 +177,18 @@
         
     };
 
-    macros {      
+    macros {
+        macro_quotes: macro_quotes {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp APOS &kp APOS &kp LEFT>;
+        };
+        macro_dquotes: macro_dquotes {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(APOS) &kp LS(APOS) &kp LEFT>;
+        };
+
         zed_em_kay: zed_em_kay {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
