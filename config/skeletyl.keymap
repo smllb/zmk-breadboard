@@ -190,6 +190,7 @@
                 = <&kp LS(APOS) &kp LS(APOS)>
                 , <&macro_release &kp LSHFT>
                 , <&macro_release &kp RSHFT>
+                , <&macro_wait_time 30>
                 , <&kp LEFT>
                 ;
         };
