@@ -38,7 +38,7 @@
         // The tap behavior (mm_quotes) takes 0 arguments, so the argument passed to &qt is effectively dropped for the tap
         qt: quotes_tap {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <1>;
+            #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             bindings = <&kp>, <&mm_quotes>;
