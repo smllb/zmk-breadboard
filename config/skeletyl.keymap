@@ -29,7 +29,7 @@
         mm_quotes: mm_quotes {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&macro_quotes>, <&macro_dquotes>;
+            bindings = <&kp APOS>, <&macro_dquotes>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -186,7 +186,12 @@
         macro_dquotes: macro_dquotes {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LS(APOS) &kp LS(APOS) &kp LEFT>;
+            bindings
+                = <&kp LS(APOS) &kp LS(APOS)>
+                , <&macro_release &kp LSHFT>
+                , <&macro_release &kp RSHFT>
+                , <&kp LEFT>
+                ;
         };
 
         zed_em_kay: zed_em_kay {
