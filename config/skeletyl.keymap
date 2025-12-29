@@ -24,7 +24,39 @@
 #define BATTLEFIELD 9
 
 / {
+    macros {
+        macro_quotes: macro_quotes {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp APOS &kp APOS &kp LEFT>;
+        };
+        macro_dquotes: macro_dquotes {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(APOS) &kp LS(APOS) &kp LEFT>;
+        };
+    };
+
     behaviors {
+        // Mod-morph to select between single and double quotes macros
+        mm_quotes: mm_quotes {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&macro_quotes>, <&macro_dquotes>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        // Hold-tap: Hold Shift, Tap Quotes Mod-Morph
+        // Note: We use a custom hold-tap that takes 1 argument (for the hold key)
+        // The tap behavior (mm_quotes) takes 0 arguments, so the argument passed to &qt is effectively dropped for the tap
+        qt: quotes_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <1>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&kp>, <&mm_quotes>;
+        };
+
         // Mod-morph: O normally, BSPC when Left Shift is held, O uppercase when Right Shift is held
         mm_o_bspc: mod_morph_o_bspc {
             compatible = "zmk,behavior-mod-morph";
@@ -249,7 +281,7 @@
         default_layer {
             bindings = <
                 &kp ESC       &kp Q         &kp W         &mt RSHIFT E   &lt FUNCTION R         &kp T         &mm_y_bspc &mm_u_bspc &mm_i_bspc   &mm_o_bspc &lt TAB_LAYER P &kp BSPC
-                &mo SYMBOL    &mtb LSHIFT A &kp S         &mt LCTRL D   &lt SYMBOL F         &kp G         &kp H         &lt SYMBOL  J         &lt SYMBOL K   &kp L         &mt LSHIFT APOS &kp LC(BSPC)
+                &mo SYMBOL    &mtb LSHIFT A &kp S         &mt LCTRL D   &lt SYMBOL F         &kp G         &kp H         &lt SYMBOL  J         &lt SYMBOL K   &kp L         &qt LSHIFT 0 &kp LC(BSPC)
                 &kp LCTRL     &mt LCTRL Z   &mt RCTRL X    &lt NUMBER C &lt NUMBER V         &kp B         &kp N         &lt NUMBER M         &lt NUMBER COMMA &mt RCTRL DOT   &mt LCTRL SLASH &none
                 &kp X         &none         &kp SPACE    &kp ENTER     &tog_mo NAVIGATION NAVIGATION     &tog_mo MEDIA MEDIA
             >;
