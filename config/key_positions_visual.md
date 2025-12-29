@@ -5,7 +5,7 @@ This document provides a visual representation of the key positions for your Ske
 ## Key Position Layout
 
 Based on your configuration files and keyboard layout, here's a visual representation of the key positions:
-
+a
 ```
 ╭────────┬────────┬────────┬────────┬────────╮   ╭────────┬────────┬────────┬────────┬────────╮
 │   0    │   1    │   2    │   3    │   4    │   │   5    │   6    │   7    │   8    │   9    │ 
