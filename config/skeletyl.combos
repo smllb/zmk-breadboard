@@ -22,18 +22,6 @@
  * M+COMMA (26+27) = Toggle Function Layer from Default / Go back to Default from Function Layer
  */
 
-// Layer definitions - copied from skeletyl.keymap for consistency
-#define DEFAULT 0
-#define SYMBOL 1
-#define NAVIGATION 2
-#define NUMBER 3
-#define FUNCTION 4
-#define MEDIA 5
-#define GAMING 6
-#define BT 7
-#define TAB_LAYER 8
-#define BATTLEFIELD 9
-
 / {
     combos {
         compatible = "zmk,combos";
