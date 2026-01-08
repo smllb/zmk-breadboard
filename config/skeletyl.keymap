@@ -285,10 +285,10 @@
 
         default_layer {
             bindings = <
-                &kp ESC       &kp Q         &kp W         &mt RSHIFT E   &lt FUNCTION R         &kp T         &mm_y_bspc &mm_u_bspc &mm_i_bspc   &mm_o_bspc &lt TAB_LAYER P &kp BSPC
+                &kp ESC       &kp Q         &kp W         &mt RSHIFT E   &lt SYMBOL R         &kp T         &mm_y_bspc &mm_u_bspc &mm_i_bspc   &mm_o_bspc &lt TAB_LAYER P &kp BSPC
                 &mo SYMBOL    &mtb LSHIFT A &kp S         &mt LCTRL D   &lt SYMBOL F         &kp G         &kp H         &lt SYMBOL  J         &lt SYMBOL K   &kp L         &qt LSHIFT 0 &kp LC(BSPC)
                 &kp LCTRL     &mt LCTRL Z   &mt RCTRL X    &lt NUMBER C &lt NUMBER V         &kp B         &kp N         &lt NUMBER M         &lt NUMBER COMMA &mt RCTRL DOT   &mt LCTRL SLASH &none
-                &kp X         &none         &kp SPACE    &kp ENTER     &tog_mo NAVIGATION NAVIGATION     &tog_mo MEDIA MEDIA
+                &lt SYMBOL X         &none         &kp SPACE    &kp ENTER     &tog_mo NAVIGATION NAVIGATION     &tog_mo MEDIA MEDIA
             >;
         };
 
