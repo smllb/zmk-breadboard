@@ -246,13 +246,17 @@
                 #binding-cells = <0>;
                 bindings = <&kp LC(C)>;  // Ctrl+C is a common binding for "Hello" in Overwatch
             };
-            
-            toggle_gaming: toggle_gaming {
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings = <&tog GAMING>;  // Toggle gaming layer
-            };
-            
+    mouse1_toggle: mouse1_toggle {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&tog MOUSE_BTN1>;
+    };
+    toggle_gaming: toggle_gaming {
+        compatible = "zmk,behavior-macro";
+        #binding-cells = <0>;
+        bindings = <&tog GAMING>;  // Toggle gaming layer
+    };
+    
             alt_f4: alt_f4 {
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
@@ -340,7 +344,7 @@
         gaming_layer {
             bindings = <
                 &trans &kp ESC       &kp Q         &kp W    &kp E         &kp R         &kp N2        &kp N3        &lt NUMBER I    &kp O         &to DEFAULT &trans
-                &trans &kp LSHIFT  &kp A         &kp S    &kp D         &kp N4        &kp N5        &kp H         &lt SYMBOL J    &kp L         &kp RET &trans
+                &kt MB1 &kp LSHIFT  &kp A         &kp S    &kp D         &kp N4        &kp N5        &kp H         &lt SYMBOL J    &kp L         &kp RET &trans
                 &trans &long_sk W    &kp Z         &kp X  &kp C         &kp V         &quick_hello  &kp M         &lt FUNCTION TAB &kp DOT      &to DEFAULT &trans
                 &kp TAB  &kp LCTRL     &kp SPACE     &kp Q         &quick_melee   &kp F
             >;
