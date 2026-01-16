@@ -347,8 +347,10 @@
                 &kt MB1 &kp LSHIFT  &kp A         &kp S    &kp D         &kp N4        &kp N5        &kp H         &lt SYMBOL J    &kp L         &kp RET &trans
                 &trans &long_sk W    &kp Z         &kp X  &kp C         &kp V         &quick_hello  &kp M         &lt FUNCTION TAB &kp DOT      &to DEFAULT &trans
                 &kp TAB  &kp LCTRL     &kp SPACE     &kp Q         &quick_melee   &kp F
+                
             >;
         };
+
 
         BT {
             bindings = <
