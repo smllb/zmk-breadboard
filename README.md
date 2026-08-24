@@ -10,7 +10,7 @@ This repository contains the ZMK firmware configuration for the Skeletyl split k
 - **Type:** Split, wireless/USB
 - **Power:** Bluetooth +8dBm, 30min sleep timeout
 - **Features:** Custom combos and multiple layers for enhanced productivity
-
+a
 ---
 
 ## Layer Summary
